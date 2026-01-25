@@ -1,0 +1,11 @@
+# Robots.txt for Phoenix Pool Resurfacing
+# https://phxpoolresurfacing.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://phxpoolresurfacing.com/sitemap.xml
+
+# Crawl-delay (optional, for server politeness)
+# Crawl-delay: 1
