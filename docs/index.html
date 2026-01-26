@@ -3001,14 +3001,14 @@
             });
         });
 
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', function() {
-                this.parentElement.classList.toggle('active');
-            });
-        });
-
         // Formspree AJAX form handler
         document.addEventListener('DOMContentLoaded', function() {
+            // FAQ accordion
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', function() {
+                    this.parentElement.classList.toggle('active');
+                });
+            });
             const form = document.getElementById('contact-form');
             if (form) {
                 form.addEventListener('submit', async function(e) {
