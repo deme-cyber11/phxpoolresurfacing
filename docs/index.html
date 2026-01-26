@@ -810,6 +810,253 @@
             line-height: 1.7;
         }
 
+        /* Trust Badges Section */
+        .trust-badges {
+            background: var(--color-surface);
+            text-align: center;
+        }
+
+        .badges-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .badge-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .badge-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--color-surface-alt);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--color-border);
+        }
+
+        .badge-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--color-primary);
+        }
+
+        .badge-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--color-text);
+        }
+
+        .badge-sublabel {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Before/After Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+        }
+
+        .gallery-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Blog Styles */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .blog-card-image {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card-date {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        .blog-article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .blog-article-header {
+            margin-bottom: 2rem;
+        }
+
+        .blog-article-date {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .blog-article h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .blog-article-content h2 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--color-text);
+        }
+
+        .blog-article-content h3 {
+            font-size: 1.25rem;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .blog-article-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .blog-article-content ul, .blog-article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .blog-article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .blog-article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .blog-article-content th, .blog-article-content td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .blog-article-content th {
+            background: var(--color-surface-alt);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* CTA Section - Modern Gradient */
         .cta-section {
             background: linear-gradient(135deg, var(--color-surface-alt) 0%, var(--color-surface) 100%);
@@ -1822,8 +2069,11 @@
                         <a href="javascript:void(0)" onclick="showPage('location-tempe')">Tempe</a>
                         <a href="javascript:void(0)" onclick="showPage('location-chandler')">Chandler</a>
                         <a href="javascript:void(0)" onclick="showPage('location-gilbert')">Gilbert</a>
+                        <a href="javascript:void(0)" onclick="showPage('location-glendale')">Glendale</a>
+                        <a href="javascript:void(0)" onclick="showPage('location-peoria')">Peoria</a>
                     </div>
                 </li>
+                <li><a href="javascript:void(0)" onclick="showPage('blog')">Blog</a></li>
                 <li><a href="javascript:void(0)" onclick="showPage('about')">About</a></li>
                 <li><a href="javascript:void(0)" onclick="showPage('contact')">Contact</a></li>
                 <li><a href="tel:6025550123" class="nav-cta">(602) 555-0123</a></li>
@@ -1832,15 +2082,60 @@
     </header>
 
     <script>
+        const pageMeta = {
+            'home': { title: 'Phoenix Pool Resurfacing | Plaster, Pebble Tec & Quartz Finishes', desc: "Phoenix's trusted pool resurfacing experts. Plaster, Pebble Tec & quartz finishes. Licensed & insured. Free estimates." },
+            'plaster-resurfacing': { title: 'Plaster Pool Resurfacing Phoenix | $4-6/sq ft | Free Estimates', desc: 'Affordable plaster pool resurfacing in Phoenix. Classic white finish, 7-12 year lifespan. Licensed contractors. Call for free estimate.' },
+            'pebble-tec': { title: 'Pebble Tec Installation Phoenix | Premium Pool Finishes', desc: 'Pebble Tec pool resurfacing in Phoenix. 15-20 year durability, stain resistant, multiple colors. Certified installers. Free estimates.' },
+            'quartz-finishes': { title: 'Quartz Pool Finishes Phoenix | Sparkling Aggregate Surfaces', desc: 'Quartz pool resurfacing in Phoenix. Beautiful sparkle effect, 10-15 year lifespan. Licensed & insured. Free estimates.' },
+            'tile-coping': { title: 'Pool Tile & Coping Repair Phoenix | Waterline Tile Replacement', desc: 'Pool tile and coping repair in Phoenix. Waterline tile replacement, coping stone restoration. Licensed contractors.' },
+            'pool-deck': { title: 'Pool Deck Resurfacing Phoenix | Cool Deck & Overlays', desc: 'Pool deck resurfacing in Phoenix. Kool Deck, acrylic overlays, slip-resistant coatings. Beat the Arizona heat.' },
+            'acid-wash': { title: 'Pool Acid Wash Phoenix | Draining & Deep Cleaning Services', desc: 'Pool acid wash and draining services in Phoenix. Remove stains, calcium, algae. Professional pool cleaning.' },
+            'location-phoenix': { title: 'Pool Resurfacing Phoenix AZ | Arcadia, Biltmore, Ahwatukee', desc: 'Pool resurfacing services in Phoenix, AZ. Serving Arcadia, Biltmore, North Phoenix, Ahwatukee. Free estimates.' },
+            'location-scottsdale': { title: 'Pool Resurfacing Scottsdale AZ | North Scottsdale, DC Ranch', desc: 'Pool resurfacing services in Scottsdale, AZ. Premium finishes for luxury homes. Serving all Scottsdale areas.' },
+            'location-mesa': { title: 'Pool Resurfacing Mesa AZ | East Mesa, Red Mountain, Las Sendas', desc: 'Pool resurfacing services in Mesa, AZ. Plaster, Pebble Tec, quartz finishes. Serving all Mesa neighborhoods.' },
+            'location-tempe': { title: 'Pool Resurfacing Tempe AZ | South Tempe, The Lakes, Kyrene', desc: 'Pool resurfacing services in Tempe, AZ. Quality finishes for Arizona climate. Free estimates.' },
+            'location-chandler': { title: 'Pool Resurfacing Chandler AZ | Ocotillo, Sun Lakes, Sun Groves', desc: 'Pool resurfacing services in Chandler, AZ. HOA-compliant finishes. Serving all Chandler communities.' },
+            'location-gilbert': { title: 'Pool Resurfacing Gilbert AZ | Power Ranch, Val Vista, Agritopia', desc: 'Pool resurfacing services in Gilbert, AZ. Family-owned, quality work. Serving all Gilbert neighborhoods.' },
+            'location-glendale': { title: 'Pool Resurfacing Glendale AZ | Arrowhead, Westgate Areas', desc: 'Pool resurfacing services in Glendale, AZ. Plaster, Pebble Tec, quartz finishes. Free estimates.' },
+            'location-peoria': { title: 'Pool Resurfacing Peoria AZ | Vistancia, Lake Pleasant Area', desc: 'Pool resurfacing services in Peoria, AZ. Quality finishes built for Arizona. Licensed & insured.' },
+            'about': { title: 'About Phoenix Pool Resurfacing | Licensed Arizona Contractors', desc: 'Learn about Phoenix Pool Resurfacing. Locally owned, licensed AZ ROC contractors. 7-year warranty on all work.' },
+            'contact': { title: 'Contact Phoenix Pool Resurfacing | Free Estimates', desc: 'Contact Phoenix Pool Resurfacing for a free estimate. Call (602) 555-0123 or fill out our form. Response within 24 hours.' },
+            'blog': { title: 'Pool Resurfacing Blog | Tips & Guides | Phoenix Pool Resurfacing', desc: 'Expert pool resurfacing tips, cost guides, and maintenance advice for Phoenix homeowners. Learn about Pebble Tec, plaster, and more.' },
+            'blog-cost': { title: 'Pool Resurfacing Cost in Phoenix 2026 | Complete Price Guide', desc: 'How much does pool resurfacing cost in Phoenix? Complete 2026 pricing guide for plaster ($4-6/sqft), Pebble Tec ($8-12/sqft), and quartz finishes.' }
+        };
+
         function showPage(pageId) {
             document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
             const page = document.getElementById(pageId);
             if (page) {
                 page.classList.add('active');
                 window.scrollTo(0, 0);
+                // Update URL hash
+                history.pushState(null, '', '#' + pageId);
+                // Update page title and meta description
+                if (pageMeta[pageId]) {
+                    document.title = pageMeta[pageId].title;
+                    document.querySelector('meta[name="description"]').content = pageMeta[pageId].desc;
+                }
             }
             document.getElementById('navLinks').classList.remove('active');
         }
+
+        // Handle direct hash links and back/forward navigation
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.slice(1);
+            if (hash && document.getElementById(hash)) {
+                showPage(hash);
+            }
+        });
+
+        // Load correct page on initial load if hash present
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.slice(1);
+            if (hash && document.getElementById(hash)) {
+                showPage(hash);
+            }
+        });
 
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
@@ -2075,6 +2370,50 @@
             </div>
         </section>
 
+        <section class="trust-badges">
+            <div class="section-header">
+                <h2 class="section-title">Credentials & Certifications</h2>
+                <p class="section-subtitle">Licensed, insured, and certified professionals</p>
+            </div>
+            <div class="badges-grid">
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <span class="badge-label">AZ ROC Licensed</span>
+                    <span class="badge-sublabel">Registrar of Contractors</span>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                    </div>
+                    <span class="badge-label">Fully Insured</span>
+                    <span class="badge-sublabel">Liability & Workers Comp</span>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <span class="badge-label">5-Star Rated</span>
+                    <span class="badge-sublabel">Google Reviews</span>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                    </div>
+                    <span class="badge-label">7-Year Warranty</span>
+                    <span class="badge-sublabel">On All Work</span>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                    </div>
+                    <span class="badge-label">500+ Pools</span>
+                    <span class="badge-sublabel">Resurfaced</span>
+                </div>
+            </div>
+        </section>
+
         <section>
             <div class="section-header">
                 <h2 class="section-title">What Our Customers Say</h2>
@@ -2098,6 +2437,57 @@
                     <p class="testimonial-text">"They replaced our cracked tile and resurfaced the whole pool. The difference is night and day. Fair pricing and they cleaned up perfectly when done."</p>
                     <p class="testimonial-author">Patricia J.</p>
                     <p class="testimonial-location">Mesa, AZ</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">Our Recent Work</h2>
+                <p class="section-subtitle">Pool transformations across the Phoenix Metro Area</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=80" alt="Pebble Tec pool resurfacing in Scottsdale" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Pebble Tec</div>
+                        <div class="gallery-title">Scottsdale - Ocean Blue</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1572331165267-854da2b021aa?w=600&q=80" alt="Quartz finish pool in Gilbert" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Quartz Finish</div>
+                        <div class="gallery-title">Gilbert - Crystal Blue</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=80" alt="Plaster resurfacing in Mesa" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Plaster</div>
+                        <div class="gallery-title">Mesa - Classic White</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=600&q=80" alt="Pebble Tec pool in Phoenix" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Pebble Tec</div>
+                        <div class="gallery-title">Phoenix - Desert Sand</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1562844431-44e774baa249?w=600&q=80" alt="Pool deck resurfacing Chandler" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Deck + Surface</div>
+                        <div class="gallery-title">Chandler - Complete Renovation</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Tile and coping repair Tempe" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Tile & Coping</div>
+                        <div class="gallery-title">Tempe - Full Restoration</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2165,11 +2555,11 @@
                     <h3>Gilbert</h3>
                     <p>Power Ranch, Val Vista</p>
                 </div>
-                <div class="area-card">
+                <div class="area-card" onclick="showPage('location-glendale')">
                     <h3>Glendale</h3>
                     <p>Arrowhead, Westgate</p>
                 </div>
-                <div class="area-card">
+                <div class="area-card" onclick="showPage('location-peoria')">
                     <h3>Peoria</h3>
                     <p>Vistancia, Lake Pleasant</p>
                 </div>
@@ -2712,6 +3102,255 @@
         </div>
     </div>
 
+    <!-- GLENDALE LOCATION PAGE -->
+    <div id="location-glendale" class="page-container">
+        <div class="service-hero">
+            <h1>Pool Resurfacing in Glendale, AZ</h1>
+            <p>Serving Arrowhead Ranch, Westgate, Thunderbird & Historic Glendale</p>
+        </div>
+        <div class="location-content">
+            <h2>Glendale Pool Resurfacing Services</h2>
+            <p>Glendale combines historic charm with modern master-planned communities, featuring thousands of pools that need professional care. From the Arrowhead area's upscale homes to the established neighborhoods near downtown, Glendale pools face the same Arizona climate challenges as the rest of the Valley.</p>
+
+            <p>Phoenix Pool Resurfacing serves all Glendale communities including Arrowhead Ranch, Westgate, Thunderbird, Sahuaro Ranch, and Historic Downtown Glendale. We deliver the same quality workmanship to Glendale that has earned us a reputation throughout the Phoenix metro area.</p>
+
+            <h2>Services Available in Glendale</h2>
+            <ul>
+                <li>Plaster resurfacing - classic affordable finish</li>
+                <li>Pebble Tec and aggregate finishes - premium durability</li>
+                <li>Quartz finishes - stunning sparkle effect</li>
+                <li>Waterline tile replacement and repair</li>
+                <li>Coping stone restoration</li>
+                <li>Pool deck resurfacing - cool and safe surfaces</li>
+                <li>Pool draining and acid wash services</li>
+            </ul>
+
+            <h2>Why Glendale Pools Need Professional Care</h2>
+            <p>Glendale pools experience the full intensity of Arizona's desert climate. The combination of extreme summer heat, hard water, and intense UV exposure accelerates surface wear. Many Glendale pools, especially in neighborhoods built in the 1980s-2000s, are reaching the age where resurfacing becomes necessary.</p>
+
+            <h2>Glendale Neighborhoods We Serve</h2>
+            <ul>
+                <li><strong>Arrowhead Ranch:</strong> Premier master-planned community with resort-style pools</li>
+                <li><strong>Westgate:</strong> Modern entertainment district area</li>
+                <li><strong>Thunderbird:</strong> Established neighborhood near Thunderbird Park</li>
+                <li><strong>Sahuaro Ranch:</strong> Historic area near Sahuaro Ranch Park</li>
+                <li><strong>Bellair:</strong> Central Glendale established community</li>
+                <li><strong>Historic Downtown:</strong> Character homes with classic pools</li>
+            </ul>
+
+            <div class="cta-buttons" style="margin-top: 2rem;">
+                <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Glendale Estimate</a>
+                <a href="tel:6025550123" class="btn btn-secondary">Call (602) 555-0123</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PEORIA LOCATION PAGE -->
+    <div id="location-peoria" class="page-container">
+        <div class="service-hero">
+            <h1>Pool Resurfacing in Peoria, AZ</h1>
+            <p>Serving Vistancia, Lake Pleasant, Westwing & Old Town Peoria</p>
+        </div>
+        <div class="location-content">
+            <h2>Peoria Pool Resurfacing Services</h2>
+            <p>Peoria has experienced tremendous growth, transforming from a small agricultural community to one of the Valley's most desirable cities. With beautiful master-planned communities like Vistancia and areas near Lake Pleasant, Peoria is home to thousands of pools that need professional maintenance and resurfacing.</p>
+
+            <p>Phoenix Pool Resurfacing proudly serves all Peoria neighborhoods including Vistancia, Lake Pleasant area, Westwing, Trilogy at Vistancia (active adult), and the established neighborhoods of Old Town Peoria. We understand the investment Peoria homeowners have made in their properties.</p>
+
+            <h2>Services Available in Peoria</h2>
+            <ul>
+                <li>Plaster resurfacing - budget-friendly classic finish</li>
+                <li>Pebble Tec installation - Arizona's most durable finish</li>
+                <li>Quartz aggregate finishes - brilliant sparkle</li>
+                <li>Waterline tile installation and repair</li>
+                <li>Coping stone replacement</li>
+                <li>Cool deck and pool deck resurfacing</li>
+                <li>Complete pool draining and acid wash</li>
+            </ul>
+
+            <h2>Peoria's Diverse Pool Market</h2>
+            <p>Peoria's rapid growth means pools of all ages throughout the city:</p>
+            <ul>
+                <li><strong>Old Town Peoria:</strong> Pools from 1970s-90s often needing full resurfacing</li>
+                <li><strong>Vistancia/Westwing:</strong> Newer pools (2005-2015) approaching first resurface</li>
+                <li><strong>Trilogy:</strong> Active adult community with high pool usage</li>
+                <li><strong>Lake Pleasant area:</strong> Custom homes with unique pool designs</li>
+            </ul>
+
+            <h2>Peoria Neighborhoods We Serve</h2>
+            <ul>
+                <li><strong>Vistancia:</strong> Award-winning master-planned community</li>
+                <li><strong>Westwing:</strong> Mountain views and quality homes</li>
+                <li><strong>Trilogy at Vistancia:</strong> Active adult resort-style living</li>
+                <li><strong>Lake Pleasant:</strong> Recreation area with custom properties</li>
+                <li><strong>Old Town Peoria:</strong> Established neighborhoods with character</li>
+                <li><strong>Fletcher Heights:</strong> Family-friendly community</li>
+            </ul>
+
+            <div class="cta-buttons" style="margin-top: 2rem;">
+                <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Peoria Estimate</a>
+                <a href="tel:6025550123" class="btn btn-secondary">Call (602) 555-0123</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOG LISTING PAGE -->
+    <div id="blog" class="page-container">
+        <div class="service-hero">
+            <h1>Pool Resurfacing Blog</h1>
+            <p>Expert tips, guides, and advice for Phoenix pool owners</p>
+        </div>
+        <section style="padding: 4rem 2rem;">
+            <div class="blog-grid">
+                <div class="blog-card" onclick="showPage('blog-cost')">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=80" alt="Pool resurfacing cost guide" loading="lazy">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-date">January 2026</div>
+                        <h3 class="blog-card-title">Pool Resurfacing Cost in Phoenix: 2026 Complete Price Guide</h3>
+                        <p class="blog-card-excerpt">How much does pool resurfacing cost? Get detailed pricing for plaster, Pebble Tec, and quartz finishes in the Phoenix area.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1572331165267-854da2b021aa?w=600&q=80" alt="Pebble Tec vs plaster comparison" loading="lazy">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">Pebble Tec vs Plaster: Which Pool Finish is Right for You?</h3>
+                        <p class="blog-card-excerpt">Compare the pros, cons, and costs of Arizona's most popular pool finishes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BLOG ARTICLE: Cost Guide -->
+    <div id="blog-cost" class="page-container">
+        <section style="padding: 8rem 2rem 2rem;">
+            <div class="blog-article">
+                <div class="blog-article-header">
+                    <p class="blog-article-date">Updated January 2026</p>
+                    <h1>Pool Resurfacing Cost in Phoenix: 2026 Complete Price Guide</h1>
+                    <p style="font-size: 1.1rem; color: var(--color-text-muted);">Everything you need to know about pool resurfacing costs in the Phoenix area, from budget plaster to premium Pebble Tec.</p>
+                </div>
+
+                <div class="blog-article-content">
+                    <p>If you're a Phoenix homeowner wondering "how much does pool resurfacing cost?" you're not alone. It's one of the most common questions we receive, and the answer depends on several factors including pool size, finish type, and current condition.</p>
+
+                    <p>In this guide, we'll break down the costs for every type of pool finish available in the Phoenix area so you can budget appropriately for your project.</p>
+
+                    <h2>Quick Cost Summary</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Finish Type</th>
+                                <th>Cost per Sq Ft</th>
+                                <th>400 sq ft Pool</th>
+                                <th>Lifespan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Standard Plaster</td>
+                                <td>$4 - $6</td>
+                                <td>$1,600 - $2,400</td>
+                                <td>7-12 years</td>
+                            </tr>
+                            <tr>
+                                <td>Quartz Aggregate</td>
+                                <td>$6 - $9</td>
+                                <td>$2,400 - $3,600</td>
+                                <td>10-15 years</td>
+                            </tr>
+                            <tr>
+                                <td>Pebble Tec</td>
+                                <td>$8 - $12</td>
+                                <td>$3,200 - $4,800</td>
+                                <td>15-20+ years</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Plaster Pool Resurfacing Cost</h2>
+                    <p>Standard pool plaster is the most affordable option at <strong>$4-6 per square foot</strong>. For an average 400 square foot pool, expect to pay <strong>$1,600 - $2,400</strong> for a complete plaster resurface.</p>
+
+                    <p>Plaster provides the classic white pool look and has been the industry standard for decades. In Arizona's harsh climate, plaster typically lasts 7-12 years before needing replacement.</p>
+
+                    <h3>Plaster Pros:</h3>
+                    <ul>
+                        <li>Lowest upfront cost</li>
+                        <li>Classic, timeless appearance</li>
+                        <li>Smooth texture underfoot</li>
+                        <li>Easy to patch if damaged</li>
+                    </ul>
+
+                    <h3>Plaster Cons:</h3>
+                    <ul>
+                        <li>Shortest lifespan in Arizona climate</li>
+                        <li>More susceptible to staining</li>
+                        <li>Requires more maintenance</li>
+                        <li>Surface can become rough over time</li>
+                    </ul>
+
+                    <h2>Pebble Tec Pool Resurfacing Cost</h2>
+                    <p>Pebble Tec is the premium choice for Arizona pools at <strong>$8-12 per square foot</strong>. For a 400 square foot pool, budget <strong>$3,200 - $4,800</strong>.</p>
+
+                    <p>While Pebble Tec costs more upfront, it typically lasts 15-20+ years in Arizona conditions - often twice as long as standard plaster. This makes it a better long-term value for many homeowners.</p>
+
+                    <h3>Pebble Tec Pros:</h3>
+                    <ul>
+                        <li>Superior durability (15-20+ years)</li>
+                        <li>Excellent stain resistance</li>
+                        <li>Wide range of colors available</li>
+                        <li>Better handles Arizona's hard water</li>
+                        <li>Lower lifetime cost</li>
+                    </ul>
+
+                    <h3>Pebble Tec Cons:</h3>
+                    <ul>
+                        <li>Higher upfront cost</li>
+                        <li>Slightly rougher texture than plaster</li>
+                        <li>More difficult to repair if damaged</li>
+                    </ul>
+
+                    <h2>Quartz Pool Finish Cost</h2>
+                    <p>Quartz finishes offer a middle ground at <strong>$6-9 per square foot</strong>. For a 400 square foot pool, expect <strong>$2,400 - $3,600</strong>.</p>
+
+                    <p>Quartz combines crusite quartz aggregate with white cement, creating a beautiful sparkle effect while providing better durability than standard plaster.</p>
+
+                    <h2>Factors That Affect Pool Resurfacing Cost</h2>
+                    <ul>
+                        <li><strong>Pool size:</strong> Larger pools cost more but have a lower per-square-foot cost</li>
+                        <li><strong>Current condition:</strong> Extensive repairs add to the base cost</li>
+                        <li><strong>Tile and coping:</strong> Replacing waterline tile adds $15-35 per linear foot</li>
+                        <li><strong>Deck condition:</strong> Deck resurfacing is often done simultaneously</li>
+                        <li><strong>Access:</strong> Difficult access can increase labor costs</li>
+                    </ul>
+
+                    <h2>When to Resurface Your Pool</h2>
+                    <p>Signs your pool needs resurfacing include:</p>
+                    <ul>
+                        <li>Rough, sandpaper-like texture</li>
+                        <li>Visible staining that won't clean</li>
+                        <li>Plaster flaking or peeling</li>
+                        <li>Consistent water chemistry problems</li>
+                        <li>Visible cracks or hollow spots</li>
+                    </ul>
+
+                    <h2>Get a Free Estimate</h2>
+                    <p>Every pool is different, and the only way to get an accurate cost is with a professional inspection. We provide free, no-obligation estimates throughout the Phoenix metro area.</p>
+
+                    <div class="cta-buttons" style="margin-top: 2rem;">
+                        <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
+                        <a href="tel:6025550123" class="btn btn-secondary">Call (602) 555-0123</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- ABOUT PAGE -->
     <div id="about" class="page-container">
         <div class="service-hero">
@@ -2812,6 +3451,28 @@
                 </div>
             </div>
         </section>
+
+        <section style="padding: 0 2rem 4rem;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="text-align: center; margin-bottom: 0.5rem; font-family: var(--font-display);">Service Area</h2>
+                <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 2rem;">We serve the entire Phoenix Metro Area</p>
+                <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d425345.6706956648!2d-112.40406366249999!3d33.60561355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed50a179cb%3A0x8c69c7f8354a1bac!2sPhoenix%2C%20AZ!5e0!3m2!1sen!2sus!4v1706000000000!5m2!1sen!2sus"
+                        width="100%"
+                        height="350"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Phoenix Pool Resurfacing Service Area Map">
+                    </iframe>
+                </div>
+                <p style="text-align: center; color: var(--color-text-muted); margin-top: 1rem; font-size: 0.9rem;">
+                    Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, Peoria & surrounding areas
+                </p>
+            </div>
+        </section>
     </div>
 
     <!-- FOOTER -->
@@ -2843,6 +3504,8 @@
                     <li><a href="javascript:void(0)" onclick="showPage('location-tempe')">Tempe</a></li>
                     <li><a href="javascript:void(0)" onclick="showPage('location-chandler')">Chandler</a></li>
                     <li><a href="javascript:void(0)" onclick="showPage('location-gilbert')">Gilbert</a></li>
+                    <li><a href="javascript:void(0)" onclick="showPage('location-glendale')">Glendale</a></li>
+                    <li><a href="javascript:void(0)" onclick="showPage('location-peoria')">Peoria</a></li>
                 </ul>
             </div>
             <div class="footer-section">

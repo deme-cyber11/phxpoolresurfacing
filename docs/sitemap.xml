@@ -10,44 +10,44 @@
 
   <!-- Service Pages -->
   <url>
-    <loc>https://phxpoolresurfacing.com/#driveway-installation</loc>
+    <loc>https://phxpoolresurfacing.com/#plaster-resurfacing</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/#driveway-replacement</loc>
+    <loc>https://phxpoolresurfacing.com/#pebble-tec</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/#stamped-concrete</loc>
+    <loc>https://phxpoolresurfacing.com/#quartz-finishes</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/#patios-walkways</loc>
+    <loc>https://phxpoolresurfacing.com/#tile-coping</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/#pool-decks</loc>
+    <loc>https://phxpoolresurfacing.com/#pool-deck</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/#commercial</loc>
+    <loc>https://phxpoolresurfacing.com/#acid-wash</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Location Pages - Generated from serviceAreas config -->
-    <url>
+  <!-- Location Pages -->
+  <url>
     <loc>https://phxpoolresurfacing.com/#location-phoenix</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -95,34 +95,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#location-paradise-valley</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#location-cave-creek</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#location-fountain-hills</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#location-ahwatukee</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
-  <!-- Blog Pages -->
+  <!-- Blog -->
   <url>
-    <loc>https://phxpoolresurfacing.com/#blog-home</loc>
+    <loc>https://phxpoolresurfacing.com/#blog</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -132,30 +108,6 @@
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#blog-concrete-vs-asphalt</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#blog-replacement-signs</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#blog-grand-opening</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#blog-florida-climate</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- About & Contact -->
@@ -169,26 +121,6 @@
     <loc>https://phxpoolresurfacing.com/#contact</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Legal & Utility Pages -->
-  <url>
-    <loc>https://phxpoolresurfacing.com/#privacy-policy</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#terms-of-service</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://phxpoolresurfacing.com/#sitemap</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.9</priority>
   </url>
 </urlset>
