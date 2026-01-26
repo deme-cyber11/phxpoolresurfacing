@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phoenix Pool Resurfacing | Plaster, Pebble Tec & Quartz Finishes</title>
 
+    <!-- ============================================================
+         SITE CONFIGURATION - UPDATE THESE VALUES BEFORE LAUNCH
+         ============================================================ -->
+    <script>
+        const SITE_CONFIG = {
+            // REQUIRED: Replace these placeholder values with real business info
+            phone: '(602) 555-0123',           // TODO: Replace with real phone number
+            phoneLink: '6025550123',            // TODO: Phone number without formatting (for tel: links)
+            license: 'AZ ROC #000000',          // TODO: Replace with real AZ ROC license number
+            googleAnalyticsId: 'G-XXXXXXXXXX',  // TODO: Replace with real GA4 property ID
+            web3formsKey: 'YOUR_ACCESS_KEY_HERE',  // TODO: Get free key at https://web3forms.com
+
+            // Optional: Update when ready
+            googleVerification: 'YOUR_VERIFICATION_CODE_HERE'
+        };
+    </script>
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+        // Note: Update SITE_CONFIG.googleAnalyticsId above, then replace G-XXXXXXXXXX in the script src
         gtag('config', 'G-XXXXXXXXXX');
     </script>
 
@@ -1358,6 +1376,57 @@
             color: white;
         }
 
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            background: var(--color-surface-alt);
+            padding: 0.875rem 2rem;
+            font-size: 0.875rem;
+            border-bottom: 1px solid var(--color-border-light);
+            position: sticky;
+            top: 70px;
+            z-index: 90;
+        }
+
+        .breadcrumb-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--color-accent);
+        }
+
+        .breadcrumb-separator {
+            color: var(--color-border);
+            font-size: 0.75rem;
+        }
+
+        .breadcrumb-current {
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .breadcrumb.hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb {
+                padding: 0.75rem 1rem;
+                top: 60px;
+            }
+        }
+
         .footer-bottom {
             max-width: 1200px;
             margin: 5rem auto 0;
@@ -2081,7 +2150,122 @@
         </nav>
     </header>
 
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb hidden" id="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb-inner">
+            <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <span id="breadcrumb-parent"></span>
+            <span class="breadcrumb-separator" id="breadcrumb-sep2" style="display:none;">›</span>
+            <span class="breadcrumb-current" id="breadcrumb-current"></span>
+        </div>
+    </nav>
+
     <script>
+        // Breadcrumb configuration for each page
+        const breadcrumbConfig = {
+            'home': null, // No breadcrumb on home
+            'plaster-resurfacing': { parent: { text: 'Services', page: null }, current: 'Plaster Resurfacing' },
+            'pebble-tec': { parent: { text: 'Services', page: null }, current: 'Pebble Tec' },
+            'quartz-finishes': { parent: { text: 'Services', page: null }, current: 'Quartz Finishes' },
+            'tile-coping': { parent: { text: 'Services', page: null }, current: 'Tile & Coping' },
+            'pool-deck': { parent: { text: 'Services', page: null }, current: 'Pool Deck' },
+            'acid-wash': { parent: { text: 'Services', page: null }, current: 'Acid Wash' },
+            'location-phoenix': { parent: { text: 'Service Areas', page: null }, current: 'Phoenix' },
+            'location-scottsdale': { parent: { text: 'Service Areas', page: null }, current: 'Scottsdale' },
+            'location-mesa': { parent: { text: 'Service Areas', page: null }, current: 'Mesa' },
+            'location-tempe': { parent: { text: 'Service Areas', page: null }, current: 'Tempe' },
+            'location-chandler': { parent: { text: 'Service Areas', page: null }, current: 'Chandler' },
+            'location-gilbert': { parent: { text: 'Service Areas', page: null }, current: 'Gilbert' },
+            'location-glendale': { parent: { text: 'Service Areas', page: null }, current: 'Glendale' },
+            'location-peoria': { parent: { text: 'Service Areas', page: null }, current: 'Peoria' },
+            'about': { parent: null, current: 'About Us' },
+            'contact': { parent: null, current: 'Contact' },
+            'blog': { parent: null, current: 'Blog' },
+            'blog-cost': { parent: { text: 'Blog', page: 'blog' }, current: 'Pool Resurfacing Cost Guide' }
+        };
+
+        function updateBreadcrumb(pageId) {
+            const breadcrumb = document.getElementById('breadcrumb');
+            const config = breadcrumbConfig[pageId];
+
+            if (!config) {
+                breadcrumb.classList.add('hidden');
+                return;
+            }
+
+            breadcrumb.classList.remove('hidden');
+            const parentEl = document.getElementById('breadcrumb-parent');
+            const sep2 = document.getElementById('breadcrumb-sep2');
+            const currentEl = document.getElementById('breadcrumb-current');
+
+            if (config.parent) {
+                if (config.parent.page) {
+                    parentEl.innerHTML = `<a href="javascript:void(0)" onclick="showPage('${config.parent.page}')">${config.parent.text}</a>`;
+                } else {
+                    parentEl.innerHTML = `<span style="color: var(--color-text-muted);">${config.parent.text}</span>`;
+                }
+                sep2.style.display = 'inline';
+            } else {
+                parentEl.innerHTML = '';
+                sep2.style.display = 'none';
+            }
+
+            currentEl.textContent = config.current;
+
+            // Update BreadcrumbList schema for SEO
+            updateBreadcrumbSchema(pageId, config);
+        }
+
+        function updateBreadcrumbSchema(pageId, config) {
+            // Remove existing breadcrumb schema
+            const existing = document.getElementById('breadcrumb-schema');
+            if (existing) existing.remove();
+
+            if (!config) return;
+
+            const baseUrl = 'https://phxpoolresurfacing.com/';
+            const items = [
+                { position: 1, name: 'Home', url: baseUrl }
+            ];
+
+            if (config.parent) {
+                items.push({
+                    position: 2,
+                    name: config.parent.text,
+                    url: config.parent.page ? baseUrl + '#' + config.parent.page : null
+                });
+                items.push({
+                    position: 3,
+                    name: config.current,
+                    url: baseUrl + '#' + pageId
+                });
+            } else {
+                items.push({
+                    position: 2,
+                    name: config.current,
+                    url: baseUrl + '#' + pageId
+                });
+            }
+
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": items.map(item => ({
+                    "@type": "ListItem",
+                    "position": item.position,
+                    "name": item.name,
+                    ...(item.url && { "item": item.url })
+                }))
+            };
+
+            const script = document.createElement('script');
+            script.id = 'breadcrumb-schema';
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(schema);
+            document.head.appendChild(script);
+        }
+
         const pageMeta = {
             'home': { title: 'Phoenix Pool Resurfacing | Plaster, Pebble Tec & Quartz Finishes', desc: "Phoenix's trusted pool resurfacing experts. Plaster, Pebble Tec & quartz finishes. Licensed & insured. Free estimates." },
             'plaster-resurfacing': { title: 'Plaster Pool Resurfacing Phoenix | $4-6/sq ft | Free Estimates', desc: 'Affordable plaster pool resurfacing in Phoenix. Classic white finish, 7-12 year lifespan. Licensed contractors. Call for free estimate.' },
@@ -2117,6 +2301,8 @@
                     document.title = pageMeta[pageId].title;
                     document.querySelector('meta[name="description"]').content = pageMeta[pageId].desc;
                 }
+                // Update breadcrumb navigation
+                updateBreadcrumb(pageId);
             }
             document.getElementById('navLinks').classList.remove('active');
         }
@@ -2156,11 +2342,47 @@
             });
         });
 
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert('Thank you! We will contact you within 24 hours. For immediate assistance, call (602) 555-0123.');
-            return false;
-        }
+        // Formspree AJAX form handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const btn = form.querySelector('button[type="submit"]');
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Sending...';
+                    btn.disabled = true;
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            form.style.display = 'none';
+                            document.getElementById('form-success').style.display = 'block';
+                            form.reset();
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        alert('There was a problem submitting the form. Please call us at ' + SITE_CONFIG.phone);
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }
+                });
+            }
+
+            // Check for success redirect (fallback for non-JS submission)
+            if (window.location.hash === '#contact-success') {
+                showPage('contact');
+                const form = document.getElementById('contact-form');
+                if (form) form.style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+            }
+        });
 
         // Header scroll effect
         window.addEventListener('scroll', () => {
@@ -3396,53 +3618,67 @@
                 <h2 style="text-align: center; margin-bottom: 0.5rem;">Request Free Estimate</h2>
                 <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 2rem;">We'll contact you within 24 hours</p>
 
-                <form onsubmit="return handleSubmit(event)">
+                <!-- Web3Forms - Get free access key at https://web3forms.com -->
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Web3Forms configuration -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"> <!-- TODO: Replace with Web3Forms key -->
+                    <input type="hidden" name="subject" value="New Pool Resurfacing Estimate Request">
+                    <input type="hidden" name="redirect" value="https://phxpoolresurfacing.com/#contact-success">
+                    <input type="checkbox" name="botcheck" style="display:none"> <!-- Honeypot spam protection -->
+
                     <div class="form-group">
-                        <label>Your Name *</label>
-                        <input type="text" required placeholder="John Smith">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
                     </div>
                     <div class="form-group">
-                        <label>Phone Number *</label>
-                        <input type="tel" required placeholder="(602) 555-1234">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(602) 555-1234">
                     </div>
                     <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="john@example.com">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com">
                     </div>
                     <div class="form-group">
-                        <label>City/Area *</label>
-                        <select required>
+                        <label for="city">City/Area *</label>
+                        <select id="city" name="city" required>
                             <option value="">Select your area...</option>
-                            <option value="phoenix">Phoenix</option>
-                            <option value="scottsdale">Scottsdale</option>
-                            <option value="mesa">Mesa</option>
-                            <option value="tempe">Tempe</option>
-                            <option value="chandler">Chandler</option>
-                            <option value="gilbert">Gilbert</option>
-                            <option value="glendale">Glendale</option>
-                            <option value="peoria">Peoria</option>
-                            <option value="other">Other</option>
+                            <option value="Phoenix">Phoenix</option>
+                            <option value="Scottsdale">Scottsdale</option>
+                            <option value="Mesa">Mesa</option>
+                            <option value="Tempe">Tempe</option>
+                            <option value="Chandler">Chandler</option>
+                            <option value="Gilbert">Gilbert</option>
+                            <option value="Glendale">Glendale</option>
+                            <option value="Peoria">Peoria</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Service Needed *</label>
-                        <select required>
+                        <label for="service">Service Needed *</label>
+                        <select id="service" name="service" required>
                             <option value="">Select a service...</option>
-                            <option value="plaster">Plaster Resurfacing</option>
-                            <option value="pebble-tec">Pebble Tec / Aggregate</option>
-                            <option value="quartz">Quartz Finish</option>
-                            <option value="tile-coping">Tile & Coping Repair</option>
-                            <option value="pool-deck">Pool Deck Resurfacing</option>
-                            <option value="acid-wash">Acid Wash</option>
-                            <option value="unsure">Not Sure - Need Advice</option>
+                            <option value="Plaster Resurfacing">Plaster Resurfacing</option>
+                            <option value="Pebble Tec / Aggregate">Pebble Tec / Aggregate</option>
+                            <option value="Quartz Finish">Quartz Finish</option>
+                            <option value="Tile & Coping Repair">Tile & Coping Repair</option>
+                            <option value="Pool Deck Resurfacing">Pool Deck Resurfacing</option>
+                            <option value="Acid Wash">Acid Wash</option>
+                            <option value="Not Sure - Need Advice">Not Sure - Need Advice</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Tell Us About Your Pool</label>
-                        <textarea rows="4" placeholder="Approximate pool size, current surface type, any specific issues..."></textarea>
+                        <label for="message">Tell Us About Your Pool</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Approximate pool size, current surface type, any specific issues..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Request Free Estimate</button>
                 </form>
+
+                <!-- Success message (shown after form submission) -->
+                <div id="form-success" style="display: none; text-align: center; padding: 2rem; background: #d4edda; border-radius: var(--radius-md); margin-top: 1rem;">
+                    <h3 style="color: #155724; margin-bottom: 0.5rem;">Thank You!</h3>
+                    <p style="color: #155724;">We've received your request and will contact you within 24 hours.</p>
+                    <p style="color: #155724; margin-top: 1rem;">For immediate assistance, call <strong>(602) 555-0123</strong></p>
+                </div>
 
                 <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-border); text-align: center;">
                     <p style="margin-bottom: 0.5rem;"><strong>Prefer to call?</strong></p>
