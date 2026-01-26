@@ -6,10 +6,9 @@
     <title>Page Not Found | Phoenix Pool Resurfacing</title>
     <meta name="robots" content="noindex, follow">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,33 +16,39 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #1E3A5F 0%, #3d4446 100%);
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #F0F9FF;
+            color: #ffffff;
             text-align: center;
             padding: 2rem;
         }
         h1 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 8rem;
             font-weight: 700;
-            color: #0EA5E9;
+            color: #e94560;
             line-height: 1;
             margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
         h2 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
             margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
         p {
             font-size: 1.1rem;
-            color: #aaa;
+            color: rgba(255,255,255,0.7);
             margin-bottom: 2rem;
             max-width: 500px;
+            line-height: 1.7;
         }
         .buttons {
             display: flex;
@@ -53,56 +58,79 @@
         }
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
-            font-size: 1rem;
+            padding: 1.125rem 2rem;
+            font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 0;
-            transition: all 0.3s ease;
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         .btn-primary {
-            background: #0EA5E9;
+            background: #e94560;
             color: white;
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
         }
         .btn-primary:hover {
-            background: #a85d3d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.5);
+            background: #ff6b6b;
         }
         .btn-secondary {
             background: transparent;
-            color: #F0F9FF;
-            border: 2px solid #F0F9FF;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
         }
         .btn-secondary:hover {
-            background: #F0F9FF;
-            color: #1E3A5F;
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
         }
         .logo {
             margin-bottom: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #e94560;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .logo svg {
-            width: 80px;
-            height: 80px;
+            width: 36px;
+            height: 36px;
         }
         .contact-info {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid #444;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .contact-info p {
+            margin-bottom: 0;
         }
         .contact-info a {
-            color: #0EA5E9;
+            color: #e94560;
             text-decoration: none;
+            transition: color 0.3s;
         }
         .contact-info a:hover {
-            text-decoration: underline;
+            color: #ff6b6b;
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 5rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="logo">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="15" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1"/>
-            <path d="M8 24 L12 10 L20 10 L24 24 Z" fill="#6B6B6B" stroke="#0EA5E9" stroke-width="1.5"/>
-            <path d="M13 10 L16 6 L19 10" fill="none" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 24 24" fill="white">
+            <path d="M4 18c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="12" cy="10" r="3"/>
         </svg>
     </div>
 
