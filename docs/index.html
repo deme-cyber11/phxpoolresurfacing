@@ -42,50 +42,54 @@
     <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE">
     <meta name="author" content="Phoenix Pool Resurfacing">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#2C3A44">
+    <meta name="theme-color" content="#1a1a2e">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Material/Craft Palette - Pool Construction */
-            --color-primary: #3D4F5F;          /* Gunite slate */
-            --color-secondary: #5A7282;        /* Weathered stone */
-            --color-accent: #C4785A;           /* Terracotta coping */
-            --color-accent-light: #D4917A;
-            --color-background: #F8F7F5;       /* Warm plaster white */
-            --color-surface: #FFFFFF;
-            --color-surface-alt: #F2F1EE;      /* Cream - cured plaster */
-            --color-surface-dark: #2C3A44;     /* Deep slate */
-            --color-text: #2C3A44;
-            --color-text-muted: #6B7A86;
-            --color-text-light: #FFFFFF;
-            --color-border: #E0DED9;           /* Grout line */
-            --color-border-light: #ECEAE6;
+            /* Editorial Palette - Bold & Confident */
+            --color-primary: #1a1a2e;          /* Deep navy */
+            --color-secondary: #16213e;        /* Rich dark blue */
+            --color-accent: #e94560;           /* Vibrant coral/red */
+            --color-accent-light: #ff6b6b;
+            --color-background: #fafafa;       /* Clean white */
+            --color-surface: #ffffff;
+            --color-surface-alt: #f5f5f5;
+            --color-surface-dark: #1a1a2e;
+            --color-text: #1a1a2e;
+            --color-text-muted: #64748b;
+            --color-text-light: #ffffff;
+            --color-border: #e2e8f0;
+            --color-border-light: #f1f5f9;
+            --color-warm: #f4a261;             /* Warm accent */
 
-            /* Typography */
-            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            /* Editorial Typography */
+            --font-display: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
 
-            /* Spacing */
-            --section-padding: 6rem 2rem;
-            --card-padding: 2rem;
+            /* Spacing - more generous */
+            --section-padding: 8rem 2rem;
+            --card-padding: 2.5rem;
 
-            /* Effects - warmer shadows */
-            --shadow-sm: 0 2px 8px rgba(44, 58, 68, 0.05);
-            --shadow-md: 0 4px 20px rgba(44, 58, 68, 0.07);
-            --shadow-lg: 0 8px 40px rgba(44, 58, 68, 0.10);
-            --shadow-hover: 0 12px 48px rgba(44, 58, 68, 0.12);
-            --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 14px;
-            --radius-xl: 20px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Effects */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+            --shadow-hover: 0 30px 80px rgba(0,0,0,0.15);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Grain overlay */
+            --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
 
         * {
@@ -119,18 +123,23 @@
             display: block;
         }
 
-        /* Header - Slate/Material */
+        /* Header - Editorial Minimal */
         header {
-            background: rgba(44, 58, 68, 0.98);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: transparent;
             color: var(--color-text-light);
-            padding: 0.875rem 0;
+            padding: 1.5rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 0;
         }
 
         nav {
@@ -151,15 +160,14 @@
         }
 
         .logo-icon {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            width: 42px;
+            height: 42px;
+            background: var(--color-accent);
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-            box-shadow: 0 2px 8px rgba(196, 120, 90, 0.35);
+            font-size: 1.3rem;
         }
 
         .logo-text {
@@ -191,18 +199,19 @@
         }
 
         .nav-cta {
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%) !important;
+            background: var(--color-accent) !important;
             color: white !important;
             padding: 0.625rem 1.25rem !important;
             border-radius: var(--radius-sm) !important;
             font-weight: 600 !important;
-            box-shadow: 0 2px 8px rgba(196, 120, 90, 0.35);
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            font-size: 0.85rem !important;
         }
 
         .nav-cta:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(196, 120, 90, 0.45) !important;
-            background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 100%) !important;
+            background: var(--color-accent-light) !important;
         }
 
         .dropdown {
@@ -269,40 +278,27 @@
             background: rgba(255,255,255,0.1);
         }
 
-        /* Hero - Material/Aggregate Texture */
+        /* Hero - Editorial Full-Bleed Image */
         .hero {
             background:
-                linear-gradient(180deg, rgba(44, 58, 68, 0.96) 0%, rgba(61, 79, 95, 0.94) 50%, rgba(90, 114, 130, 0.92) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="aggregate" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="rgba(255,255,255,0.04)"/><circle cx="13" cy="7" r="2" fill="rgba(255,255,255,0.03)"/><circle cx="7" cy="15" r="1.8" fill="rgba(255,255,255,0.035)"/><circle cx="17" cy="17" r="1.2" fill="rgba(255,255,255,0.025)"/><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect fill="url(%23aggregate)" width="200" height="200"/></svg>');
+                linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.75) 100%),
+                url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1920&q=80') center/cover no-repeat;
             color: white;
-            padding: 11rem 2rem 7rem;
-            text-align: center;
+            padding: 0;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             position: relative;
             overflow: hidden;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            right: -50%;
-            bottom: -50%;
-            background:
-                radial-gradient(ellipse at 15% 25%, rgba(196, 120, 90, 0.12) 0%, transparent 45%),
-                radial-gradient(ellipse at 85% 75%, rgba(90, 114, 130, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 60%);
-            animation: float 25s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(1%, 0.5%) rotate(0.5deg); }
-            66% { transform: translate(-0.5%, 1%) rotate(-0.5deg); }
+            inset: 0;
+            background: var(--grain);
+            opacity: 0.03;
+            pointer-events: none;
         }
 
         .hero::after {
@@ -311,53 +307,114 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 150px;
+            height: 200px;
             background: linear-gradient(to top, var(--color-background) 0%, transparent 100%);
             pointer-events: none;
         }
 
         .hero-content {
-            max-width: 1000px;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 4rem 8rem 6rem;
             position: relative;
             z-index: 1;
+            max-width: 700px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--color-accent);
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1.75rem;
-            font-weight: 800;
-            line-height: 1.1;
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            line-height: 1.05;
             letter-spacing: -0.03em;
+            font-family: var(--font-display);
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--color-accent);
         }
 
         .hero p {
-            font-size: clamp(1.125rem, 2vw, 1.375rem);
-            margin-bottom: 2.5rem;
-            opacity: 0.92;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.85;
             line-height: 1.7;
             font-weight: 400;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 85%;
+            height: 70vh;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: 4rem;
+            left: 6rem;
+            display: flex;
+            gap: 3rem;
+            z-index: 2;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            line-height: 1;
+            color: white;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            margin-top: 0.25rem;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1.25rem;
-            justify-content: center;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1rem 2rem;
+            padding: 1.125rem 2rem;
             border-radius: var(--radius-sm);
             font-weight: 600;
             text-decoration: none;
@@ -365,96 +422,122 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            background: var(--color-accent);
             color: white;
-            box-shadow: 0 4px 16px rgba(196, 120, 90, 0.35);
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(196, 120, 90, 0.45);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.5);
+            background: var(--color-accent-light);
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.12);
+            background: transparent;
             color: white;
-            border: 1px solid rgba(255,255,255,0.25);
-            backdrop-filter: blur(4px);
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.2);
-            border-color: rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
         }
 
-        /* Trust Bar - Clean & Confident */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .hero-content {
+                padding: 10rem 2rem 6rem;
+                max-width: 100%;
+                text-align: center;
+            }
+            .hero-image {
+                display: none;
+            }
+            .hero-stats {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                justify-content: center;
+                margin-top: 3rem;
+            }
+            .cta-buttons {
+                justify-content: center;
+            }
+            .hero-tag {
+                justify-content: center;
+            }
+        }
+
+        /* Trust Bar - Editorial Strip */
         .trust-bar {
-            background: var(--color-surface);
-            padding: 3rem 2rem;
-            border-bottom: 1px solid var(--color-border-light);
+            background: var(--color-primary);
+            padding: 1.5rem 2rem;
             position: relative;
             z-index: 2;
         }
 
         .trust-items {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
 
         .trust-item {
             display: flex;
-            flex-direction: column;
             align-items: center;
             gap: 0.75rem;
-            padding: 1.25rem 1rem;
-            border-radius: var(--radius-md);
-            transition: var(--transition);
-        }
-
-        .trust-item:hover {
-            background: var(--color-surface-alt);
+            color: white;
         }
 
         .trust-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            border-radius: var(--radius-md);
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: var(--shadow-sm);
         }
 
         .trust-icon svg {
-            width: 26px;
-            height: 26px;
-            stroke: white;
+            width: 20px;
+            height: 20px;
+            stroke: var(--color-accent);
             fill: none;
             stroke-width: 2;
         }
 
+        .trust-text {
+            display: flex;
+            flex-direction: column;
+        }
+
         .trust-label {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--color-text);
-            letter-spacing: -0.01em;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: white;
         }
 
         .trust-detail {
-            font-size: 0.8rem;
-            color: var(--color-text-muted);
-            font-weight: 500;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
         }
 
-        /* Sections */
+        /* Sections - Editorial */
         section {
             padding: var(--section-padding);
         }
@@ -464,120 +547,144 @@
             margin-bottom: 4rem;
         }
 
-        .section-title {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            color: var(--color-text);
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
             margin-bottom: 1rem;
-            font-weight: 800;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--color-text);
+            margin-bottom: 1.25rem;
+            font-weight: 700;
             letter-spacing: -0.03em;
+            font-family: var(--font-display);
+            line-height: 1.1;
         }
 
         .section-subtitle {
-            font-size: 1.125rem;
+            font-size: 1.15rem;
             color: var(--color-text-muted);
             max-width: 600px;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* Services Grid - Modern Cards */
+        /* Services Grid - Editorial with Photos */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.75rem;
-            max-width: 1280px;
+            gap: 2rem;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .service-card {
             background: var(--color-surface);
-            border-radius: var(--radius-lg);
-            padding: 2.25rem;
-            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-md);
+            overflow: hidden;
             transition: var(--transition);
             cursor: pointer;
             position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            opacity: 0;
-            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
         .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-            border-color: transparent;
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--color-surface-alt) 0%, var(--color-border-light) 100%);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             transition: var(--transition);
         }
 
-        .service-card:hover .service-icon {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+        .service-card:hover .service-image {
+            transform: scale(1.05);
         }
 
-        .service-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--color-primary);
-            fill: none;
-            stroke-width: 2;
-            transition: var(--transition);
+        .service-image-wrapper {
+            overflow: hidden;
+            position: relative;
         }
 
-        .service-card:hover .service-icon svg {
-            stroke: white;
+        .service-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(26,26,46,0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .service-content {
+            padding: 1.75rem;
+        }
+
+        .service-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
         }
 
         .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.875rem;
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
             color: var(--color-text);
             font-weight: 700;
+            font-family: var(--font-display);
         }
 
         .service-card p {
             color: var(--color-text-muted);
             font-size: 0.95rem;
             margin-bottom: 1.25rem;
-            line-height: 1.65;
+            line-height: 1.6;
         }
 
         .learn-more {
-            color: var(--color-secondary);
+            color: var(--color-primary);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.375rem;
+            gap: 0.5rem;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .learn-more::after {
+            content: '→';
             transition: var(--transition);
         }
 
         .service-card:hover .learn-more {
-            color: var(--color-primary);
-            gap: 0.625rem;
+            color: var(--color-accent);
+        }
+
+        .service-card:hover .learn-more::after {
+            transform: translateX(4px);
+        }
+
+        /* Hide old service icons */
+        .service-icon {
+            display: none;
         }
 
         /* Process - Timeline Style */
@@ -644,11 +751,9 @@
             line-height: 1.55;
         }
 
-        /* Why Choose - Slate Dark Section */
+        /* Why Choose - Editorial Dark Section */
         .why-choose {
-            background:
-                linear-gradient(135deg, rgba(44, 58, 68, 0.98) 0%, rgba(61, 79, 95, 0.96) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="40"/><circle cx="100" cy="100" r="40" fill="none" stroke="rgba(255,255,255,0.015)" stroke-width="20"/></svg>');
+            background: var(--color-primary);
             color: white;
             position: relative;
             overflow: hidden;
@@ -657,69 +762,52 @@
         .why-choose::before {
             content: '';
             position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(196, 120, 90, 0.08) 0%, transparent 70%);
+            inset: 0;
+            background: var(--grain);
+            opacity: 0.04;
             pointer-events: none;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
+            gap: 2.5rem;
+            max-width: 1100px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
 
         .feature {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-radius: var(--radius-lg);
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: var(--transition);
+            text-align: left;
+            padding: 0;
         }
 
-        .feature:hover {
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(255,255,255,0.15);
-            transform: translateY(-4px);
+        .feature-number {
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.9;
         }
 
         .feature-icon {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(135deg, rgba(196, 120, 90, 0.2) 0%, rgba(196, 120, 90, 0.1) 100%);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.25rem;
-            border: 1px solid rgba(196, 120, 90, 0.2);
-        }
-
-        .feature-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--color-accent);
-            fill: none;
-            stroke-width: 2;
+            display: none;
         }
 
         .feature h3 {
-            font-size: 1.15rem;
+            font-size: 1.35rem;
             margin-bottom: 0.75rem;
             font-weight: 700;
+            font-family: var(--font-display);
         }
 
         .feature p {
-            font-size: 0.95rem;
-            opacity: 0.85;
-            line-height: 1.6;
+            font-size: 1rem;
+            opacity: 0.75;
+            line-height: 1.7;
         }
 
         /* CTA Section - Modern Gradient */
@@ -946,46 +1034,47 @@
             color: var(--color-text-muted);
         }
 
-        /* Footer - Modern Dark */
+        /* Footer - Editorial Dark */
         footer {
-            background: linear-gradient(180deg, var(--color-surface-dark) 0%, #071E24 100%);
+            background: var(--color-primary);
             color: var(--color-text-light);
-            padding: 5rem 2rem 2rem;
+            padding: 6rem 2rem 3rem;
             position: relative;
         }
 
         footer::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+            inset: 0;
+            background: var(--grain);
+            opacity: 0.03;
+            pointer-events: none;
         }
 
         .footer-content {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 4rem;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-brand p {
-            opacity: 0.75;
+            opacity: 0.65;
             margin: 1.25rem 0;
-            font-size: 0.925rem;
+            font-size: 0.95rem;
             line-height: 1.7;
         }
 
         .footer-section h4 {
-            font-size: 0.8rem;
-            margin-bottom: 1.25rem;
+            font-size: 0.75rem;
+            margin-bottom: 1.5rem;
             color: var(--color-accent);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 700;
+            letter-spacing: 0.15em;
+            font-weight: 600;
         }
 
         .footer-section ul {
@@ -993,11 +1082,11 @@
         }
 
         .footer-section li {
-            margin-bottom: 0.625rem;
+            margin-bottom: 0.75rem;
         }
 
         .footer-section a {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.65);
             text-decoration: none;
             font-size: 0.9rem;
             transition: var(--transition);
@@ -1005,18 +1094,19 @@
         }
 
         .footer-section a:hover {
-            color: var(--color-accent);
-            transform: translateX(3px);
+            color: white;
         }
 
         .footer-bottom {
-            max-width: 1280px;
-            margin: 4rem auto 0;
+            max-width: 1200px;
+            margin: 5rem auto 0;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
             font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.4);
+            position: relative;
+            z-index: 1;
         }
 
         /* Service Page - Slate Hero */
@@ -1445,11 +1535,11 @@
             height: 300px;
         }
 
-        /* Subtle entrance animations */
+        /* Editorial entrance animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -1457,19 +1547,61 @@
             }
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         .hero-content {
-            animation: fadeInUp 0.8s ease-out;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-image {
+            animation: fadeIn 1.2s ease-out 0.3s backwards;
+        }
+
+        .hero-stats {
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
         }
 
         .trust-item {
-            animation: fadeInUp 0.6s ease-out backwards;
+            animation: fadeInUp 0.5s ease-out backwards;
         }
 
         .trust-item:nth-child(1) { animation-delay: 0.1s; }
-        .trust-item:nth-child(2) { animation-delay: 0.15s; }
-        .trust-item:nth-child(3) { animation-delay: 0.2s; }
-        .trust-item:nth-child(4) { animation-delay: 0.25s; }
-        .trust-item:nth-child(5) { animation-delay: 0.3s; }
+        .trust-item:nth-child(2) { animation-delay: 0.2s; }
+        .trust-item:nth-child(3) { animation-delay: 0.3s; }
+        .trust-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .service-card {
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .feature {
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .feature:nth-child(1) { animation-delay: 0.2s; }
+        .feature:nth-child(2) { animation-delay: 0.35s; }
+        .feature:nth-child(3) { animation-delay: 0.5s; }
 
         /* Smooth image/icon loading */
         .service-icon,
@@ -1720,47 +1852,78 @@
             alert('Thank you! We will contact you within 24 hours. For immediate assistance, call (602) 555-0123.');
             return false;
         }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
     </script>
 
     <!-- HOME PAGE -->
     <div id="home" class="page-container active">
         <section class="hero">
             <div class="hero-content">
-                <h1>Phoenix's Premier <span>Pool Resurfacing</span> Experts</h1>
-                <p>Transform your worn pool with beautiful, long-lasting finishes. Plaster, Pebble Tec, and quartz surfaces backed by our 7-year warranty. Licensed and insured.</p>
+                <span class="hero-tag">Phoenix Pool Experts</span>
+                <h1>Pool Resurfacing <span>Done Right</span></h1>
+                <p>Transform your worn, stained pool into a stunning backyard centerpiece. Expert craftsmanship with premium finishes that last.</p>
                 <div class="cta-buttons">
-                    <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate →</a>
+                    <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
                     <a href="tel:6025550123" class="btn btn-secondary">Call (602) 555-0123</a>
                 </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">500+</div>
+                        <div class="hero-stat-label">Pools Resurfaced</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">7yr</div>
+                        <div class="hero-stat-label">Warranty</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">5.0</div>
+                        <div class="hero-stat-label">Star Rating</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1572331165267-854da2b021aa?w=800&q=80" alt="Beautiful resurfaced pool">
             </div>
         </section>
 
         <section class="trust-bar">
             <div class="trust-items">
                 <div class="trust-item">
-                    <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                    <span class="trust-label">Locally Owned</span>
-                    <span class="trust-detail">Phoenix-based since 2018</span>
-                </div>
-                <div class="trust-item">
                     <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                    <span class="trust-label">Licensed & Insured</span>
-                    <span class="trust-detail">AZ ROC Licensed</span>
+                    <div class="trust-text">
+                        <span class="trust-label">Licensed & Insured</span>
+                        <span class="trust-detail">AZ ROC Licensed</span>
+                    </div>
                 </div>
                 <div class="trust-item">
                     <div class="trust-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                    <span class="trust-label">5-Star Rated</span>
-                    <span class="trust-detail">100+ happy customers</span>
+                    <div class="trust-text">
+                        <span class="trust-label">5-Star Rated</span>
+                        <span class="trust-detail">100+ Reviews</span>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                    <div class="trust-text">
+                        <span class="trust-label">7-Year Warranty</span>
+                        <span class="trust-detail">On All Finishes</span>
+                    </div>
                 </div>
                 <div class="trust-item">
                     <div class="trust-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                    <span class="trust-label">Free Estimates</span>
-                    <span class="trust-detail">No obligation quotes</span>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                    <span class="trust-label">7-Year Warranty</span>
-                    <span class="trust-detail">Workmanship guarantee</span>
+                    <div class="trust-text">
+                        <span class="trust-label">Free Estimates</span>
+                        <span class="trust-detail">No Obligation</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1806,40 +1969,70 @@
             </div>
             <div class="services-grid">
                 <div class="service-card" onclick="showPage('plaster-resurfacing')">
-                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
-                    <h3>Plaster Resurfacing</h3>
-                    <p>Classic white plaster finish. Affordable, timeless look with smooth texture. Ideal for budget-conscious projects.</p>
-                    <span class="learn-more">Learn More →</span>
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=80" alt="Plaster pool resurfacing" class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Most Popular</span>
+                        <h3>Plaster Resurfacing</h3>
+                        <p>Classic white plaster finish. Affordable, timeless look with smooth texture.</p>
+                        <span class="learn-more">Learn More</span>
+                    </div>
                 </div>
                 <div class="service-card" onclick="showPage('pebble-tec')">
-                    <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="8" cy="18" r="2"/><circle cx="17" cy="17" r="2"/></svg></div>
-                    <h3>Pebble Tec & Aggregate</h3>
-                    <p>Premium pebble finishes for superior durability. Lasts 15-20+ years with beautiful natural texture.</p>
-                    <span class="learn-more">Learn More →</span>
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=600&q=80" alt="Pebble Tec pool finish" class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Premium</span>
+                        <h3>Pebble Tec & Aggregate</h3>
+                        <p>Superior durability with beautiful natural texture. Lasts 15-20+ years.</p>
+                        <span class="learn-more">Learn More</span>
+                    </div>
                 </div>
                 <div class="service-card" onclick="showPage('quartz-finishes')">
-                    <div class="service-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                    <h3>Quartz Finishes</h3>
-                    <p>Sparkling quartz aggregate for stunning visual appeal. Stain-resistant with vibrant color options.</p>
-                    <span class="learn-more">Learn More →</span>
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1562844431-44e774baa249?w=600&q=80" alt="Quartz pool finish" class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Stunning</span>
+                        <h3>Quartz Finishes</h3>
+                        <p>Sparkling quartz aggregate with vibrant color options. Stain-resistant.</p>
+                        <span class="learn-more">Learn More</span>
+                    </div>
                 </div>
                 <div class="service-card" onclick="showPage('tile-coping')">
-                    <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
-                    <h3>Tile & Coping Repair</h3>
-                    <p>Waterline tile replacement and coping stone restoration. Complete the look of your resurfaced pool.</p>
-                    <span class="learn-more">Learn More →</span>
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Pool tile and coping" class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Finishing Touch</span>
+                        <h3>Tile & Coping Repair</h3>
+                        <p>Waterline tile replacement and coping stone restoration.</p>
+                        <span class="learn-more">Learn More</span>
+                    </div>
                 </div>
                 <div class="service-card" onclick="showPage('pool-deck')">
-                    <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/></svg></div>
-                    <h3>Pool Deck Resurfacing</h3>
-                    <p>Cool deck and textured coatings for safety and comfort. Beat the Arizona heat with proper deck surfaces.</p>
-                    <span class="learn-more">Learn More →</span>
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1564429238904-e59ccbb07dc7?w=600&q=80" alt="Pool deck resurfacing" class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Cool Comfort</span>
+                        <h3>Pool Deck Resurfacing</h3>
+                        <p>Beat the Arizona heat with cool deck and textured coatings.</p>
+                        <span class="learn-more">Learn More</span>
+                    </div>
                 </div>
                 <div class="service-card" onclick="showPage('acid-wash')">
-                    <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
-                    <h3>Draining & Acid Wash</h3>
-                    <p>Deep cleaning to restore your pool's appearance. Remove stains, calcium deposits, and algae buildup.</p>
-                    <span class="learn-more">Learn More →</span>
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519302959554-a75be0afc82a?w=600&q=80" alt="Pool acid wash cleaning" class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Refresh</span>
+                        <h3>Draining & Acid Wash</h3>
+                        <p>Deep cleaning to remove stains, calcium deposits, and algae.</p>
+                        <span class="learn-more">Learn More</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1847,38 +2040,23 @@
         <section class="why-choose">
             <div class="section-header">
                 <h2 class="section-title" style="color: white;">Why Phoenix Homeowners Choose Us</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.85);">Arizona pool expertise you can trust</p>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Arizona pool expertise you can trust</p>
             </div>
             <div class="features-grid">
                 <div class="feature">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg></div>
+                    <div class="feature-number">01</div>
                     <h3>Arizona Climate Experts</h3>
-                    <p>We understand how Phoenix's intense sun, hard water, and heat affect pool surfaces.</p>
+                    <p>We understand how Phoenix's intense sun, hard water, and heat affect pool surfaces. Our materials and techniques are chosen specifically for the desert environment.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                    <div class="feature-number">02</div>
                     <h3>Expert Craftsmanship</h3>
-                    <p>Proper surface prep, professional application, and attention to detail on every job.</p>
+                    <p>Proper surface prep, professional application, and meticulous attention to detail on every job. We take pride in work that lasts.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                    <h3>Licensed & Insured</h3>
-                    <p>Fully licensed Arizona ROC contractor with comprehensive liability coverage.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                    <h3>On-Time Completion</h3>
-                    <p>We respect your schedule and complete projects when promised.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                    <h3>Transparent Pricing</h3>
-                    <p>Detailed quotes with no hidden fees. Know exactly what you're paying.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                    <h3>Outstanding Service</h3>
-                    <p>Direct communication with our team. We're here to answer your questions.</p>
+                    <div class="feature-number">03</div>
+                    <h3>7-Year Warranty</h3>
+                    <p>We stand behind our work with a comprehensive warranty. Licensed Arizona ROC contractor with full liability coverage for your peace of mind.</p>
                 </div>
             </div>
         </section>
