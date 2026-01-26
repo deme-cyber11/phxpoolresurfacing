@@ -1617,6 +1617,649 @@
             border-radius: 50%;
         }
 
+        /* ============================================================
+           COMPONENT LIBRARY - Reusable Page Elements
+           ============================================================ */
+
+        /* Component: Page Hero with Background Image */
+        .page-hero {
+            position: relative;
+            padding: 12rem 2rem 6rem;
+            text-align: center;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.88) 100%);
+            z-index: 1;
+        }
+
+        .page-hero > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .page-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Component: Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding: 3rem 2rem;
+            background: var(--color-surface-dark);
+            flex-wrap: wrap;
+        }
+
+        .stats-bar.light {
+            background: var(--color-surface-alt);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            color: var(--color-accent);
+            line-height: 1;
+        }
+
+        .stats-bar:not(.light) .stat-number {
+            color: white;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+            opacity: 0.7;
+        }
+
+        .stats-bar:not(.light) .stat-label {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Component: Image-Text Split */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .split-section.reverse {
+            direction: rtl;
+        }
+
+        .split-section.reverse > * {
+            direction: ltr;
+        }
+
+        .split-section.dark {
+            background: var(--color-surface-dark);
+            max-width: 100%;
+            padding: 5rem calc((100% - 1200px) / 2 + 2rem);
+        }
+
+        .split-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .split-content h2 {
+            font-size: 2rem;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .split-section.dark .split-content h2 {
+            color: white;
+        }
+
+        .split-content p {
+            color: var(--color-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .split-section.dark .split-content p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Component: Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-grid.cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 900px;
+        }
+
+        .feature-grid.cols-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .feature-card {
+            background: var(--color-surface);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border-light);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            color: var(--color-text);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Component: Process Steps */
+        .process-section {
+            padding: 5rem 2rem;
+            background: var(--color-surface-alt);
+        }
+
+        .process-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--color-text);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--color-surface);
+            border: 3px solid var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin: 0 auto 1.5rem;
+            font-family: var(--font-display);
+        }
+
+        .process-step h3 {
+            font-size: 1.1rem;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* Component: Testimonial Callout */
+        .testimonial-section {
+            padding: 5rem 2rem;
+            background: var(--color-surface-dark);
+        }
+
+        .testimonial-card {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .testimonial-quote {
+            font-size: 1.5rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--color-accent);
+            position: absolute;
+            top: -1rem;
+            left: -2rem;
+            font-family: Georgia, serif;
+            opacity: 0.5;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-location {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Component: CTA Banner */
+        .cta-banner {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--color-accent) 0%, #c53a52 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-banner p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-banner .btn-primary {
+            background: white;
+            color: var(--color-accent);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-banner .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .cta-banner .btn-secondary {
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* Component: Neighborhood/Area Grid */
+        .area-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .area-card {
+            background: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border-light);
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .area-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .area-card h4 {
+            font-size: 1.1rem;
+            color: var(--color-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .area-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Component: FAQ Accordion */
+        .faq-section {
+            padding: 5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-section > h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            background: var(--color-surface);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: var(--color-surface-alt);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        /* Component: Section Header */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Component: Services List (for location pages) */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 0 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: var(--color-text);
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            border-color: var(--color-accent);
+            transform: translateX(4px);
+        }
+
+        .service-link-icon {
+            font-size: 1.5rem;
+        }
+
+        .service-link span {
+            font-weight: 500;
+        }
+
+        /* Component: Related Articles */
+        .related-articles {
+            padding: 4rem 2rem;
+            background: var(--color-surface-alt);
+        }
+
+        .related-articles h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .article-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .article-card-content {
+            padding: 1.5rem;
+        }
+
+        .article-card h3 {
+            font-size: 1.1rem;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .article-card p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Component Responsive */
+        @media (max-width: 1024px) {
+            .split-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .split-section.reverse {
+                direction: ltr;
+            }
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .feature-grid.cols-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-steps::before {
+                display: none;
+            }
+            .area-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .services-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 10rem 1.5rem 4rem;
+            }
+            .stats-bar {
+                gap: 2rem;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .testimonial-quote {
+                font-size: 1.2rem;
+            }
+            .testimonial-quote::before {
+                position: relative;
+                top: 0;
+                left: 0;
+                display: block;
+                font-size: 3rem;
+                margin-bottom: -1rem;
+            }
+            .area-grid {
+                grid-template-columns: 1fr;
+            }
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+            .cta-banner h2 {
+                font-size: 1.75rem;
+            }
+        }
+
         /* Contact Form - Clean Modern */
         .contact-form {
             max-width: 620px;
@@ -2840,107 +3483,398 @@
 
     <!-- PLASTER RESURFACING SERVICE PAGE -->
     <div id="plaster-resurfacing" class="page-container">
-        <div class="service-hero">
+        <!-- Hero with Background -->
+        <div class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200&q=80');">
             <h1>Plaster Pool Resurfacing</h1>
-            <p>Classic white plaster finish - affordable, timeless, and proven</p>
+            <p>The classic choice - affordable, timeless, and proven for Arizona pools</p>
         </div>
-        <div class="service-content">
-            <h2>About Plaster Resurfacing</h2>
-            <p>Pool plaster has been the industry standard for decades. This cement-based finish provides a smooth, classic look that complements any backyard. White plaster reflects sunlight, keeping your pool water sparkling and inviting.</p>
 
-            <p>In Arizona's climate, standard plaster typically lasts 7-12 years with proper maintenance. It's the most affordable resurfacing option and works well for pool owners who want a clean, traditional appearance.</p>
-
-            <h2>Benefits of Plaster</h2>
-            <ul>
-                <li><strong>Affordable:</strong> Lowest cost per square foot of any pool finish</li>
-                <li><strong>Classic look:</strong> Timeless white appearance that never goes out of style</li>
-                <li><strong>Smooth texture:</strong> Comfortable on bare feet</li>
-                <li><strong>Easy to repair:</strong> Patches blend well if needed</li>
-                <li><strong>Proven durability:</strong> Decades of proven performance</li>
-            </ul>
-
-            <div class="pricing-box">
-                <h3>Plaster Resurfacing Pricing</h3>
-                <p><strong>$4 - $6 per square foot</strong></p>
-                <p>Average pool (400 sq ft): $1,600 - $2,400</p>
-                <p>Large pool (600 sq ft): $2,400 - $3,600</p>
-                <p>Price includes draining, prep, application, and fill.</p>
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">$4-6</div>
+                <div class="stat-label">Per Square Foot</div>
             </div>
+            <div class="stat-item">
+                <div class="stat-number">7-12</div>
+                <div class="stat-label">Year Lifespan</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Plaster Jobs Done</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5-7</div>
+                <div class="stat-label">Days to Complete</div>
+            </div>
+        </div>
 
-            <h2>When to Choose Plaster</h2>
-            <p>Plaster is ideal if you're on a budget, prefer the classic white pool look, or plan to sell your home in the next few years. It's also a good choice for rental properties where maximum ROI matters.</p>
+        <!-- What is Plaster - Split Section -->
+        <div class="split-section">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Beautiful white plaster pool" loading="lazy">
+            </div>
+            <div class="split-content">
+                <h2>What is Pool Plaster?</h2>
+                <p>Pool plaster is a cement-based finish that has been the industry standard for over 50 years. It's made from white Portland cement mixed with marble dust or limestone, creating a smooth, waterproof surface.</p>
+                <p>The classic white color reflects sunlight beautifully, making your pool water appear bright and inviting. In Arizona's climate, properly maintained plaster typically lasts 7-12 years before needing replacement.</p>
+                <div class="cta-buttons">
+                    <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
+                </div>
+            </div>
+        </div>
 
-            <p>For pools that see heavy use or if you want a longer-lasting finish, consider upgrading to Pebble Tec or quartz.</p>
+        <!-- Benefits Feature Grid -->
+        <div style="background: var(--color-surface-alt); padding: 5rem 0;">
+            <div class="section-header">
+                <h2>Why Choose Plaster?</h2>
+                <p>Six reasons plaster remains the most popular pool finish in Arizona</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Most Affordable</h3>
+                    <p>Lowest cost per square foot of any pool finish - ideal for budget-conscious homeowners</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Classic Beauty</h3>
+                    <p>Timeless white appearance that complements any backyard style</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🦶</div>
+                    <h3>Smooth Texture</h3>
+                    <p>Silky smooth surface that's comfortable on bare feet</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Easy Repairs</h3>
+                    <p>Patches blend well if damage occurs - simpler than aggregate fixes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Quick Install</h3>
+                    <p>Faster application time means less disruption to your schedule</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Proven Track Record</h3>
+                    <p>Decades of reliable performance in Arizona conditions</p>
+                </div>
+            </div>
+        </div>
 
-            <div class="cta-buttons" style="margin-top: 2rem;">
+        <!-- Process Steps -->
+        <div class="process-section">
+            <h2>Our Plaster Resurfacing Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Drain & Prep</h3>
+                    <p>We drain your pool and chip away the old, damaged surface</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Repair</h3>
+                    <p>Fix any cracks, tile issues, or structural problems</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Apply Plaster</h3>
+                    <p>Hand-apply fresh plaster for a smooth, even finish</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Fill & Balance</h3>
+                    <p>Fill the pool and balance chemistry for perfect startup</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="testimonial-section">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">We went with plaster to stay on budget and couldn't be happier. The pool looks brand new and the whole process took less than a week. Great value for the money.</p>
+                <div class="testimonial-author">
+                    <div>
+                        <div class="testimonial-name">Mike & Sarah R.</div>
+                        <div class="testimonial-location">Mesa, AZ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Plaster FAQs</h2>
+            <div class="faq-item">
+                <div class="faq-question">How long does plaster last in Arizona?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">With proper chemical maintenance, pool plaster typically lasts 7-12 years in Arizona. Our harsh sun and hard water can be tough on surfaces, so consistent care is important. We provide aftercare instructions to help maximize your plaster's lifespan.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is plaster or Pebble Tec better?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">It depends on your priorities. Plaster is more affordable upfront and has a smoother texture. Pebble Tec costs more but lasts nearly twice as long. For budget-focused projects or if you're selling soon, plaster is often the smart choice. Read our <a href="javascript:void(0)" onclick="showPage('blog-pebble-tec-vs-plaster')">full comparison guide</a>.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long until I can swim after resurfacing?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">You'll typically be swimming within 7-10 days. After application, we fill the pool and begin the chemistry balancing process. The plaster needs about a week to cure properly before swimming is safe.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can you change the color of my plaster?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Yes! While white is classic, we also offer colored plaster options including light blue, gray, and other shades. Colored plaster can create beautiful water effects and match your backyard aesthetic.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner">
+            <h2>Ready to Resurface Your Pool?</h2>
+            <p>Get a free, no-obligation estimate for plaster resurfacing. We'll assess your pool and provide honest pricing.</p>
+            <div class="cta-buttons" style="justify-content: center;">
                 <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
                 <a href="tel:6025550123" class="btn btn-secondary">Call (602) 555-0123</a>
             </div>
+        </div>
 
-            <h2>Related Resources</h2>
-            <ul>
-                <li><a href="javascript:void(0)" onclick="showPage('blog-pebble-tec-vs-plaster')">Pebble Tec vs Plaster: Which is Right for You?</a></li>
-                <li><a href="javascript:void(0)" onclick="showPage('blog-cost')">Pool Resurfacing Cost Guide 2026</a></li>
-                <li><a href="javascript:void(0)" onclick="showPage('blog-signs-pool-needs-resurfacing')">5 Signs Your Pool Needs Resurfacing</a></li>
-                <li><a href="javascript:void(0)" onclick="showPage('pebble-tec')">Compare: Pebble Tec Finishes</a></li>
-                <li><a href="javascript:void(0)" onclick="showPage('quartz-finishes')">Compare: Quartz Finishes</a></li>
-            </ul>
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h2>Learn More</h2>
+            <div class="articles-grid">
+                <div class="article-card" onclick="showPage('blog-pebble-tec-vs-plaster')">
+                    <img src="https://images.unsplash.com/photo-1572331165267-854da2b021aa?w=400&q=80" alt="Pebble Tec vs Plaster" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Pebble Tec vs Plaster: Which is Right?</h3>
+                        <p>Complete comparison guide</p>
+                    </div>
+                </div>
+                <div class="article-card" onclick="showPage('blog-cost')">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&q=80" alt="Cost Guide" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Pool Resurfacing Cost Guide 2026</h3>
+                        <p>Complete pricing breakdown</p>
+                    </div>
+                </div>
+                <div class="article-card" onclick="showPage('blog-signs-pool-needs-resurfacing')">
+                    <img src="https://images.unsplash.com/photo-1562844282-0a4fa8f2c051?w=400&q=80" alt="Warning Signs" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>5 Signs Your Pool Needs Resurfacing</h3>
+                        <p>Don't ignore these warnings</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- PEBBLE TEC SERVICE PAGE -->
     <div id="pebble-tec" class="page-container">
-        <div class="service-hero">
+        <!-- Hero with Background -->
+        <div class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1572331165267-854da2b021aa?w=1200&q=80');">
             <h1>Pebble Tec & Aggregate Finishes</h1>
-            <p>Premium durability and natural beauty for Arizona pools</p>
+            <p>Arizona's premium choice - unmatched durability and natural beauty</p>
         </div>
-        <div class="service-content">
-            <h2>Why Pebble Tec?</h2>
-            <p>Pebble Tec is the gold standard for pool finishes in Arizona. This aggregate finish combines small pebbles with cement to create an incredibly durable surface that stands up to our harsh sun, hard water, and extreme temperatures.</p>
 
-            <p>Unlike standard plaster that may need replacing in 7-12 years, Pebble Tec routinely lasts 15-20+ years. The natural pebble texture also hides minor imperfections and provides excellent slip resistance.</p>
-
-            <h2>Benefits of Pebble Tec</h2>
-            <ul>
-                <li><strong>Superior durability:</strong> Lasts 15-20+ years in Arizona conditions</li>
-                <li><strong>Stain resistant:</strong> Better resistance to mineral staining and algae</li>
-                <li><strong>Natural beauty:</strong> Unique pebble texture with depth and character</li>
-                <li><strong>Color options:</strong> Wide range of pebble blends to match your style</li>
-                <li><strong>Lower maintenance:</strong> Requires less chemical balancing than plaster</li>
-                <li><strong>Better value:</strong> Higher upfront cost but lower lifetime cost</li>
-            </ul>
-
-            <div class="pricing-box">
-                <h3>Pebble Tec Pricing</h3>
-                <p><strong>$8 - $12 per square foot</strong></p>
-                <p>Average pool (400 sq ft): $3,200 - $4,800</p>
-                <p>Large pool (600 sq ft): $4,800 - $7,200</p>
-                <p>Premium blends and specialty colors may cost more.</p>
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">$8-12</div>
+                <div class="stat-label">Per Square Foot</div>
             </div>
+            <div class="stat-item">
+                <div class="stat-number">15-20+</div>
+                <div class="stat-label">Year Lifespan</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">300+</div>
+                <div class="stat-label">Pebble Tec Installs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Color Options</div>
+            </div>
+        </div>
 
-            <h2>Popular Pebble Tec Colors</h2>
-            <p>We offer the full range of Pebble Tec finishes including:</p>
-            <ul>
-                <li><strong>Ocean Blue:</strong> Deep blue water appearance</li>
-                <li><strong>Aqua Blue:</strong> Bright, tropical look</li>
-                <li><strong>Tahoe Blue:</strong> Natural lake-like color</li>
-                <li><strong>Desert Sand:</strong> Warm, inviting tones</li>
-                <li><strong>Midnight Black:</strong> Dramatic, modern look</li>
-            </ul>
+        <!-- What is Pebble Tec - Split Section -->
+        <div class="split-section">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&q=80" alt="Pebble Tec pool finish" loading="lazy">
+            </div>
+            <div class="split-content">
+                <h2>What is Pebble Tec?</h2>
+                <p>Pebble Tec is a premium aggregate pool finish that combines small, naturally tumbled pebbles with cement. The result is an incredibly durable surface with a beautiful, natural appearance.</p>
+                <p>Unlike standard plaster that may need replacing in 7-12 years, Pebble Tec routinely lasts 15-20+ years in Arizona's harsh conditions. It's the gold standard for pool finishes in the desert Southwest.</p>
+                <div class="cta-buttons">
+                    <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
+                </div>
+            </div>
+        </div>
 
-            <div class="cta-buttons" style="margin-top: 2rem;">
+        <!-- Color Options - Dark Split -->
+        <div class="split-section reverse dark">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Pool color options" loading="lazy">
+            </div>
+            <div class="split-content">
+                <h2>50+ Color Options</h2>
+                <p>Choose from the full range of Pebble Tec finishes to match your backyard aesthetic:</p>
+                <p><strong>Blues:</strong> Ocean Blue, Aqua Blue, Tahoe Blue, Caribbean Blue<br>
+                <strong>Naturals:</strong> Desert Sand, Creme de Menthe, French Gray<br>
+                <strong>Bold:</strong> Midnight Black, Blue Granite, Verde</p>
+                <p>We'll bring samples to your home so you can see how each color looks in your pool.</p>
+            </div>
+        </div>
+
+        <!-- Benefits Feature Grid -->
+        <div style="background: var(--color-surface-alt); padding: 5rem 0;">
+            <div class="section-header">
+                <h2>Why Homeowners Choose Pebble Tec</h2>
+                <p>The premium benefits that make Pebble Tec Arizona's most popular upgrade</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Extreme Durability</h3>
+                    <p>Lasts 15-20+ years - nearly twice as long as standard plaster</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Stain Resistant</h3>
+                    <p>Superior resistance to mineral staining and algae growth</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Handles Hard Water</h3>
+                    <p>Specifically designed for Arizona's mineral-heavy water</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Stunning Colors</h3>
+                    <p>50+ color blends from subtle to dramatic</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📉</div>
+                    <h3>Lower Lifetime Cost</h3>
+                    <p>Higher upfront, but saves money over 20 years</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Adds Home Value</h3>
+                    <p>Premium finish that buyers recognize and value</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process Steps -->
+        <div class="process-section">
+            <h2>Our Pebble Tec Installation Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Drain & Prep</h3>
+                    <p>Complete removal of old surface down to the shell</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Repair & Bond</h3>
+                    <p>Fix any issues and apply bond coat for adhesion</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Apply Pebble Tec</h3>
+                    <p>Hand-trowel aggregate and acid wash to expose pebbles</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Fill & Start Up</h3>
+                    <p>Careful fill process with chemistry balancing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="testimonial-section">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">We upgraded from plaster to Pebble Tec 8 years ago and it still looks brand new. Best investment we've made in our home. The Ocean Blue color is absolutely stunning.</p>
+                <div class="testimonial-author">
+                    <div>
+                        <div class="testimonial-name">Jennifer & David M.</div>
+                        <div class="testimonial-location">Scottsdale, AZ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Pebble Tec FAQs</h2>
+            <div class="faq-item">
+                <div class="faq-question">Is Pebble Tec rough on feet?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">New Pebble Tec can feel textured for the first 2-4 weeks. After the break-in period, most homeowners find it comfortable. If texture is a concern, Pebble Sheen offers a smoother alternative with similar durability.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Why is Pebble Tec more expensive?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Pebble Tec uses premium materials and requires specialized installation techniques. However, since it lasts nearly twice as long as plaster, the lifetime cost is often similar or lower. Read our <a href="javascript:void(0)" onclick="showPage('blog-pebble-tec-vs-plaster')">full cost comparison</a>.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What colors are most popular in Phoenix?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Ocean Blue and Aqua Blue are our most requested colors - they create beautiful blue-green water. Desert Sand and French Gray are popular for natural-look backyards. Midnight Black is trending for modern homes.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long until I can swim?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Plan for about 10-14 days from start to swimming. Pebble Tec requires careful startup with specific brushing and chemistry protocols to ensure optimal curing and longevity.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner">
+            <h2>Upgrade to Pebble Tec Today</h2>
+            <p>Get a free estimate and color consultation. We'll help you choose the perfect finish for your pool.</p>
+            <div class="cta-buttons" style="justify-content: center;">
                 <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
                 <a href="tel:6025550123" class="btn btn-secondary">Call (602) 555-0123</a>
             </div>
+        </div>
 
-            <h2>Related Resources</h2>
-            <ul>
-                <li><a href="javascript:void(0)" onclick="showPage('blog-pebble-tec-vs-plaster')">Pebble Tec vs Plaster: Complete Comparison</a></li>
-                <li><a href="javascript:void(0)" onclick="showPage('blog-cost')">Pool Resurfacing Cost Guide 2026</a></li>
-                <li><a href="javascript:void(0)" onclick="showPage('blog-signs-pool-needs-resurfacing')">5 Signs Your Pool Needs Resurfacing</a></li>
-                <li><a href="javascript:void(0)" onclick="showPage('plaster-resurfacing')">Compare: Plaster Resurfacing</a></li>
-                <li><a href="javascript:void(0)" onclick="showPage('quartz-finishes')">Compare: Quartz Finishes</a></li>
-            </ul>
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h2>Learn More</h2>
+            <div class="articles-grid">
+                <div class="article-card" onclick="showPage('blog-pebble-tec-vs-plaster')">
+                    <img src="https://images.unsplash.com/photo-1572331165267-854da2b021aa?w=400&q=80" alt="Pebble Tec vs Plaster" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Pebble Tec vs Plaster: Full Comparison</h3>
+                        <p>Which finish is right for you?</p>
+                    </div>
+                </div>
+                <div class="article-card" onclick="showPage('blog-cost')">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&q=80" alt="Cost Guide" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Pool Resurfacing Cost Guide 2026</h3>
+                        <p>Complete pricing breakdown</p>
+                    </div>
+                </div>
+                <div class="article-card" onclick="showPage('plaster-resurfacing')">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80" alt="Plaster Option" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Plaster Resurfacing</h3>
+                        <p>The budget-friendly alternative</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -3114,34 +4048,183 @@
 
     <!-- LOCATION PAGES -->
     <div id="location-phoenix" class="page-container">
-        <div class="service-hero">
+        <!-- Hero -->
+        <div class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80');">
             <h1>Pool Resurfacing in Phoenix</h1>
             <p>Serving Arcadia, Biltmore, North Phoenix, South Mountain & Ahwatukee</p>
         </div>
-        <div class="location-content">
-            <h2>Phoenix Pool Resurfacing Services</h2>
-            <p>As Arizona's capital and largest city, Phoenix is home to thousands of backyard pools. The intense desert sun, hard water, and extreme summer temperatures take a toll on pool surfaces, making professional resurfacing essential for maintaining your pool's beauty and function.</p>
 
-            <p>Phoenix Pool Resurfacing serves all Phoenix neighborhoods including Arcadia, Biltmore, Paradise Valley Village, North Phoenix, South Mountain, and Ahwatukee Foothills. We understand the unique challenges Phoenix pools face and use materials designed to withstand our climate.</p>
+        <!-- Stats Bar -->
+        <div class="stats-bar light">
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Phoenix Pools Done</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">300+</div>
+                <div class="stat-label">Days of Sunshine</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">115°F</div>
+                <div class="stat-label">Summer Temps</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24hr</div>
+                <div class="stat-label">Response Time</div>
+            </div>
+        </div>
 
-            <h2>Services Available in Phoenix</h2>
-            <ul>
-                <li>Plaster resurfacing</li>
-                <li>Pebble Tec installation</li>
-                <li>Quartz finishes</li>
-                <li>Tile and coping repair</li>
-                <li>Pool deck resurfacing</li>
-                <li>Draining and acid wash</li>
-            </ul>
+        <!-- Intro Split Section -->
+        <div class="split-section">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80" alt="Phoenix pool" loading="lazy">
+            </div>
+            <div class="split-content">
+                <h2>Phoenix Pool Experts</h2>
+                <p>As Arizona's capital and largest city, Phoenix is home to thousands of backyard pools. The intense desert sun, hard water, and extreme temperatures take a toll on pool surfaces.</p>
+                <p>We specialize in finishes that can handle Phoenix's unique climate - surfaces that won't crack, stain, or deteriorate under 300+ days of UV exposure and 115°F summers.</p>
+                <div class="cta-buttons">
+                    <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
+                </div>
+            </div>
+        </div>
 
-            <h2>Why Phoenix Pools Need Quality Finishes</h2>
-            <p>With 300+ days of sunshine and summer temperatures regularly exceeding 110°F, Phoenix pools are exposed to more UV radiation and heat stress than pools in most other parts of the country. Our hard water also causes mineral buildup that can damage inferior finishes.</p>
+        <!-- Neighborhoods Grid -->
+        <div style="background: var(--color-surface-alt); padding: 4rem 0;">
+            <div class="section-header">
+                <h2>Phoenix Neighborhoods We Serve</h2>
+                <p>From Ahwatukee to North Phoenix, we cover the entire city</p>
+            </div>
+            <div class="area-grid">
+                <div class="area-card">
+                    <h4>Arcadia</h4>
+                    <p>Luxury homes & estates</p>
+                </div>
+                <div class="area-card">
+                    <h4>Biltmore</h4>
+                    <p>Historic elegance</p>
+                </div>
+                <div class="area-card">
+                    <h4>North Phoenix</h4>
+                    <p>Desert Ridge & more</p>
+                </div>
+                <div class="area-card">
+                    <h4>Paradise Valley Village</h4>
+                    <p>Family neighborhoods</p>
+                </div>
+                <div class="area-card">
+                    <h4>South Mountain</h4>
+                    <p>Foothills living</p>
+                </div>
+                <div class="area-card">
+                    <h4>Ahwatukee</h4>
+                    <p>Foothills community</p>
+                </div>
+                <div class="area-card">
+                    <h4>Encanto</h4>
+                    <p>Historic district</p>
+                </div>
+                <div class="area-card">
+                    <h4>Maryvale</h4>
+                    <p>West Phoenix</p>
+                </div>
+            </div>
+        </div>
 
-            <p>We recommend Pebble Tec or quartz finishes for Phoenix pools because they handle these conditions better than standard plaster. The investment pays off with surfaces that last 15-20 years instead of 7-10.</p>
+        <!-- Services Available -->
+        <div style="padding: 4rem 0;">
+            <div class="section-header">
+                <h2>Services Available in Phoenix</h2>
+                <p>Complete pool surface solutions for every budget</p>
+            </div>
+            <div class="services-list">
+                <a href="javascript:void(0)" onclick="showPage('plaster-resurfacing')" class="service-link">
+                    <span class="service-link-icon">🏊</span>
+                    <span>Plaster Resurfacing</span>
+                </a>
+                <a href="javascript:void(0)" onclick="showPage('pebble-tec')" class="service-link">
+                    <span class="service-link-icon">💎</span>
+                    <span>Pebble Tec Installation</span>
+                </a>
+                <a href="javascript:void(0)" onclick="showPage('quartz-finishes')" class="service-link">
+                    <span class="service-link-icon">✨</span>
+                    <span>Quartz Finishes</span>
+                </a>
+                <a href="javascript:void(0)" onclick="showPage('tile-coping')" class="service-link">
+                    <span class="service-link-icon">🔲</span>
+                    <span>Tile & Coping Repair</span>
+                </a>
+                <a href="javascript:void(0)" onclick="showPage('pool-deck')" class="service-link">
+                    <span class="service-link-icon">🌡️</span>
+                    <span>Pool Deck Resurfacing</span>
+                </a>
+                <a href="javascript:void(0)" onclick="showPage('acid-wash')" class="service-link">
+                    <span class="service-link-icon">💧</span>
+                    <span>Draining & Acid Wash</span>
+                </a>
+            </div>
+        </div>
 
-            <div class="cta-buttons" style="margin-top: 2rem;">
+        <!-- Why Quality Matters - Dark Section -->
+        <div class="split-section dark">
+            <div class="split-content">
+                <h2>Why Phoenix Pools Need Quality Finishes</h2>
+                <p>Phoenix's climate is brutal on pool surfaces. With 300+ days of intense UV exposure, summer temps exceeding 115°F, and some of the hardest water in the country, inferior finishes simply don't last.</p>
+                <p>We recommend Pebble Tec or quartz finishes for Phoenix pools - they're specifically designed to handle these conditions. The investment pays off with surfaces that last 15-20 years instead of 7-10.</p>
+            </div>
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1572331165267-854da2b021aa?w=800&q=80" alt="Quality pool finish" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="testimonial-section">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">Living in Arcadia, our pool gets blasted by sun all day. They recommended Pebble Tec and it was the right call - still looks great after 6 years. The team was professional and the price was fair.</p>
+                <div class="testimonial-author">
+                    <div>
+                        <div class="testimonial-name">The Martinez Family</div>
+                        <div class="testimonial-location">Arcadia, Phoenix</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner">
+            <h2>Get Your Free Phoenix Estimate</h2>
+            <p>We'll assess your pool and provide honest recommendations for your specific situation.</p>
+            <div class="cta-buttons" style="justify-content: center;">
                 <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
                 <a href="tel:6025550123" class="btn btn-secondary">Call (602) 555-0123</a>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h2>Helpful Resources</h2>
+            <div class="articles-grid">
+                <div class="article-card" onclick="showPage('blog-cost')">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&q=80" alt="Cost Guide" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Pool Resurfacing Cost Guide 2026</h3>
+                        <p>Phoenix pricing breakdown</p>
+                    </div>
+                </div>
+                <div class="article-card" onclick="showPage('blog-pebble-tec-vs-plaster')">
+                    <img src="https://images.unsplash.com/photo-1572331165267-854da2b021aa?w=400&q=80" alt="Comparison" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Pebble Tec vs Plaster</h3>
+                        <p>Which is right for Phoenix?</p>
+                    </div>
+                </div>
+                <div class="article-card" onclick="showPage('blog-signs-pool-needs-resurfacing')">
+                    <img src="https://images.unsplash.com/photo-1562844282-0a4fa8f2c051?w=400&q=80" alt="Warning Signs" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>5 Signs Your Pool Needs Help</h3>
+                        <p>Don't ignore these warnings</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -3961,32 +5044,136 @@
 
     <!-- ABOUT PAGE -->
     <div id="about" class="page-container">
-        <div class="service-hero">
+        <!-- Hero -->
+        <div class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80');">
             <h1>About Phoenix Pool Resurfacing</h1>
-            <p>Local expertise you can trust</p>
+            <p>Local experts dedicated to one thing: making Arizona pools beautiful</p>
         </div>
-        <div class="service-content">
-            <h2>Phoenix's Pool Resurfacing Experts</h2>
-            <p>Phoenix Pool Resurfacing is a locally owned and operated pool resurfacing company serving the Phoenix Metro Area. We specialize exclusively in pool surface restoration - it's all we do, and we do it well.</p>
 
-            <p>Our team has resurfaced hundreds of pools throughout Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, and surrounding communities. We understand the unique challenges that Arizona's climate poses for pool surfaces and use materials and techniques optimized for our conditions.</p>
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Pools Resurfaced</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">7yr</div>
+                <div class="stat-label">Warranty</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5.0</div>
+                <div class="stat-label">Star Rating</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Licensed & Insured</div>
+            </div>
+        </div>
 
-            <h2>Why We Focus on Resurfacing</h2>
-            <p>Many pool companies offer resurfacing as a side service. We chose to specialize because pool resurfacing requires specific expertise and attention to detail. By focusing exclusively on surfaces, we've developed deep knowledge of finish materials, proper preparation techniques, and application methods that deliver lasting results.</p>
+        <!-- Our Story - Split Section -->
+        <div class="split-section">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Pool resurfacing work" loading="lazy">
+            </div>
+            <div class="split-content">
+                <h2>Why We Focus on Resurfacing</h2>
+                <p>Many pool companies offer resurfacing as a side service. We chose to specialize because pool resurfacing requires specific expertise and attention to detail.</p>
+                <p>By focusing exclusively on surfaces, we've developed deep knowledge of finish materials, proper preparation techniques, and application methods that deliver lasting results in Arizona's challenging climate.</p>
+                <p><strong>Resurfacing is all we do - and we do it better than anyone.</strong></p>
+            </div>
+        </div>
 
-            <h2>Our Commitment</h2>
-            <ul>
-                <li><strong>Honest assessments:</strong> We'll tell you what your pool actually needs, even if it's less than you expected</li>
-                <li><strong>Quality materials:</strong> We use proven products from trusted manufacturers</li>
-                <li><strong>Professional installation:</strong> Proper prep and application for lasting results</li>
-                <li><strong>Fair pricing:</strong> Competitive rates without sacrificing quality</li>
-                <li><strong>Warranty protection:</strong> We stand behind our work with a 7-year warranty</li>
-            </ul>
+        <!-- Values Feature Grid -->
+        <div style="background: var(--color-surface-alt); padding: 5rem 0;">
+            <div class="section-header">
+                <h2>Our Commitment to You</h2>
+                <p>The principles that guide every project we take on</p>
+            </div>
+            <div class="feature-grid cols-4">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Honest Assessments</h3>
+                    <p>We tell you what your pool actually needs - even if it's less than expected</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Quality Materials</h3>
+                    <p>Proven products from trusted manufacturers, optimized for Arizona</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👷</div>
+                    <h3>Expert Installation</h3>
+                    <p>Proper prep and application techniques for results that last</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Fair Pricing</h3>
+                    <p>Competitive rates without cutting corners on quality</p>
+                </div>
+            </div>
+        </div>
 
-            <h2>Licensed & Insured</h2>
-            <p>We're fully licensed with the Arizona Registrar of Contractors (ROC) and carry comprehensive general liability and workers' compensation insurance. You can trust that your project is protected.</p>
+        <!-- Process Section -->
+        <div class="process-section">
+            <h2>How We Work</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>We assess your pool and discuss options honestly</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Clear Quote</h3>
+                    <p>Detailed estimate with no hidden fees or surprises</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Expert Work</h3>
+                    <p>Professional installation by our trained crew</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>7-Year Warranty</h3>
+                    <p>We stand behind our work with real protection</p>
+                </div>
+            </div>
+        </div>
 
-            <div class="cta-buttons" style="margin-top: 2rem;">
+        <!-- Credentials - Dark Split -->
+        <div class="split-section reverse dark">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Professional pool work" loading="lazy">
+            </div>
+            <div class="split-content">
+                <h2>Licensed & Insured</h2>
+                <p>Your protection is our priority. We maintain:</p>
+                <p>✓ Arizona Registrar of Contractors (ROC) License<br>
+                ✓ Comprehensive General Liability Insurance<br>
+                ✓ Workers' Compensation Coverage<br>
+                ✓ 7-Year Workmanship Warranty</p>
+                <p>Every project is fully protected. Ask to see our credentials anytime.</p>
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="testimonial-section">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">From the first call to the final walkthrough, these guys were professional and honest. No pushy sales tactics, just straightforward advice on what my pool needed. The finished product exceeded my expectations.</p>
+                <div class="testimonial-author">
+                    <div>
+                        <div class="testimonial-name">Robert T.</div>
+                        <div class="testimonial-location">Gilbert, AZ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner">
+            <h2>Ready to Work with Us?</h2>
+            <p>Get your free estimate and see why Phoenix homeowners trust us with their pools.</p>
+            <div class="cta-buttons" style="justify-content: center;">
                 <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
                 <a href="tel:6025550123" class="btn btn-secondary">Call (602) 555-0123</a>
             </div>
