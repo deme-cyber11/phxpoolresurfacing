@@ -42,7 +42,7 @@
     <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE">
     <meta name="author" content="Phoenix Pool Resurfacing">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0D4F5F">
+    <meta name="theme-color" content="#2C3A44">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json">
@@ -53,20 +53,20 @@
 
     <style>
         :root {
-            /* Modern Teal + Gold Color Palette */
-            --color-primary: #0D4F5F;
-            --color-secondary: #1B7B8E;
-            --color-accent: #D4A853;
-            --color-accent-light: #E8C97A;
-            --color-background: #FAFBFC;
+            /* Material/Craft Palette - Pool Construction */
+            --color-primary: #3D4F5F;          /* Gunite slate */
+            --color-secondary: #5A7282;        /* Weathered stone */
+            --color-accent: #C4785A;           /* Terracotta coping */
+            --color-accent-light: #D4917A;
+            --color-background: #F8F7F5;       /* Warm plaster white */
             --color-surface: #FFFFFF;
-            --color-surface-alt: #F3F6F8;
-            --color-surface-dark: #0A3D4A;
-            --color-text: #1A2B3C;
-            --color-text-muted: #5A6B7C;
+            --color-surface-alt: #F2F1EE;      /* Cream - cured plaster */
+            --color-surface-dark: #2C3A44;     /* Deep slate */
+            --color-text: #2C3A44;
+            --color-text-muted: #6B7A86;
             --color-text-light: #FFFFFF;
-            --color-border: #E2E8F0;
-            --color-border-light: #F1F5F9;
+            --color-border: #E0DED9;           /* Grout line */
+            --color-border-light: #ECEAE6;
 
             /* Typography */
             --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -76,15 +76,15 @@
             --section-padding: 6rem 2rem;
             --card-padding: 2rem;
 
-            /* Effects */
-            --shadow-sm: 0 2px 8px rgba(13, 79, 95, 0.06);
-            --shadow-md: 0 4px 20px rgba(13, 79, 95, 0.08);
-            --shadow-lg: 0 8px 40px rgba(13, 79, 95, 0.12);
-            --shadow-hover: 0 12px 48px rgba(13, 79, 95, 0.15);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
+            /* Effects - warmer shadows */
+            --shadow-sm: 0 2px 8px rgba(44, 58, 68, 0.05);
+            --shadow-md: 0 4px 20px rgba(44, 58, 68, 0.07);
+            --shadow-lg: 0 8px 40px rgba(44, 58, 68, 0.10);
+            --shadow-hover: 0 12px 48px rgba(44, 58, 68, 0.12);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -119,9 +119,9 @@
             display: block;
         }
 
-        /* Header - Modern Glass Effect */
+        /* Header - Slate/Material */
         header {
-            background: rgba(10, 61, 74, 0.97);
+            background: rgba(44, 58, 68, 0.98);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             color: var(--color-text-light);
@@ -130,7 +130,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         nav {
@@ -159,7 +159,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.4rem;
-            box-shadow: 0 2px 8px rgba(212, 168, 83, 0.3);
+            box-shadow: 0 2px 8px rgba(196, 120, 90, 0.35);
         }
 
         .logo-text {
@@ -192,16 +192,16 @@
 
         .nav-cta {
             background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%) !important;
-            color: var(--color-surface-dark) !important;
+            color: white !important;
             padding: 0.625rem 1.25rem !important;
             border-radius: var(--radius-sm) !important;
             font-weight: 600 !important;
-            box-shadow: 0 2px 8px rgba(212, 168, 83, 0.3);
+            box-shadow: 0 2px 8px rgba(196, 120, 90, 0.35);
         }
 
         .nav-cta:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(212, 168, 83, 0.4) !important;
+            box-shadow: 0 4px 12px rgba(196, 120, 90, 0.45) !important;
             background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 100%) !important;
         }
 
@@ -269,11 +269,11 @@
             background: rgba(255,255,255,0.1);
         }
 
-        /* Hero - Modern with Water Texture */
+        /* Hero - Material/Aggregate Texture */
         .hero {
             background:
-                linear-gradient(180deg, rgba(10, 61, 74, 0.92) 0%, rgba(13, 79, 95, 0.88) 50%, rgba(27, 123, 142, 0.85) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><pattern id="water" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><ellipse cx="25" cy="25" rx="20" ry="10" fill="rgba(255,255,255,0.03)"/><ellipse cx="75" cy="60" rx="25" ry="12" fill="rgba(255,255,255,0.025)"/><ellipse cx="50" cy="85" rx="18" ry="8" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect fill="url(%23water)" width="400" height="400"/></svg>');
+                linear-gradient(180deg, rgba(44, 58, 68, 0.96) 0%, rgba(61, 79, 95, 0.94) 50%, rgba(90, 114, 130, 0.92) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="aggregate" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="rgba(255,255,255,0.04)"/><circle cx="13" cy="7" r="2" fill="rgba(255,255,255,0.03)"/><circle cx="7" cy="15" r="1.8" fill="rgba(255,255,255,0.035)"/><circle cx="17" cy="17" r="1.2" fill="rgba(255,255,255,0.025)"/><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect fill="url(%23aggregate)" width="200" height="200"/></svg>');
             color: white;
             padding: 11rem 2rem 7rem;
             text-align: center;
@@ -293,16 +293,16 @@
             right: -50%;
             bottom: -50%;
             background:
-                radial-gradient(ellipse at 20% 20%, rgba(212, 168, 83, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(27, 123, 142, 0.2) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
-            animation: float 20s ease-in-out infinite;
+                radial-gradient(ellipse at 15% 25%, rgba(196, 120, 90, 0.12) 0%, transparent 45%),
+                radial-gradient(ellipse at 85% 75%, rgba(90, 114, 130, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 60%);
+            animation: float 25s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(2%, 1%) rotate(1deg); }
-            66% { transform: translate(-1%, 2%) rotate(-1deg); }
+            33% { transform: translate(1%, 0.5%) rotate(0.5deg); }
+            66% { transform: translate(-0.5%, 1%) rotate(-0.5deg); }
         }
 
         .hero::after {
@@ -370,13 +370,13 @@
 
         .btn-primary {
             background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
-            color: var(--color-surface-dark);
-            box-shadow: 0 4px 16px rgba(212, 168, 83, 0.35);
+            color: white;
+            box-shadow: 0 4px 16px rgba(196, 120, 90, 0.35);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(212, 168, 83, 0.45);
+            box-shadow: 0 8px 24px rgba(196, 120, 90, 0.45);
         }
 
         .btn-secondary {
@@ -644,11 +644,11 @@
             line-height: 1.55;
         }
 
-        /* Why Choose - Modern Dark Section */
+        /* Why Choose - Slate Dark Section */
         .why-choose {
             background:
-                linear-gradient(135deg, rgba(10, 61, 74, 0.97) 0%, rgba(13, 79, 95, 0.95) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="40"/><circle cx="100" cy="100" r="40" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="20"/></svg>');
+                linear-gradient(135deg, rgba(44, 58, 68, 0.98) 0%, rgba(61, 79, 95, 0.96) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="40"/><circle cx="100" cy="100" r="40" fill="none" stroke="rgba(255,255,255,0.015)" stroke-width="20"/></svg>');
             color: white;
             position: relative;
             overflow: hidden;
@@ -661,7 +661,7 @@
             right: -100px;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(212, 168, 83, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(196, 120, 90, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -693,13 +693,13 @@
         .feature-icon {
             width: 72px;
             height: 72px;
-            background: linear-gradient(135deg, rgba(212, 168, 83, 0.2) 0%, rgba(212, 168, 83, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(196, 120, 90, 0.2) 0%, rgba(196, 120, 90, 0.1) 100%);
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.25rem;
-            border: 1px solid rgba(212, 168, 83, 0.2);
+            border: 1px solid rgba(196, 120, 90, 0.2);
         }
 
         .feature-icon svg {
@@ -1019,11 +1019,11 @@
             color: rgba(255,255,255,0.5);
         }
 
-        /* Service Page - Modern Hero */
+        /* Service Page - Slate Hero */
         .service-hero {
             background:
-                linear-gradient(135deg, rgba(10, 61, 74, 0.95) 0%, rgba(13, 79, 95, 0.9) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="15"/></svg>');
+                linear-gradient(135deg, rgba(44, 58, 68, 0.97) 0%, rgba(61, 79, 95, 0.94) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="15"/></svg>');
             color: white;
             padding: 10rem 2rem 5rem;
             text-align: center;
@@ -1227,7 +1227,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--color-secondary);
-            box-shadow: 0 0 0 4px rgba(27, 123, 142, 0.1);
+            box-shadow: 0 0 0 4px rgba(90, 114, 130, 0.12);
         }
 
         /* Responsive */
