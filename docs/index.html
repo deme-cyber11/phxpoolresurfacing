@@ -2523,11 +2523,12 @@
                 box-shadow: none;
                 background: rgba(255,255,255,0.03);
                 display: none;
-                min-width: 100%;
+                width: 100%;
                 border-radius: 0;
                 border: none;
                 padding: 0;
                 margin-top: 0;
+                overflow: visible;
             }
 
             .dropdown.active .dropdown-menu {
@@ -2535,9 +2536,13 @@
             }
 
             .dropdown-menu a {
-                padding: 0.875rem 2rem;
+                padding: 0.875rem 1.5rem 0.875rem 2.5rem;
                 border-radius: 0;
                 color: rgba(255,255,255,0.8);
+                display: block;
+                width: 100%;
+                text-align: left;
+                white-space: normal;
             }
 
             .hero {
@@ -3839,16 +3844,6 @@
         </nav>
     </header>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb hidden" id="breadcrumb" aria-label="Breadcrumb">
-        <div class="breadcrumb-inner">
-            <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
-            <span class="breadcrumb-separator">›</span>
-            <span id="breadcrumb-parent"></span>
-            <span class="breadcrumb-separator" id="breadcrumb-sep2" style="display:none;">›</span>
-            <span class="breadcrumb-current" id="breadcrumb-current"></span>
-        </div>
-    </nav>
 
     <script>
         // Breadcrumb configuration for each page
