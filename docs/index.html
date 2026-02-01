@@ -173,8 +173,9 @@
             transition: var(--transition);
         }
 
-        header.scrolled {
-            background: rgba(26, 26, 46, 0.95);
+        header.scrolled,
+        header.header-solid {
+            background: rgba(26, 26, 46, 0.98);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 1rem 0;
@@ -1374,11 +1375,11 @@
         /* Breadcrumb Navigation */
         .breadcrumb {
             background: var(--color-surface-alt);
-            padding: 0.875rem 2rem;
-            font-size: 0.875rem;
+            padding: 0.625rem 2rem;
+            font-size: 0.8rem;
             border-bottom: 1px solid var(--color-border-light);
             position: sticky;
-            top: 70px;
+            top: 60px;
             z-index: 90;
         }
 
@@ -1440,7 +1441,7 @@
                 linear-gradient(135deg, rgba(44, 58, 68, 0.97) 0%, rgba(61, 79, 95, 0.94) 100%),
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="15"/></svg>');
             color: white;
-            padding: 10rem 2rem 5rem;
+            padding: 6rem 2rem 3rem;
             text-align: center;
             position: relative;
         }
@@ -1601,7 +1602,7 @@
         /* Component: Page Hero with Background Image */
         .page-hero {
             position: relative;
-            padding: 12rem 2rem 6rem;
+            padding: 7rem 2rem 3.5rem;
             text-align: center;
             color: white;
             background-size: cover;
@@ -3985,6 +3986,7 @@
         function showPage(pageId) {
             document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
             const page = document.getElementById(pageId);
+            const header = document.querySelector('header');
             if (page) {
                 page.classList.add('active');
                 window.scrollTo(0, 0);
@@ -3997,6 +3999,12 @@
                 }
                 // Update breadcrumb navigation
                 updateBreadcrumb(pageId);
+                // Make header solid on non-home pages
+                if (pageId === 'home') {
+                    header.classList.remove('header-solid');
+                } else {
+                    header.classList.add('header-solid');
+                }
             }
             document.getElementById('navLinks').classList.remove('active');
         }
@@ -4014,6 +4022,9 @@
             const hash = window.location.hash.slice(1);
             if (hash && document.getElementById(hash)) {
                 showPage(hash);
+            } else {
+                // On home page - ensure header starts transparent
+                document.querySelector('header').classList.remove('header-solid');
             }
         });
 
