@@ -63,7 +63,11 @@
     <meta name="theme-color" content="#1a1a2e">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
+
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
 
     <!-- Self-hosted fonts (no external requests) -->
     <style>
@@ -294,18 +298,6 @@
             font-size: 0.6rem;
             margin-left: 0.375rem;
             opacity: 0.7;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: var(--radius-sm);
-            transition: var(--transition);
         }
 
         .menu-toggle:hover {
@@ -718,11 +710,6 @@
             transform: translateX(4px);
         }
 
-        /* Hide old service icons */
-        .service-icon {
-            display: none;
-        }
-
         /* Process - Timeline Style */
         .process-grid {
             display: grid;
@@ -827,10 +814,6 @@
             line-height: 1;
             margin-bottom: 1rem;
             opacity: 0.9;
-        }
-
-        .feature-icon {
-            display: none;
         }
 
         .feature h3 {
@@ -1263,15 +1246,9 @@
         }
 
         .faq-answer {
-            padding: 0 1.75rem 1.5rem;
             color: var(--color-text-muted);
-            display: none;
             line-height: 1.7;
             font-size: 0.95rem;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
         }
 
         /* Service Areas - Clean Grid */
@@ -2038,41 +2015,6 @@
             background: var(--color-surface);
         }
 
-        .faq-question {
-            padding: 1.5rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
-        }
-
-        .faq-question:hover {
-            background: var(--color-surface-alt);
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--color-accent);
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-
         .faq-answer-inner {
             padding: 0 1.5rem 1.5rem;
             color: var(--color-text-muted);
@@ -2595,7 +2537,6 @@
         .feature:nth-child(3) { animation-delay: 0.5s; }
 
         /* Smooth image/icon loading */
-        .service-icon,
         .trust-icon,
         .feature-icon,
         .process-number {
@@ -2648,6 +2589,863 @@
             .btn-primary,
             .btn-secondary {
                 border: 2px solid currentColor;
+            }
+        }
+
+        /* =========================
+           PHASE 1-4 ENHANCEMENTS
+           ========================= */
+
+        /* Scroll-triggered animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-animate.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-animate.animate-left {
+            transform: translateX(-40px);
+        }
+
+        .scroll-animate.animate-left.animate-in {
+            transform: translateX(0);
+        }
+
+        .scroll-animate.animate-right {
+            transform: translateX(40px);
+        }
+
+        .scroll-animate.animate-right.animate-in {
+            transform: translateX(0);
+        }
+
+        .scroll-animate.animate-scale {
+            transform: scale(0.9);
+        }
+
+        .scroll-animate.animate-scale.animate-in {
+            transform: scale(1);
+        }
+
+        /* Staggered animation delays */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+
+        /* Enhanced Hero with animated gradient */
+        .hero::before {
+            background:
+                linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.8) 50%, rgba(26, 26, 46, 0.85) 100%);
+            animation: heroGradientShift 15s ease-in-out infinite;
+        }
+
+        @keyframes heroGradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.92; }
+        }
+
+        /* Animated mesh gradient overlay */
+        .hero-mesh {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(233, 69, 96, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(22, 33, 62, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(244, 162, 97, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            animation: meshFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes meshFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(2%, -2%) scale(1.02); }
+            50% { transform: translate(-1%, 1%) scale(0.98); }
+            75% { transform: translate(-2%, -1%) scale(1.01); }
+        }
+
+        /* Image Comparison Slider */
+        .image-compare {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            cursor: ew-resize;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .image-compare img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .image-compare .compare-after {
+            clip-path: inset(0 50% 0 0);
+        }
+
+        .image-compare .compare-slider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: white;
+            cursor: ew-resize;
+            z-index: 10;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .image-compare .compare-slider::before,
+        .image-compare .compare-slider::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .image-compare .compare-slider::before {
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231a1a2e' viewBox='0 0 24 24'%3E%3Cpath d='M8 5l-5 7 5 7M16 5l5 7-5 7'/%3E%3C/svg%3E") center/60% no-repeat;
+        }
+
+        .image-compare .compare-slider::after {
+            display: none;
+        }
+
+        .image-compare .compare-label {
+            position: absolute;
+            bottom: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: var(--radius-sm);
+            z-index: 5;
+        }
+
+        .image-compare .compare-label-before {
+            left: 1rem;
+        }
+
+        .image-compare .compare-label-after {
+            right: 1rem;
+        }
+
+        /* Enhanced Card Hover Micro-interactions */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover .service-tag {
+            transform: translateX(4px);
+        }
+
+        .service-tag {
+            transition: transform 0.3s ease;
+        }
+
+        /* Process Timeline Animation */
+        .process-number {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-number::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 50%;
+        }
+
+        .process-step.animate-in .process-number::before {
+            animation: pulseOnce 0.6s ease-out;
+        }
+
+        @keyframes pulseOnce {
+            0% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.1; transform: scale(1.3); }
+            100% { opacity: 0; transform: scale(1.5); }
+        }
+
+        /* Counter Animation for Stats */
+        .stat-number, .hero-stat-number {
+            display: inline-block;
+        }
+
+        .count-up {
+            animation: countFadeIn 0.6s ease-out;
+        }
+
+        @keyframes countFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Form Validation Animations */
+        .form-group input:valid:not(:placeholder-shown),
+        .form-group textarea:valid:not(:placeholder-shown) {
+            border-color: #22c55e;
+        }
+
+        .form-group input:valid:not(:placeholder-shown) + .input-valid-icon,
+        .form-group textarea:valid:not(:placeholder-shown) + .input-valid-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .input-valid-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%) scale(0.8);
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: #22c55e;
+            pointer-events: none;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            animation: inputFocus 0.3s ease;
+        }
+
+        @keyframes inputFocus {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.01); }
+            100% { transform: scale(1); }
+        }
+
+        /* Form Success Animation */
+        #form-success {
+            animation: successPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes successPop {
+            0% { opacity: 0; transform: scale(0.8); }
+            50% { transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: checkmarkBounce 0.6s ease-out 0.2s both;
+        }
+
+        @keyframes checkmarkBounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .success-checkmark svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+            animation: drawCheck 0.4s ease-out 0.5s forwards;
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Enhanced Trust Badges with Hover */
+        .badge-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+        }
+
+        .badge-item:hover {
+            transform: translateY(-4px);
+            background: var(--color-surface);
+            box-shadow: var(--shadow-md);
+        }
+
+        .badge-icon {
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .badge-item:hover .badge-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--color-primary);
+        }
+
+        .badge-item:hover .badge-icon svg {
+            fill: white;
+        }
+
+        a.badge-item {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a.badge-item:hover .badge-label {
+            color: var(--color-accent);
+        }
+
+        /* Google Reviews Widget Styles */
+        .reviews-widget {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--color-border-light);
+            text-align: center;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+
+        .reviews-widget-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .google-logo {
+            height: 24px;
+        }
+
+        .reviews-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .reviews-rating-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            color: var(--color-text);
+        }
+
+        .reviews-stars {
+            color: #fbbc04;
+            font-size: 1.25rem;
+        }
+
+        .reviews-count {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .reviews-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: gap 0.3s ease;
+        }
+
+        .reviews-cta:hover {
+            gap: 0.75rem;
+        }
+
+        /* Floating Action Elements */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+        }
+
+        .floating-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .floating-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .floating-btn-phone {
+            background: #22c55e;
+            color: white;
+        }
+
+        .floating-btn-quote {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            .floating-btn {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        /* Improved Pattern/Grain Texture */
+        .hero::after {
+            background:
+                linear-gradient(to top, var(--color-background) 0%, transparent 100%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+        }
+
+        /* Loading skeleton for images */
+        .skeleton-loader {
+            background: linear-gradient(90deg, var(--color-surface-alt) 25%, var(--color-surface) 50%, var(--color-surface-alt) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* =========================
+           PHASE 6: Advanced UI Enhancements
+           ========================= */
+
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-warm));
+            z-index: 10000;
+            transition: width 0.1s linear;
+        }
+
+        /* Page Transition Effects */
+        .page-container {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        }
+
+        .page-container.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page-container.page-exit {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        /* Enhanced Hamburger Menu Animation */
+        .menu-toggle {
+            width: 44px;
+            height: 44px;
+            position: relative;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .menu-toggle .bar {
+            width: 24px;
+            height: 2px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        @media (max-width: 968px) {
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        /* Enhanced FAQ Accordion with smooth height */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+            padding: 0 1.75rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.75rem 1.5rem;
+        }
+
+        .faq-question {
+            user-select: none;
+        }
+
+        .faq-question span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--color-surface-alt);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-question span {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* Enhanced Homepage FAQ Design */
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, var(--color-surface) 0%, rgba(255,255,255,0.02) 100%);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--color-accent);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item:hover::before,
+        .faq-item.active::before {
+            transform: scaleY(1);
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-border);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .faq-item.active {
+            border-color: var(--color-accent);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.12);
+        }
+
+        .faq-question {
+            padding: 1.5rem 1.75rem;
+            padding-left: 1.5rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .faq-question span {
+            margin-left: auto;
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1) 0%, rgba(233, 69, 96, 0.05) 100%);
+            border-radius: var(--radius-md);
+            color: var(--color-accent);
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover .faq-icon,
+        .faq-item.active .faq-icon {
+            background: var(--color-accent);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .faq-answer {
+            padding-left: 1.5rem;
+            font-size: 0.975rem;
+            line-height: 1.75;
+            color: var(--color-text-muted);
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 1.75rem;
+        }
+
+        /* Parallax Hero Effect */
+        .page-hero {
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                background-attachment: scroll;
+            }
+        }
+
+        /* Enhanced Gallery Hover */
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(26, 26, 46, 0.4));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-overlay {
+            z-index: 2;
+            transform: translateY(10px);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            opacity: 0.9;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Button Magnetic Effect */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+            pointer-events: none;
+        }
+
+        .btn-primary:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Subtle Text Shadow on Hero */
+        .hero h1, .page-hero h1 {
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Improved Card Focus States */
+        .service-card:focus-within,
+        .testimonial-card:focus-within,
+        .area-card:focus-within {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 4px;
+        }
+
+        /* Smooth Image Load */
+        img {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        img[loading="lazy"] {
+            opacity: 0;
+        }
+
+        img[loading="lazy"].loaded,
+        img:not([loading="lazy"]) {
+            opacity: 1;
+        }
+
+        /* Tooltip for Floating CTA */
+        .floating-btn::after {
+            content: attr(title);
+            position: absolute;
+            right: calc(100% + 12px);
+            top: 50%;
+            transform: translateY(-50%) translateX(10px);
+            background: var(--color-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-btn:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .floating-btn::after {
+                display: none;
+            }
+        }
+
+        /* Back to Top Button Indicator */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--color-secondary);
+            transform: translateY(-4px);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                left: 1rem;
+                bottom: 1rem;
+                width: 40px;
+                height: 40px;
             }
         }
     </style>
@@ -2770,13 +3568,25 @@
     </script>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
     <header>
         <nav>
             <a href="javascript:void(0)" class="logo" onclick="showPage('home')">
                 <div class="logo-icon"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M4 18c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="12" cy="10" r="3"/></svg></div>
                 <span class="logo-text">Phoenix Pool Resurfacing</span>
             </a>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="javascript:void(0)" onclick="showPage('home')">Home</a></li>
                 <li class="dropdown">
@@ -2989,7 +3799,10 @@
         });
 
         function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menu-toggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
         }
 
         document.querySelectorAll('.dropdown > a').forEach(dropdown => {
@@ -3049,20 +3862,238 @@
             }
         });
 
-        // Header scroll effect
+        // Header scroll effect + Scroll Progress + Back to Top
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
+            const scrollProgress = document.getElementById('scroll-progress');
+            const backToTop = document.getElementById('back-to-top');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+            // Header
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
+
+            // Scroll progress bar
+            if (scrollProgress) {
+                scrollProgress.style.width = scrollPercent + '%';
+            }
+
+            // Back to top button
+            if (backToTop) {
+                if (window.scrollY > 600) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
         });
+
+        // =========================
+        // PHASE 1-4 ENHANCEMENTS
+        // =========================
+
+        // Scroll Animation Observer
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    // Trigger counter animation if it's a stat
+                    if (entry.target.querySelector('.stat-number, .hero-stat-number')) {
+                        animateCounters(entry.target);
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Add scroll-animate class to elements on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Elements to animate on scroll
+            const animateElements = document.querySelectorAll('.service-card, .process-step, .feature, .testimonial-card, .faq-item, .area-card, .badge-item, .gallery-item, .blog-card, .feature-card, .stat-item');
+            animateElements.forEach((el, index) => {
+                el.classList.add('scroll-animate');
+                el.classList.add('stagger-' + ((index % 6) + 1));
+                scrollObserver.observe(el);
+            });
+
+            // Section headers
+            document.querySelectorAll('.section-header').forEach(el => {
+                el.classList.add('scroll-animate');
+                scrollObserver.observe(el);
+            });
+        });
+
+        // Counter Animation
+        function animateCounters(container) {
+            const counters = container.querySelectorAll('.stat-number, .hero-stat-number');
+            counters.forEach(counter => {
+                if (counter.dataset.animated) return;
+                counter.dataset.animated = 'true';
+                counter.classList.add('count-up');
+
+                const text = counter.textContent;
+                const match = text.match(/^([\d,]+)/);
+                if (match) {
+                    const target = parseInt(match[1].replace(/,/g, ''));
+                    const suffix = text.replace(match[1], '');
+                    const duration = 1500;
+                    const start = performance.now();
+
+                    function update(currentTime) {
+                        const elapsed = currentTime - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.floor(target * eased);
+                        counter.textContent = current.toLocaleString() + suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        } else {
+                            counter.textContent = text;
+                        }
+                    }
+                    requestAnimationFrame(update);
+                }
+            });
+        }
+
+        // Animate hero stats on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const heroStats = document.querySelector('.hero-stats');
+                if (heroStats) animateCounters(heroStats);
+            }, 800);
+        });
+
+        // Image Comparison Slider
+        function initImageCompare(container) {
+            const slider = container.querySelector('.compare-slider');
+            const afterImage = container.querySelector('.compare-after');
+            let isDragging = false;
+
+            function updateSlider(x) {
+                const rect = container.getBoundingClientRect();
+                let percentage = ((x - rect.left) / rect.width) * 100;
+                percentage = Math.max(0, Math.min(100, percentage));
+
+                slider.style.left = percentage + '%';
+                afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+            }
+
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateSlider(e.clientX);
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (isDragging) updateSlider(e.clientX);
+            });
+
+            container.addEventListener('mouseup', () => isDragging = false);
+            container.addEventListener('mouseleave', () => isDragging = false);
+
+            // Touch support
+            container.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                updateSlider(e.touches[0].clientX);
+            });
+
+            container.addEventListener('touchmove', (e) => {
+                if (isDragging) {
+                    e.preventDefault();
+                    updateSlider(e.touches[0].clientX);
+                }
+            });
+
+            container.addEventListener('touchend', () => isDragging = false);
+        }
+
+        // Initialize all image comparison sliders
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.image-compare').forEach(initImageCompare);
+        });
+
+        // Floating CTA visibility
+        window.addEventListener('scroll', () => {
+            const floatingCta = document.querySelector('.floating-cta');
+            if (floatingCta) {
+                if (window.scrollY > 500) {
+                    floatingCta.classList.add('visible');
+                } else {
+                    floatingCta.classList.remove('visible');
+                }
+            }
+        });
+
+        // Form validation enhancement
+        document.addEventListener('DOMContentLoaded', () => {
+            const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+            formInputs.forEach(input => {
+                // Add validation icon container
+                if (input.type !== 'submit' && input.tagName !== 'SELECT') {
+                    const wrapper = input.parentElement;
+                    if (!wrapper.querySelector('.input-valid-icon')) {
+                        const icon = document.createElement('span');
+                        icon.className = 'input-valid-icon';
+                        icon.innerHTML = '<i class="ph ph-check-circle" style="font-size: 1.25rem;"></i>';
+                        if (input.tagName === 'TEXTAREA') {
+                            icon.style.top = '1.5rem';
+                        }
+                        wrapper.appendChild(icon);
+                    }
+                }
+            });
+
+            // Lazy image load handler for smooth fade-in
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            lazyImages.forEach(img => {
+                if (img.complete) {
+                    img.classList.add('loaded');
+                } else {
+                    img.addEventListener('load', () => img.classList.add('loaded'));
+                }
+            });
+        });
+
+        // Enhanced form success state
+        function showFormSuccess() {
+            const successDiv = document.getElementById('form-success');
+            if (successDiv && !successDiv.querySelector('.success-checkmark')) {
+                const checkmark = document.createElement('div');
+                checkmark.className = 'success-checkmark';
+                checkmark.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>';
+                successDiv.insertBefore(checkmark, successDiv.firstChild);
+            }
+        }
+
+        // Trigger success animation when form succeeds
+        const originalFormHandler = document.getElementById('contact-form');
+        if (originalFormHandler) {
+            originalFormHandler.addEventListener('submit', function() {
+                setTimeout(showFormSuccess, 100);
+            });
+        }
     </script>
+
+    <!-- Floating CTA Buttons -->
+    <div class="floating-cta">
+        <a href="tel:6025550123" class="floating-btn floating-btn-phone" title="Call Us">
+            <i class="ph ph-phone" style="font-size: 1.5rem;"></i>
+        </a>
+        <a href="javascript:void(0)" onclick="showPage('contact')" class="floating-btn floating-btn-quote" title="Get Quote">
+            <i class="ph ph-chat-text" style="font-size: 1.5rem;"></i>
+        </a>
+    </div>
 
     <!-- HOME PAGE -->
     <div id="home" class="page-container active">
         <section class="hero">
+            <div class="hero-mesh"></div>
             <div class="hero-content">
                 <span class="hero-tag">Phoenix Pool Experts</span>
                 <h1>Pool Resurfacing <span>Done Right</span></h1>
@@ -3263,27 +4294,27 @@
                 <p class="section-subtitle">Licensed, insured, and certified professionals</p>
             </div>
             <div class="badges-grid">
-                <div class="badge-item">
+                <a href="https://roc.az.gov/" target="_blank" rel="noopener" class="badge-item" title="Verify our Arizona ROC License">
                     <div class="badge-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <span class="badge-label">AZ ROC Licensed</span>
                     <span class="badge-sublabel">Registrar of Contractors</span>
-                </div>
-                <div class="badge-item">
+                </a>
+                <a href="https://www.bbb.org/" target="_blank" rel="noopener" class="badge-item" title="Check our BBB Rating">
                     <div class="badge-icon">
                         <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
                     </div>
-                    <span class="badge-label">Fully Insured</span>
-                    <span class="badge-sublabel">Liability & Workers Comp</span>
-                </div>
-                <div class="badge-item">
+                    <span class="badge-label">BBB Accredited</span>
+                    <span class="badge-sublabel">A+ Rating</span>
+                </a>
+                <a href="https://www.angi.com/" target="_blank" rel="noopener" class="badge-item" title="Read our Angi Reviews">
                     <div class="badge-icon">
                         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
-                    <span class="badge-label">5-Star Rated</span>
-                    <span class="badge-sublabel">Google Reviews</span>
-                </div>
+                    <span class="badge-label">Angi Certified</span>
+                    <span class="badge-sublabel">Top Rated Pro</span>
+                </a>
                 <div class="badge-item">
                     <div class="badge-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
@@ -3326,6 +4357,22 @@
                     <p class="testimonial-location">Mesa, AZ</p>
                 </div>
             </div>
+
+            <!-- Google Reviews Widget -->
+            <div class="reviews-widget">
+                <div class="reviews-widget-header">
+                    <svg class="google-logo" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/><path fill="#EA4335" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/><path fill="#FBBC05" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/><path fill="#4285F4" d="M225 3v65h-9.5V3h9.5z"/><path fill="#34A853" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/><path fill="#EA4335" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z"/></svg>
+                    <span style="font-weight: 600; color: var(--color-text);">Reviews</span>
+                </div>
+                <div class="reviews-rating">
+                    <span class="reviews-rating-number">5.0</span>
+                    <span class="reviews-stars">★★★★★</span>
+                </div>
+                <p class="reviews-count">Based on 100+ reviews</p>
+                <a href="#" class="reviews-cta" target="_blank" rel="noopener">
+                    Read our reviews <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
         </section>
 
         <section>
@@ -3334,11 +4381,14 @@
                 <p class="section-subtitle">Pool transformations across the Phoenix Metro Area</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=80" alt="Pebble Tec pool resurfacing in Scottsdale" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Pebble Tec</div>
-                        <div class="gallery-title">Scottsdale - Ocean Blue</div>
+                <!-- Before/After Comparison Slider -->
+                <div class="gallery-item" style="grid-column: span 2;">
+                    <div class="image-compare">
+                        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=800&q=80" alt="Before - worn pool surface" class="compare-before">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80" alt="After - Pebble Tec resurfacing" class="compare-after">
+                        <div class="compare-slider"></div>
+                        <span class="compare-label compare-label-before">Before</span>
+                        <span class="compare-label compare-label-after">After</span>
                     </div>
                 </div>
                 <div class="gallery-item">
@@ -3386,27 +4436,27 @@
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">How much does pool resurfacing cost in Phoenix? <span>+</span></div>
+                    <div class="faq-question"><i class="ph ph-currency-dollar faq-icon"></i>How much does pool resurfacing cost in Phoenix? <span>+</span></div>
                     <div class="faq-answer">Pool resurfacing typically costs $4,000-$15,000 depending on pool size and finish type. Basic plaster runs $4-6 per square foot, while premium Pebble Tec costs $8-12 per square foot. We provide free estimates with exact pricing for your pool.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">How long does pool resurfacing take? <span>+</span></div>
+                    <div class="faq-question"><i class="ph ph-clock faq-icon"></i>How long does pool resurfacing take? <span>+</span></div>
                     <div class="faq-answer">Most pool resurfacing projects take 5-7 days from start to finish. This includes draining, surface preparation, applying the new finish, filling, and initial chemical balancing. Weather can occasionally affect timing.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">When is the best time to resurface a pool in Arizona? <span>+</span></div>
+                    <div class="faq-question"><i class="ph ph-calendar faq-icon"></i>When is the best time to resurface a pool in Arizona? <span>+</span></div>
                     <div class="faq-answer">October through March is ideal. Cooler temperatures allow for better curing of the new surface, and you won't miss prime swimming season. However, we resurface pools year-round with proper precautions.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">How long does pool plaster last? <span>+</span></div>
+                    <div class="faq-question"><i class="ph ph-timer faq-icon"></i>How long does pool plaster last? <span>+</span></div>
                     <div class="faq-answer">Standard pool plaster lasts 7-12 years in Arizona's harsh climate. Pebble Tec and quartz finishes last 15-20+ years due to their superior durability against sun exposure and hard water.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Pebble Tec vs plaster - which is better? <span>+</span></div>
+                    <div class="faq-question"><i class="ph ph-scales faq-icon"></i>Pebble Tec vs plaster - which is better? <span>+</span></div>
                     <div class="faq-answer">Pebble Tec costs more upfront ($8-12/sq ft vs $4-6/sq ft for plaster) but lasts twice as long and requires less maintenance. For Arizona pools exposed to intense sun and hard water, Pebble Tec often provides better long-term value.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Can you resurface a pool with water in it? <span>+</span></div>
+                    <div class="faq-question"><i class="ph ph-drop faq-icon"></i>Can you resurface a pool with water in it? <span>+</span></div>
                     <div class="faq-answer">No, the pool must be completely drained for resurfacing. We handle the draining, and proper drainage is important to avoid damaging the pool structure from hydrostatic pressure.</div>
                 </div>
             </div>
@@ -6563,10 +7613,13 @@
                 </form>
 
                 <!-- Success message (shown after form submission) -->
-                <div id="form-success" style="display: none; text-align: center; padding: 2rem; background: #d4edda; border-radius: var(--radius-md); margin-top: 1rem;">
-                    <h3 style="color: #155724; margin-bottom: 0.5rem;">Thank You!</h3>
-                    <p style="color: #155724;">We've received your request and will contact you within 24 hours.</p>
-                    <p style="color: #155724; margin-top: 1rem;">For immediate assistance, call <strong>(602) 555-0123</strong></p>
+                <div id="form-success" style="display: none; text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-radius: var(--radius-lg); margin-top: 1rem; border: 1px solid #a7f3d0;">
+                    <div class="success-checkmark">
+                        <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+                    </div>
+                    <h3 style="color: #065f46; margin-bottom: 0.75rem; font-size: 1.5rem;">Thank You!</h3>
+                    <p style="color: #047857; font-size: 1.1rem;">We've received your request and will contact you within 24 hours.</p>
+                    <p style="color: #047857; margin-top: 1.5rem;">For immediate assistance, call <a href="tel:6025550123" style="color: #065f46; font-weight: 700;">(602) 555-0123</a></p>
                 </div>
 
                 <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-border); text-align: center;">
