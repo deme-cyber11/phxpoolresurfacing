@@ -2253,6 +2253,225 @@
             box-shadow: 0 0 0 4px rgba(90, 114, 130, 0.12);
         }
 
+        /* Enhanced Contact Page */
+        .contact-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 100%);
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-info-card {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border-light);
+            transition: var(--transition);
+        }
+
+        .contact-info-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1) 0%, rgba(233, 69, 96, 0.05) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-info-icon i {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+        }
+
+        .contact-info-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: var(--color-text);
+        }
+
+        .contact-info-card p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin: 0;
+        }
+
+        .contact-phone-link {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-email-link {
+            color: var(--color-accent);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .contact-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .contact-badge i {
+            color: var(--color-accent);
+        }
+
+        .contact-form-column .contact-form {
+            max-width: 100%;
+            background: var(--color-surface);
+            padding: 2.5rem;
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--color-border-light);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .contact-form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form-header h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-header p {
+            color: var(--color-text-muted);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .form-group label i {
+            margin-right: 0.5rem;
+            color: var(--color-accent);
+        }
+
+        .contact-submit-btn {
+            width: 100%;
+            padding: 1.125rem 2rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .contact-submit-btn i {
+            font-size: 1.25rem;
+        }
+
+        .form-success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-radius: var(--radius-lg);
+            margin-top: 1.5rem;
+            border: 1px solid #a7f3d0;
+        }
+
+        .form-success-message h3 {
+            color: #065f46;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .form-success-message p {
+            color: #047857;
+            font-size: 1.1rem;
+        }
+
+        .form-success-message .success-call {
+            margin-top: 1.5rem;
+        }
+
+        .form-success-message .success-call a {
+            color: #065f46;
+            font-weight: 700;
+        }
+
+        .contact-map-section {
+            padding: 0;
+        }
+
+        .contact-map-container {
+            width: 100%;
+            height: 400px;
+        }
+
+        .contact-map-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info-column {
+                order: 2;
+            }
+
+            .contact-form-column {
+                order: 1;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-column .contact-form {
+                padding: 1.75rem;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             .menu-toggle {
@@ -7548,107 +7767,163 @@
 
     <!-- CONTACT PAGE -->
     <div id="contact" class="page-container">
-        <div class="service-hero">
-            <h1>Contact Us</h1>
-            <p>Get your free pool resurfacing estimate</p>
+        <div class="service-hero" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);">
+            <h1>Get Your Free Estimate</h1>
+            <p>Transform your pool with Phoenix's trusted resurfacing experts</p>
         </div>
-        <section style="padding: 4rem 2rem;">
-            <div class="contact-form">
-                <h2 style="text-align: center; margin-bottom: 0.5rem;">Request Free Estimate</h2>
-                <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 2rem;">We'll contact you within 24 hours</p>
 
-                <!-- Web3Forms - Get free access key at https://web3forms.com -->
-                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                    <!-- Web3Forms configuration -->
-                    <input type="hidden" name="access_key" value="d6f71870-3ee4-474c-8056-b8f67f1ad6d4">
-                    <input type="hidden" name="subject" value="New Pool Resurfacing Estimate Request">
-                    <input type="hidden" name="redirect" value="https://phxpoolresurfacing.com/#contact-success">
-                    <input type="checkbox" name="botcheck" style="display:none"> <!-- Honeypot spam protection -->
+        <section class="contact-section">
+            <div class="contact-grid">
+                <!-- Left Column - Contact Info -->
+                <div class="contact-info-column">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="ph ph-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Call Us Directly</h3>
+                            <a href="tel:6025550123" class="contact-phone-link">(602) 555-0123</a>
+                            <p>Mon-Fri 7am-6pm, Sat 8am-4pm</p>
+                        </div>
+                    </div>
 
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="ph ph-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email Us</h3>
+                            <a href="mailto:contact@phxpoolresurfacing.com" class="contact-email-link">contact@phxpoolresurfacing.com</a>
+                            <p>We respond within 24 hours</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="(602) 555-1234">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="city">City/Area *</label>
-                        <select id="city" name="city" required>
-                            <option value="">Select your area...</option>
-                            <option value="Phoenix">Phoenix</option>
-                            <option value="Scottsdale">Scottsdale</option>
-                            <option value="Mesa">Mesa</option>
-                            <option value="Tempe">Tempe</option>
-                            <option value="Chandler">Chandler</option>
-                            <option value="Gilbert">Gilbert</option>
-                            <option value="Glendale">Glendale</option>
-                            <option value="Peoria">Peoria</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Needed *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a service...</option>
-                            <option value="Plaster Resurfacing">Plaster Resurfacing</option>
-                            <option value="Pebble Tec / Aggregate">Pebble Tec / Aggregate</option>
-                            <option value="Quartz Finish">Quartz Finish</option>
-                            <option value="Tile & Coping Repair">Tile & Coping Repair</option>
-                            <option value="Pool Deck Resurfacing">Pool Deck Resurfacing</option>
-                            <option value="Acid Wash">Acid Wash</option>
-                            <option value="Not Sure - Need Advice">Not Sure - Need Advice</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Tell Us About Your Pool</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Approximate pool size, current surface type, any specific issues..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Request Free Estimate</button>
-                </form>
 
-                <!-- Success message (shown after form submission) -->
-                <div id="form-success" style="display: none; text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-radius: var(--radius-lg); margin-top: 1rem; border: 1px solid #a7f3d0;">
-                    <div class="success-checkmark">
-                        <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="ph ph-map-pin"></i>
+                        </div>
+                        <div>
+                            <h3>Service Area</h3>
+                            <p style="font-weight: 600; color: var(--color-text);">Phoenix Metro Area</p>
+                            <p>Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert & more</p>
+                        </div>
                     </div>
-                    <h3 style="color: #065f46; margin-bottom: 0.75rem; font-size: 1.5rem;">Thank You!</h3>
-                    <p style="color: #047857; font-size: 1.1rem;">We've received your request and will contact you within 24 hours.</p>
-                    <p style="color: #047857; margin-top: 1.5rem;">For immediate assistance, call <a href="tel:6025550123" style="color: #065f46; font-weight: 700;">(602) 555-0123</a></p>
+
+                    <div class="contact-trust-badges">
+                        <div class="contact-badge">
+                            <i class="ph ph-shield-check"></i>
+                            <span>Licensed & Insured</span>
+                        </div>
+                        <div class="contact-badge">
+                            <i class="ph ph-star"></i>
+                            <span>5-Star Rated</span>
+                        </div>
+                        <div class="contact-badge">
+                            <i class="ph ph-clock"></i>
+                            <span>24hr Response</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-border); text-align: center;">
-                    <p style="margin-bottom: 0.5rem;"><strong>Prefer to call?</strong></p>
-                    <a href="tel:6025550123" style="font-size: 1.5rem; color: var(--color-primary); font-weight: 700;">(602) 555-0123</a>
-                    <p style="color: var(--color-text-muted); margin-top: 0.5rem;">Mon-Fri 7am-6pm, Sat 8am-4pm</p>
+                <!-- Right Column - Form -->
+                <div class="contact-form-column">
+                    <div class="contact-form">
+                        <div class="contact-form-header">
+                            <h2>Request Free Estimate</h2>
+                            <p>Fill out the form and we'll contact you within 24 hours</p>
+                        </div>
+
+                        <!-- Web3Forms -->
+                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="d6f71870-3ee4-474c-8056-b8f67f1ad6d4">
+                            <input type="hidden" name="subject" value="New Pool Resurfacing Estimate Request">
+                            <input type="hidden" name="redirect" value="https://phxpoolresurfacing.com/#contact-success">
+                            <input type="checkbox" name="botcheck" style="display:none">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name"><i class="ph ph-user"></i> Your Name *</label>
+                                    <input type="text" id="name" name="name" required placeholder="John Smith">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone"><i class="ph ph-phone"></i> Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="(602) 555-1234">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email"><i class="ph ph-envelope"></i> Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="john@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="city"><i class="ph ph-map-pin"></i> City/Area *</label>
+                                    <select id="city" name="city" required>
+                                        <option value="">Select your area...</option>
+                                        <option value="Phoenix">Phoenix</option>
+                                        <option value="Scottsdale">Scottsdale</option>
+                                        <option value="Mesa">Mesa</option>
+                                        <option value="Tempe">Tempe</option>
+                                        <option value="Chandler">Chandler</option>
+                                        <option value="Gilbert">Gilbert</option>
+                                        <option value="Glendale">Glendale</option>
+                                        <option value="Peoria">Peoria</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service"><i class="ph ph-wrench"></i> Service Needed *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="Plaster Resurfacing">Plaster Resurfacing</option>
+                                    <option value="Pebble Tec / Aggregate">Pebble Tec / Aggregate</option>
+                                    <option value="Quartz Finish">Quartz Finish</option>
+                                    <option value="Tile & Coping Repair">Tile & Coping Repair</option>
+                                    <option value="Pool Deck Resurfacing">Pool Deck Resurfacing</option>
+                                    <option value="Acid Wash">Acid Wash</option>
+                                    <option value="Not Sure - Need Advice">Not Sure - Need Advice</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message"><i class="ph ph-chat-text"></i> Tell Us About Your Pool</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Approximate pool size, current surface type, any specific issues..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary contact-submit-btn">
+                                <i class="ph ph-paper-plane-tilt"></i> Request Free Estimate
+                            </button>
+                        </form>
+
+                        <!-- Success message -->
+                        <div id="form-success" class="form-success-message">
+                            <div class="success-checkmark">
+                                <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+                            </div>
+                            <h3>Thank You!</h3>
+                            <p>We've received your request and will contact you within 24 hours.</p>
+                            <p class="success-call">For immediate assistance, call <a href="tel:6025550123">(602) 555-0123</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section style="padding: 0 2rem 4rem;">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <h2 style="text-align: center; margin-bottom: 0.5rem; font-family: var(--font-display);">Service Area</h2>
-                <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 2rem;">We serve the entire Phoenix Metro Area</p>
-                <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d425345.6706956648!2d-112.40406366249999!3d33.60561355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed50a179cb%3A0x8c69c7f8354a1bac!2sPhoenix%2C%20AZ!5e0!3m2!1sen!2sus!4v1706000000000!5m2!1sen!2sus"
-                        width="100%"
-                        height="350"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Phoenix Pool Resurfacing Service Area Map">
-                    </iframe>
-                </div>
-                <p style="text-align: center; color: var(--color-text-muted); margin-top: 1rem; font-size: 0.9rem;">
-                    Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, Peoria & surrounding areas
-                </p>
+        <!-- Map Section -->
+        <section class="contact-map-section">
+            <div class="contact-map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d425345.6706956648!2d-112.40406366249999!3d33.60561355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed50a179cb%3A0x8c69c7f8354a1bac!2sPhoenix%2C%20AZ!5e0!3m2!1sen!2sus!4v1706000000000!5m2!1sen!2sus"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Phoenix Pool Resurfacing Service Area Map">
+                </iframe>
             </div>
         </section>
     </div>
