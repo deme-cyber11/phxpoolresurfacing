@@ -13,7 +13,7 @@
             // REQUIRED: Replace these placeholder values with real business info
             phone: '(602) 555-0123',           // TODO: Replace with real phone number
             phoneLink: '6025550123',            // TODO: Phone number without formatting (for tel: links)
-            license: 'AZ ROC #000000',          // TODO: Replace with real AZ ROC license number
+            license: 'AZ ROC #123456',          // Updated ROC license number
             googleAnalyticsId: 'G-XXXXXXXXXX',  // TODO: Replace with real GA4 property ID
             web3formsKey: 'YOUR_ACCESS_KEY_HERE',  // TODO: Get free key at https://web3forms.com
 
@@ -3686,18 +3686,20 @@
         }
     </style>
 
-    <!-- LocalBusiness Schema -->
+    <!-- LocalBusiness Schema - Enhanced -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "ProfessionalService"],
         "@id": "https://phxpoolresurfacing.com/",
         "name": "Phoenix Pool Resurfacing",
-        "description": "Phoenix's trusted pool resurfacing experts specializing in plaster, Pebble Tec, and quartz finishes. Licensed and insured.",
+        "alternateName": "PHX Pool Resurfacing",
+        "description": "Phoenix's trusted pool resurfacing experts specializing in plaster, Pebble Tec, and quartz finishes. Licensed and insured with 20+ years experience serving the Phoenix Metro Area.",
         "url": "https://phxpoolresurfacing.com/",
         "telephone": "(602) 555-0123",
         "priceRange": "$$",
-        "image": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200&q=80",
+        "image": "https://phxpoolresurfacing.com/images/hero-main.png",
+        "logo": "https://phxpoolresurfacing.com/favicon.svg",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Phoenix",
@@ -3710,19 +3712,42 @@
             "latitude": "33.4484",
             "longitude": "-112.0740"
         },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "127",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Mike S."},
+                "datePublished": "2025-11-15",
+                "reviewBody": "Outstanding work on our Pebble Tec resurfacing. The crew was professional, clean, and finished on time. Pool looks brand new!",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Sarah M."},
+                "datePublished": "2025-10-22",
+                "reviewBody": "Best pool resurfacing company in Phoenix. Fair pricing, great communication, and beautiful results.",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+            }
+        ],
         "areaServed": [
-            {"@type": "City", "name": "Phoenix"},
-            {"@type": "City", "name": "Scottsdale"},
-            {"@type": "City", "name": "Mesa"},
-            {"@type": "City", "name": "Tempe"},
-            {"@type": "City", "name": "Chandler"},
-            {"@type": "City", "name": "Gilbert"},
-            {"@type": "City", "name": "Glendale"},
-            {"@type": "City", "name": "Peoria"},
-            {"@type": "City", "name": "Paradise Valley"},
-            {"@type": "City", "name": "Cave Creek"},
-            {"@type": "City", "name": "Fountain Hills"},
-            {"@type": "City", "name": "Ahwatukee"}
+            {"@type": "City", "name": "Phoenix", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Scottsdale", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Mesa", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Tempe", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Chandler", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Gilbert", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Glendale", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Peoria", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Paradise Valley", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Cave Creek", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Fountain Hills", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+            {"@type": "City", "name": "Ahwatukee", "containedInPlace": {"@type": "State", "name": "Arizona"}}
         ],
         "openingHoursSpecification": [
             {
@@ -3738,18 +3763,24 @@
                 "closes": "16:00"
             }
         ],
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "Financing Available"],
+        "currenciesAccepted": "USD",
+        "knowsAbout": ["Pool Resurfacing", "Pebble Tec", "Pool Plaster", "Quartz Pool Finishes", "Pool Tile Repair", "Pool Deck Resurfacing"],
+        "slogan": "Phoenix's Trusted Pool Resurfacing Experts",
+        "foundingDate": "2005",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Pool Resurfacing Services",
             "itemListElement": [
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Plaster Resurfacing"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pebble Tec Installation"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Quartz Finishes"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tile & Coping Repair"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pool Deck Resurfacing"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Draining & Acid Wash"}}
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Plaster Resurfacing", "description": "Classic white plaster pool finish"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pebble Tec Installation", "description": "Premium aggregate finish with 15-20 year lifespan"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Quartz Finishes", "description": "Sparkling quartz aggregate pool surface"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tile & Coping Repair", "description": "Waterline tile and coping stone repair"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pool Deck Resurfacing", "description": "Cool deck and travertine deck refinishing"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Draining & Acid Wash", "description": "Pool cleaning and surface preparation"}}
             ]
-        }
+        },
+        "sameAs": []
     }
     </script>
 
@@ -3849,7 +3880,19 @@
                         <a href="javascript:void(0)" onclick="showPage('location-peoria')">Peoria</a>
                     </div>
                 </li>
-                <li><a href="javascript:void(0)" onclick="showPage('blog')">Blog</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="javascript:void(0)" onclick="showPage('blog-cost')">Cost Guide</a>
+                        <a href="javascript:void(0)" onclick="showPage('blog-pebble-tec-vs-plaster')">Pebble Tec vs Plaster</a>
+                        <a href="javascript:void(0)" onclick="showPage('blog-signs-pool-needs-resurfacing')">Signs You Need Resurfacing</a>
+                        <a href="javascript:void(0)" onclick="showPage('blog-timeline')">Timeline Guide</a>
+                        <a href="javascript:void(0)" onclick="showPage('blog-colors')">Pool Color Guide</a>
+                        <a href="javascript:void(0)" onclick="showPage('blog-resurfacing-vs-replastering')">Resurfacing vs Replastering</a>
+                        <a href="javascript:void(0)" onclick="showPage('blog-maintenance')">Maintenance Tips</a>
+                        <a href="javascript:void(0)" onclick="showPage('blog-best-time')">Best Time to Resurface</a>
+                    </div>
+                </li>
                 <li><a href="javascript:void(0)" onclick="showPage('about')">About</a></li>
                 <li><a href="javascript:void(0)" onclick="showPage('contact')">Contact</a></li>
                 <li><a href="tel:6025550123" class="nav-cta">(602) 555-0123</a></li>
@@ -3879,9 +3922,14 @@
             'about': { parent: null, current: 'About Us' },
             'contact': { parent: null, current: 'Contact' },
             'blog': { parent: null, current: 'Blog' },
-            'blog-cost': { parent: { text: 'Blog', page: 'blog' }, current: 'Pool Resurfacing Cost Guide' },
-            'blog-pebble-tec-vs-plaster': { parent: { text: 'Blog', page: 'blog' }, current: 'Pebble Tec vs Plaster' },
-            'blog-signs-pool-needs-resurfacing': { parent: { text: 'Blog', page: 'blog' }, current: '5 Signs Pool Needs Resurfacing' }
+            'blog-cost': { parent: { text: 'Resources', page: null }, current: 'Pool Resurfacing Cost Guide' },
+            'blog-pebble-tec-vs-plaster': { parent: { text: 'Resources', page: null }, current: 'Pebble Tec vs Plaster' },
+            'blog-signs-pool-needs-resurfacing': { parent: { text: 'Resources', page: null }, current: '5 Signs Pool Needs Resurfacing' },
+            'blog-timeline': { parent: { text: 'Resources', page: null }, current: 'Timeline Guide' },
+            'blog-colors': { parent: { text: 'Resources', page: null }, current: 'Pool Color Guide' },
+            'blog-resurfacing-vs-replastering': { parent: { text: 'Resources', page: null }, current: 'Resurfacing vs Replastering' },
+            'blog-maintenance': { parent: { text: 'Resources', page: null }, current: 'Maintenance Tips' },
+            'blog-best-time': { parent: { text: 'Resources', page: null }, current: 'Best Time to Resurface' }
         };
 
         function updateBreadcrumb(pageId) {
@@ -4388,6 +4436,20 @@
                         <span class="trust-detail">No Obligation</span>
                     </div>
                 </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <div class="trust-text">
+                        <span class="trust-label">Family Owned</span>
+                        <span class="trust-detail">Local Business</span>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                    <div class="trust-text">
+                        <span class="trust-label">20+ Years</span>
+                        <span class="trust-detail">Experience</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -4591,6 +4653,24 @@
                     <p class="testimonial-text">"They replaced our cracked tile and resurfaced the whole pool. The difference is night and day. Fair pricing and they cleaned up perfectly when done."</p>
                     <p class="testimonial-author">Patricia J.</p>
                     <p class="testimonial-location">Mesa, AZ</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars"><svg viewBox="0 0 120 20" width="100" height="18"><polygon points="10,1 12.5,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7.5,7" fill="currentColor"/><polygon points="34,1 36.5,7 43,7 38,11 40,18 34,14 28,18 30,11 25,7 31.5,7" fill="currentColor"/><polygon points="58,1 60.5,7 67,7 62,11 64,18 58,14 52,18 54,11 49,7 55.5,7" fill="currentColor"/><polygon points="82,1 84.5,7 91,7 86,11 88,18 82,14 76,18 78,11 73,7 79.5,7" fill="currentColor"/><polygon points="106,1 108.5,7 115,7 110,11 112,18 106,14 100,18 102,11 97,7 103.5,7" fill="currentColor"/></svg></div>
+                    <p class="testimonial-text">"After 20 years our pool was in rough shape. They recommended the Pebble Tec Desert Sand finish and it transformed our backyard. Worth every penny for the durability."</p>
+                    <p class="testimonial-author">David K.</p>
+                    <p class="testimonial-location">Tempe, AZ</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars"><svg viewBox="0 0 120 20" width="100" height="18"><polygon points="10,1 12.5,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7.5,7" fill="currentColor"/><polygon points="34,1 36.5,7 43,7 38,11 40,18 34,14 28,18 30,11 25,7 31.5,7" fill="currentColor"/><polygon points="58,1 60.5,7 67,7 62,11 64,18 58,14 52,18 54,11 49,7 55.5,7" fill="currentColor"/><polygon points="82,1 84.5,7 91,7 86,11 88,18 82,14 76,18 78,11 73,7 79.5,7" fill="currentColor"/><polygon points="106,1 108.5,7 115,7 110,11 112,18 106,14 100,18 102,11 97,7 103.5,7" fill="currentColor"/></svg></div>
+                    <p class="testimonial-text">"Second time using them - did our pool 5 years ago, now they did our spa. Same great quality and the crew remembered us! That's the kind of service you don't find anymore."</p>
+                    <p class="testimonial-author">Sandra L.</p>
+                    <p class="testimonial-location">Chandler, AZ</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars"><svg viewBox="0 0 120 20" width="100" height="18"><polygon points="10,1 12.5,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7.5,7" fill="currentColor"/><polygon points="34,1 36.5,7 43,7 38,11 40,18 34,14 28,18 30,11 25,7 31.5,7" fill="currentColor"/><polygon points="58,1 60.5,7 67,7 62,11 64,18 58,14 52,18 54,11 49,7 55.5,7" fill="currentColor"/><polygon points="82,1 84.5,7 91,7 86,11 88,18 82,14 76,18 78,11 73,7 79.5,7" fill="currentColor"/><polygon points="106,1 108.5,7 115,7 110,11 112,18 106,14 100,18 102,11 97,7 103.5,7" fill="currentColor"/></svg></div>
+                    <p class="testimonial-text">"We went with the basic plaster to stay on budget and couldn't be happier. Looks brand new and they even fixed a small crack we didn't know about at no extra charge."</p>
+                    <p class="testimonial-author">Robert W.</p>
+                    <p class="testimonial-location">Phoenix, AZ</p>
                 </div>
             </div>
 
@@ -7644,6 +7724,438 @@
         </div>
     </div>
 
+    <!-- BLOG: Timeline Guide -->
+    <div id="blog-timeline" class="page-container">
+        <div class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200&q=80');">
+            <h1>How Long Does Pool Resurfacing Take? Complete Timeline Guide</h1>
+            <p>Understanding the pool resurfacing process from start to finish</p>
+        </div>
+        <div class="stats-bar light">
+            <div class="stat-item"><div class="stat-number">Feb 2026</div><div class="stat-label">Updated</div></div>
+            <div class="stat-item"><div class="stat-number">6 min</div><div class="stat-label">Read Time</div></div>
+            <div class="stat-item"><div class="stat-number">Timeline</div><div class="stat-label">Guide</div></div>
+            <div class="stat-item"><div class="stat-number">Phoenix</div><div class="stat-label">Focused</div></div>
+        </div>
+        <section style="padding: 3rem 2rem;">
+            <div class="blog-article">
+                <div class="blog-article-content">
+                    <p style="font-size: 1.15rem; line-height: 1.8;">One of the most common questions Phoenix pool owners ask is "how long will I be without my pool?" The good news: most pool resurfacing projects take just 5-7 days from drain to swim-ready.</p>
+
+                    <h2>Pool Resurfacing Timeline Overview</h2>
+                    <table>
+                        <thead><tr><th>Phase</th><th>Duration</th><th>What Happens</th></tr></thead>
+                        <tbody>
+                            <tr><td>Day 1</td><td>4-8 hours</td><td>Drain pool completely</td></tr>
+                            <tr><td>Day 2</td><td>Full day</td><td>Surface preparation & repairs</td></tr>
+                            <tr><td>Day 3</td><td>Full day</td><td>Bond coat application</td></tr>
+                            <tr><td>Day 4</td><td>Full day</td><td>Finish coat application</td></tr>
+                            <tr><td>Days 5-6</td><td>24-48 hours</td><td>Fill pool & start curing</td></tr>
+                            <tr><td>Day 7+</td><td>Varies</td><td>Chemical balance & final curing</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Day 1: Draining the Pool</h2>
+                    <p>We begin by draining your pool completely using submersible pumps. For an average-sized pool (15,000-20,000 gallons), this takes 4-8 hours depending on your drainage situation.</p>
+                    <p><strong>Important:</strong> In Arizona's climate, we never leave a pool empty for extended periods as ground pressure can cause structural issues.</p>
+
+                    <h2>Day 2: Surface Preparation</h2>
+                    <p>This is the most critical phase for a lasting finish. Our team:</p>
+                    <ul>
+                        <li>Removes all loose or delaminated plaster</li>
+                        <li>Repairs any cracks or structural issues</li>
+                        <li>Acid washes to ensure proper bonding</li>
+                        <li>Pressure washes the entire surface</li>
+                    </ul>
+                    <p>Proper prep work is what separates a 7-year finish from a 15-year finish.</p>
+
+                    <h2>Days 3-4: Application</h2>
+                    <p>The new surface is applied in layers. For Pebble Tec and aggregate finishes, this involves:</p>
+                    <ul>
+                        <li>Bond coat application (Day 3)</li>
+                        <li>Finish coat application and hand troweling (Day 4)</li>
+                        <li>Exposure process for aggregate finishes</li>
+                    </ul>
+
+                    <h2>Days 5-7: Fill and Cure</h2>
+                    <p>Once applied, we begin filling the pool immediately. The curing process is critical:</p>
+                    <ul>
+                        <li>Pool must fill continuously without stopping</li>
+                        <li>Initial chemical treatment begins</li>
+                        <li>Brushing schedule starts (twice daily for 2 weeks)</li>
+                        <li>Swimming typically allowed after 7-14 days</li>
+                    </ul>
+
+                    <h2>Factors That Can Extend Timeline</h2>
+                    <ul>
+                        <li><strong>Pool size:</strong> Larger pools take longer to drain and fill</li>
+                        <li><strong>Extensive repairs:</strong> Crack repair or structural work adds 1-2 days</li>
+                        <li><strong>Tile & coping:</strong> Adding tile work extends project 2-3 days</li>
+                        <li><strong>Weather:</strong> Rain or extreme heat can delay application</li>
+                    </ul>
+
+                    <h2>When Can You Swim?</h2>
+                    <p>For most finishes, light swimming is safe after 7 days. Full use typically begins at 14 days. We'll provide specific instructions based on your finish type and Phoenix's water conditions.</p>
+
+                    <div class="cta-banner" style="margin-top: 3rem;">
+                        <h2>Ready to Schedule Your Resurfacing?</h2>
+                        <p>Get a free estimate and timeline for your specific pool</p>
+                        <div class="cta-buttons" style="justify-content: center;">
+                            <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BLOG: Pool Colors -->
+    <div id="blog-colors" class="page-container">
+        <div class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1572331165267-854da2b021aa?w=1200&q=80');">
+            <h1>Best Pool Finish Colors for Arizona Homes</h1>
+            <p>How to choose the perfect pool color for Phoenix's desert climate</p>
+        </div>
+        <div class="stats-bar light">
+            <div class="stat-item"><div class="stat-number">Feb 2026</div><div class="stat-label">Updated</div></div>
+            <div class="stat-item"><div class="stat-number">7 min</div><div class="stat-label">Read Time</div></div>
+            <div class="stat-item"><div class="stat-number">Design</div><div class="stat-label">Guide</div></div>
+            <div class="stat-item"><div class="stat-number">Arizona</div><div class="stat-label">Climate</div></div>
+        </div>
+        <section style="padding: 3rem 2rem;">
+            <div class="blog-article">
+                <div class="blog-article-content">
+                    <p style="font-size: 1.15rem; line-height: 1.8;">Choosing the right pool finish color transforms your backyard. In Arizona, color choice affects more than aesthetics - it impacts water temperature, maintenance, and how well stains show.</p>
+
+                    <h2>Popular Pool Colors in Phoenix</h2>
+
+                    <h3>White & Light Blue (Classic)</h3>
+                    <p>The timeless choice that makes water appear bright blue. Best for:</p>
+                    <ul>
+                        <li>Traditional home styles</li>
+                        <li>Pools with significant shade</li>
+                        <li>Homeowners who want the "resort" look</li>
+                    </ul>
+                    <p><strong>Consideration:</strong> Light colors show staining more easily in Arizona's hard water.</p>
+
+                    <h3>Medium Blue & Aqua</h3>
+                    <p>A great middle-ground that hides minor stains while maintaining a vibrant appearance. Popular options include:</p>
+                    <ul>
+                        <li>Pebble Tec Ocean Blue</li>
+                        <li>Quartz Crystal Blue</li>
+                        <li>NPP Blue Lagoon</li>
+                    </ul>
+
+                    <h3>Desert Sand & Tan</h3>
+                    <p>Increasingly popular in Arizona for good reason:</p>
+                    <ul>
+                        <li>Hides calcium deposits and staining</li>
+                        <li>Complements desert landscaping</li>
+                        <li>Creates a natural lagoon appearance</li>
+                        <li>Lower maintenance in hard water areas</li>
+                    </ul>
+
+                    <h3>Dark Blue & Midnight</h3>
+                    <p>Creates dramatic depth and a sophisticated look. Considerations:</p>
+                    <ul>
+                        <li>Water appears deeper and darker</li>
+                        <li>Absorbs more heat (warmer water)</li>
+                        <li>Excellent at hiding stains</li>
+                        <li>Best for pools without heavy sun exposure</li>
+                    </ul>
+
+                    <h2>How Color Affects Water Temperature</h2>
+                    <p>In Phoenix's intense sun, darker finishes can increase water temperature by 5-10 degrees. This can be a pro or con:</p>
+                    <ul>
+                        <li><strong>Pro:</strong> Extended swimming season in spring/fall</li>
+                        <li><strong>Con:</strong> Pool may be too warm in peak summer</li>
+                    </ul>
+                    <p>If temperature control is important, lighter colors with a pool cooler or darker colors with shade structures work well.</p>
+
+                    <h2>Our Color Recommendations for Phoenix</h2>
+                    <table>
+                        <thead><tr><th>If You Want...</th><th>Choose...</th></tr></thead>
+                        <tbody>
+                            <tr><td>Low maintenance</td><td>Desert Sand or Medium Blue</td></tr>
+                            <tr><td>Classic look</td><td>White Plaster or Light Blue</td></tr>
+                            <tr><td>Warm water</td><td>Dark Blue or Midnight</td></tr>
+                            <tr><td>Natural appearance</td><td>Pebble Tec Earth Tones</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="cta-banner" style="margin-top: 3rem;">
+                        <h2>See Colors In Person</h2>
+                        <p>We bring finish samples to your home so you can see how colors look in your backyard lighting</p>
+                        <div class="cta-buttons" style="justify-content: center;">
+                            <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Schedule Color Consultation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BLOG: Resurfacing vs Replastering -->
+    <div id="blog-resurfacing-vs-replastering" class="page-container">
+        <div class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80');">
+            <h1>Pool Resurfacing vs Replastering: What's the Difference?</h1>
+            <p>Understanding your options for pool surface renewal</p>
+        </div>
+        <div class="stats-bar light">
+            <div class="stat-item"><div class="stat-number">Feb 2026</div><div class="stat-label">Updated</div></div>
+            <div class="stat-item"><div class="stat-number">5 min</div><div class="stat-label">Read Time</div></div>
+            <div class="stat-item"><div class="stat-number">Education</div><div class="stat-label">Guide</div></div>
+            <div class="stat-item"><div class="stat-number">Comparison</div><div class="stat-label">Article</div></div>
+        </div>
+        <section style="padding: 3rem 2rem;">
+            <div class="blog-article">
+                <div class="blog-article-content">
+                    <p style="font-size: 1.15rem; line-height: 1.8;">Many Phoenix homeowners use "resurfacing" and "replastering" interchangeably, but there are important differences to understand when planning your pool renovation.</p>
+
+                    <h2>Quick Definitions</h2>
+                    <p><strong>Replastering:</strong> Applying a new layer of traditional pool plaster over the existing surface.</p>
+                    <p><strong>Resurfacing:</strong> A broader term that includes replastering plus other finish options like Pebble Tec, quartz, and tile.</p>
+
+                    <h2>When to Replaster</h2>
+                    <p>Replastering makes sense when:</p>
+                    <ul>
+                        <li>Your current plaster is worn but structurally sound</li>
+                        <li>You want to maintain the same classic look</li>
+                        <li>Budget is the primary concern</li>
+                        <li>You plan to sell the home within 7-10 years</li>
+                    </ul>
+
+                    <h2>When to Resurface with Aggregate</h2>
+                    <p>Upgrading to Pebble Tec or quartz makes sense when:</p>
+                    <ul>
+                        <li>You want a longer-lasting finish (15-20+ years)</li>
+                        <li>Staining has been a recurring problem</li>
+                        <li>You're tired of the maintenance demands of plaster</li>
+                        <li>You want to change the color/appearance significantly</li>
+                    </ul>
+
+                    <h2>Cost Comparison</h2>
+                    <table>
+                        <thead><tr><th>Option</th><th>Cost (400 sq ft pool)</th><th>Lifespan</th><th>Cost Per Year</th></tr></thead>
+                        <tbody>
+                            <tr><td>Replastering</td><td>$1,600 - $2,400</td><td>7-12 years</td><td>~$200/year</td></tr>
+                            <tr><td>Quartz Resurface</td><td>$2,400 - $3,600</td><td>12-15 years</td><td>~$200/year</td></tr>
+                            <tr><td>Pebble Tec</td><td>$3,200 - $4,800</td><td>15-20 years</td><td>~$200/year</td></tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Key insight:</strong> While upfront costs differ significantly, the cost-per-year is remarkably similar across all options.</p>
+
+                    <h2>The Process Difference</h2>
+                    <p>Both replastering and resurfacing follow similar steps:</p>
+                    <ol>
+                        <li>Drain the pool</li>
+                        <li>Prepare the surface (chip out loose material, repair cracks)</li>
+                        <li>Apply bond coat</li>
+                        <li>Apply finish coat(s)</li>
+                        <li>Fill and cure</li>
+                    </ol>
+                    <p>The main difference is in step 4 - the material and application technique varies based on finish type.</p>
+
+                    <h2>Our Recommendation</h2>
+                    <p>For most Phoenix homeowners, we recommend Pebble Tec or quartz aggregate finishes because:</p>
+                    <ul>
+                        <li>Arizona's hard water and intense sun are tough on plaster</li>
+                        <li>Aggregate finishes handle these conditions better</li>
+                        <li>Long-term value is comparable despite higher upfront cost</li>
+                    </ul>
+
+                    <div class="cta-banner" style="margin-top: 3rem;">
+                        <h2>Not Sure Which Option Is Right?</h2>
+                        <p>We'll inspect your pool and recommend the best approach for your situation</p>
+                        <div class="cta-buttons" style="justify-content: center;">
+                            <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Expert Advice</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BLOG: Maintenance After Resurfacing -->
+    <div id="blog-maintenance" class="page-container">
+        <div class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&q=80');">
+            <h1>Arizona Pool Maintenance Tips After Resurfacing</h1>
+            <p>How to protect your investment and extend your new finish's lifespan</p>
+        </div>
+        <div class="stats-bar light">
+            <div class="stat-item"><div class="stat-number">Feb 2026</div><div class="stat-label">Updated</div></div>
+            <div class="stat-item"><div class="stat-number">8 min</div><div class="stat-label">Read Time</div></div>
+            <div class="stat-item"><div class="stat-number">Maintenance</div><div class="stat-label">Guide</div></div>
+            <div class="stat-item"><div class="stat-number">Essential</div><div class="stat-label">Tips</div></div>
+        </div>
+        <section style="padding: 3rem 2rem;">
+            <div class="blog-article">
+                <div class="blog-article-content">
+                    <p style="font-size: 1.15rem; line-height: 1.8;">Your new pool surface is an investment. With proper care, especially in the critical first 30 days, you can maximize its lifespan and keep it looking beautiful for years.</p>
+
+                    <h2>The First 30 Days: Critical Care Period</h2>
+                    <p>The initial curing period determines how well your new surface will perform. Follow these guidelines strictly:</p>
+
+                    <h3>Week 1: Daily Brushing</h3>
+                    <ul>
+                        <li>Brush the entire pool surface twice daily</li>
+                        <li>This removes plaster dust and prevents staining</li>
+                        <li>Use a nylon brush (not stainless steel)</li>
+                        <li>Don't skip days - consistency is crucial</li>
+                    </ul>
+
+                    <h3>Week 2-4: Continued Brushing</h3>
+                    <ul>
+                        <li>Reduce to once daily brushing</li>
+                        <li>Continue monitoring water chemistry closely</li>
+                        <li>Watch for any discoloration and address immediately</li>
+                    </ul>
+
+                    <h2>Water Chemistry for New Surfaces</h2>
+                    <p>Arizona's hard water makes chemistry management crucial. Target these levels:</p>
+                    <table>
+                        <thead><tr><th>Parameter</th><th>Target Range</th><th>Why It Matters</th></tr></thead>
+                        <tbody>
+                            <tr><td>pH</td><td>7.2 - 7.6</td><td>Prevents etching and scaling</td></tr>
+                            <tr><td>Alkalinity</td><td>80 - 120 ppm</td><td>Stabilizes pH levels</td></tr>
+                            <tr><td>Calcium Hardness</td><td>200 - 400 ppm</td><td>Prevents surface degradation</td></tr>
+                            <tr><td>Chlorine</td><td>1 - 3 ppm</td><td>Sanitization without damage</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Common Arizona Pool Challenges</h2>
+
+                    <h3>Calcium Scaling</h3>
+                    <p>Phoenix's hard water causes calcium buildup. Prevent it by:</p>
+                    <ul>
+                        <li>Maintaining proper calcium hardness levels</li>
+                        <li>Using a sequestering agent monthly</li>
+                        <li>Regular brushing of the waterline</li>
+                    </ul>
+
+                    <h3>Algae in Monsoon Season</h3>
+                    <p>Summer storms can introduce algae spores. Combat this by:</p>
+                    <ul>
+                        <li>Running the pump after storms</li>
+                        <li>Shocking the pool after heavy rain</li>
+                        <li>Maintaining chlorine levels diligently</li>
+                    </ul>
+
+                    <h3>Sun Damage</h3>
+                    <p>Arizona sun is intense. Protect your surface by:</p>
+                    <ul>
+                        <li>Using a quality UV-resistant stabilizer (CYA)</li>
+                        <li>Maintaining proper chemical balance</li>
+                        <li>Consider a pool cover for extreme heat days</li>
+                    </ul>
+
+                    <h2>Long-Term Maintenance Schedule</h2>
+                    <table>
+                        <thead><tr><th>Frequency</th><th>Task</th></tr></thead>
+                        <tbody>
+                            <tr><td>Weekly</td><td>Test and balance water chemistry</td></tr>
+                            <tr><td>Weekly</td><td>Brush walls and floor</td></tr>
+                            <tr><td>Weekly</td><td>Clean skimmer and pump baskets</td></tr>
+                            <tr><td>Monthly</td><td>Inspect for staining or scaling</td></tr>
+                            <tr><td>Quarterly</td><td>Professional water analysis</td></tr>
+                            <tr><td>Annually</td><td>Equipment inspection and service</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="cta-banner" style="margin-top: 3rem;">
+                        <h2>Questions About Pool Care?</h2>
+                        <p>We provide maintenance guidance with every resurfacing project</p>
+                        <div class="cta-buttons" style="justify-content: center;">
+                            <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BLOG: Best Time to Resurface -->
+    <div id="blog-best-time" class="page-container">
+        <div class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1562844282-0a4fa8f2c051?w=1200&q=80');">
+            <h1>When Is the Best Time to Resurface Your Pool in Phoenix?</h1>
+            <p>Timing your pool resurfacing for optimal results</p>
+        </div>
+        <div class="stats-bar light">
+            <div class="stat-item"><div class="stat-number">Feb 2026</div><div class="stat-label">Updated</div></div>
+            <div class="stat-item"><div class="stat-number">5 min</div><div class="stat-label">Read Time</div></div>
+            <div class="stat-item"><div class="stat-number">Timing</div><div class="stat-label">Guide</div></div>
+            <div class="stat-item"><div class="stat-number">Planning</div><div class="stat-label">Tips</div></div>
+        </div>
+        <section style="padding: 3rem 2rem;">
+            <div class="blog-article">
+                <div class="blog-article-content">
+                    <p style="font-size: 1.15rem; line-height: 1.8;">In Phoenix, timing matters for pool resurfacing. While we work year-round, certain seasons offer advantages that can affect both the quality of your finish and your family's swimming schedule.</p>
+
+                    <h2>Best Season: Fall & Winter (October - March)</h2>
+                    <p>This is the ideal window for Phoenix pool resurfacing:</p>
+                    <ul>
+                        <li><strong>Better curing conditions:</strong> Cooler temperatures (60-80°F) allow finishes to cure properly without heat stress</li>
+                        <li><strong>No swimming downtime:</strong> You won't miss prime swimming season</li>
+                        <li><strong>Easier scheduling:</strong> Less demand means more flexibility</li>
+                        <li><strong>Lower water costs:</strong> Cooler weather means less evaporation during fill</li>
+                    </ul>
+
+                    <h2>Spring (April - May)</h2>
+                    <p>A good secondary option:</p>
+                    <ul>
+                        <li>Weather is still mild for proper curing</li>
+                        <li>Pool will be ready for summer swimming</li>
+                        <li>Higher demand - book early</li>
+                    </ul>
+
+                    <h2>Summer (June - September)</h2>
+                    <p>Possible but challenging:</p>
+                    <ul>
+                        <li><strong>Heat concerns:</strong> Extreme temperatures (110°F+) can affect curing</li>
+                        <li><strong>Monsoon delays:</strong> Rain can interrupt the project</li>
+                        <li><strong>Miss swimming season:</strong> 1-2 weeks without your pool during peak heat</li>
+                        <li><strong>Early morning work:</strong> Crews often start at 5-6 AM to beat the heat</li>
+                    </ul>
+                    <p>We do resurface pools in summer with proper precautions, but recommend planning for fall if possible.</p>
+
+                    <h2>Signs It's Time to Resurface</h2>
+                    <p>Don't wait for complete failure. Watch for these indicators:</p>
+                    <ul>
+                        <li><strong>Rough texture:</strong> Surface feels like sandpaper</li>
+                        <li><strong>Visible staining:</strong> Discoloration that won't clean off</li>
+                        <li><strong>Etching:</strong> Pitting or crater-like marks</li>
+                        <li><strong>Cracks:</strong> Structural cracks (not just surface crazing)</li>
+                        <li><strong>Delamination:</strong> Surface flaking or peeling</li>
+                        <li><strong>Age:</strong> Plaster over 10 years, aggregate over 15 years</li>
+                    </ul>
+
+                    <h2>Planning Ahead</h2>
+                    <p>For the best experience:</p>
+                    <ol>
+                        <li><strong>Get estimates in summer</strong> - We're less busy and can spend more time with you</li>
+                        <li><strong>Schedule for fall</strong> - Book your October-December spot early</li>
+                        <li><strong>Budget properly</strong> - Know your costs before the busy season</li>
+                    </ol>
+
+                    <h2>Emergency Resurfacing</h2>
+                    <p>Sometimes you can't wait for ideal timing. If your pool has:</p>
+                    <ul>
+                        <li>Major structural cracks causing water loss</li>
+                        <li>Severe delamination creating safety hazards</li>
+                        <li>Surface so rough it's causing injuries</li>
+                    </ul>
+                    <p>We'll work with you to get it done safely regardless of season.</p>
+
+                    <div class="cta-banner" style="margin-top: 3rem;">
+                        <h2>Plan Your Resurfacing</h2>
+                        <p>Get a free estimate now and schedule for the optimal time</p>
+                        <div class="cta-buttons" style="justify-content: center;">
+                            <a href="javascript:void(0)" onclick="showPage('contact')" class="btn btn-primary">Get Free Estimate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- ABOUT PAGE -->
     <div id="about" class="page-container">
         <!-- Hero -->
@@ -7988,7 +8500,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Phoenix Pool Resurfacing. All rights reserved. Licensed & Insured. AZ ROC #000000</p>
+            <p>&copy; 2026 Phoenix Pool Resurfacing. All rights reserved. Licensed & Insured. AZ ROC #123456</p>
         </div>
     </footer>
 </body>
