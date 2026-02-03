@@ -96,18 +96,54 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog -->
+  <!-- Blog / Resources -->
   <url>
-    <loc>https://phxpoolresurfacing.com/#blog</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://phxpoolresurfacing.com/#blog-cost</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/#blog-pebble-tec-vs-plaster</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/#blog-signs-pool-needs-resurfacing</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/#blog-timeline</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/#blog-cost</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://phxpoolresurfacing.com/#blog-colors</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/#blog-resurfacing-vs-replastering</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/#blog-maintenance</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/#blog-best-time</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- About & Contact -->
