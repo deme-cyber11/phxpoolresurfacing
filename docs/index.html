@@ -1862,20 +1862,23 @@
             line-height: 1.5;
         }
 
-        /* Component: Testimonial Callout */
+        /* Component: Testimonial Callout (Service Pages) */
         .testimonial-section {
             padding: 5rem 2rem;
-            background: var(--color-surface-dark);
+            background: #1a1a2e;
         }
 
-        .testimonial-card {
+        .testimonial-section .testimonial-card {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
             color: white;
+            background: transparent;
+            border: none;
+            box-shadow: none;
         }
 
-        .testimonial-quote {
+        .testimonial-section .testimonial-quote {
             font-size: 1.5rem;
             line-height: 1.7;
             font-style: italic;
@@ -1884,10 +1887,10 @@
             color: white;
         }
 
-        .testimonial-quote::before {
+        .testimonial-section .testimonial-quote::before {
             content: '"';
             font-size: 4rem;
-            color: var(--color-accent);
+            color: #e94560;
             position: absolute;
             top: -1rem;
             left: -2rem;
@@ -1895,28 +1898,31 @@
             opacity: 0.5;
         }
 
-        .testimonial-author {
+        .testimonial-section .testimonial-author {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1rem;
+            color: white;
         }
 
-        .testimonial-avatar {
+        .testimonial-section .testimonial-avatar {
             width: 60px;
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
         }
 
-        .testimonial-name {
+        .testimonial-section .testimonial-name {
             font-weight: 600;
             font-size: 1.1rem;
+            color: white;
         }
 
-        .testimonial-location {
+        .testimonial-section .testimonial-location {
             opacity: 0.7;
             font-size: 0.9rem;
+            color: white;
         }
 
         /* Component: CTA Banner */
@@ -2180,10 +2186,10 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-            .testimonial-quote {
+            .testimonial-section .testimonial-quote {
                 font-size: 1.2rem;
             }
-            .testimonial-quote::before {
+            .testimonial-section .testimonial-quote::before {
                 position: relative;
                 top: 0;
                 left: 0;
