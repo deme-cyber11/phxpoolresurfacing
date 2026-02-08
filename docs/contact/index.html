@@ -151,9 +151,9 @@
 
                         <!-- Web3Forms -->
                         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                            <input type="hidden" name="access_key" value="d6f71870-3ee4-474c-8056-b8f67f1ad6d4">
+                            <input type="hidden" name="access_key" value="01ce42fe-3813-4769-b72c-c0e2a8db99e1">
                             <input type="hidden" name="subject" value="New Pool Resurfacing Estimate Request">
-                            <input type="hidden" name="redirect" value="https://phxpoolresurfacing.com/#contact-success">
+                            <input type="hidden" name="redirect" value="https://phxpoolresurfacing.com/contact/#form-success">
                             <input type="checkbox" name="botcheck" style="display:none">
 
                             <div class="form-row">
@@ -280,6 +280,7 @@
     </footer>
     <script>
     window.addEventListener('scroll',()=>{const s=document.getElementById('scroll-progress'),b=document.getElementById('back-to-top'),t=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;if(s)s.style.width=(t/h*100)+'%';if(b)b.classList.toggle('visible',t>300);});
+    if(window.location.hash==='#form-success'){const f=document.getElementById('contact-form');const s=document.getElementById('form-success');if(f)f.style.display='none';if(s)s.style.display='block';}
     </script>
 </body>
 </html>
