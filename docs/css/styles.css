@@ -2349,19 +2349,6 @@ footer::before {
     font-weight: 700;
 }
 
-.contact-map-section {
-    padding: 0;
-}
-
-.contact-map-container {
-    width: 100%;
-    height: 400px;
-}
-
-.contact-map-container iframe {
-    width: 100%;
-    height: 100%;
-}
 
 @media (max-width: 968px) {
     .contact-grid {
