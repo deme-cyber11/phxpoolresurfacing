@@ -98,6 +98,12 @@
 
   <!-- Resource / Blog Pages -->
   <url>
+    <loc>https://phxpoolresurfacing.com/resources/cost-calculator/</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://phxpoolresurfacing.com/resources/pool-resurfacing-cost/</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
