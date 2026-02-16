@@ -12,6 +12,11 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Phoenix Pool Resurfacing">
+    <meta property="og:image" content="https://phxpoolresurfacing.com/images/plaster-resurfacing.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pool Resurfacing Cost Calculator - Phoenix, AZ | Phoenix Pool Resurfacing">
+    <meta name="twitter:description" content="Calculate your pool resurfacing cost instantly. Enter your pool size and finish type to get a 2026 price estimate for Phoenix, AZ.">
+    <meta name="twitter:image" content="https://phxpoolresurfacing.com/images/plaster-resurfacing.png">
     <meta name="geo.region" content="US-AZ">
     <meta name="geo.placename" content="Phoenix">
     <meta name="robots" content="index, follow">
@@ -719,6 +724,8 @@
             <div class="footer-section"><h4>Company</h4><ul>
                 <li><a href="/about/">About Us</a></li>
                 <li><a href="/contact/">Contact</a></li>
+                <li><a href="/privacy/">Privacy Policy</a></li>
+                <li><a href="/terms/">Terms of Service</a></li>
                 <li><a href="/">Home</a></li>
             </ul></div>
         </div>
@@ -727,7 +734,7 @@
 
     <script>
     // Scroll progress & back to top
-    window.addEventListener('scroll',()=>{const s=document.getElementById('scroll-progress'),b=document.getElementById('back-to-top'),t=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;if(s)s.style.width=(t/h*100)+'%';if(b)b.classList.toggle('visible',t>300);});
+    window.addEventListener('scroll',()=>{const s=document.getElementById('scroll-progress'),b=document.getElementById('back-to-top'),f=document.querySelector('.floating-cta'),t=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;if(s)s.style.width=(t/h*100)+'%';if(b)b.classList.toggle('visible',t>300);if(f)f.classList.toggle('visible',t>300);});
 
     // Calculator state
     let selectedFinish = 'plaster';
@@ -804,5 +811,16 @@
     // Initial calculation
     calculate();
     </script>
+
+    <!-- Floating Mobile CTA -->
+    <div class="floating-cta">
+        <a href="tel:6026930112" class="floating-btn floating-btn-phone" title="Call Now">
+            <i class="ph ph-phone"></i>
+        </a>
+        <a href="/contact/" class="floating-btn floating-btn-quote" title="Free Estimate">
+            <i class="ph ph-chat-text"></i>
+        </a>
+    </div>
+
 </body>
 </html>
