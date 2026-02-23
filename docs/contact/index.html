@@ -298,6 +298,8 @@ gtag('config', 'G-2N3F5VYYHZ');
     </footer>
     <script>
     window.addEventListener('scroll',()=>{const s=document.getElementById('scroll-progress'),b=document.getElementById('back-to-top'),f=document.querySelector('.floating-cta'),t=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;if(s)s.style.width=(t/h*100)+'%';if(b)b.classList.toggle('visible',t>300);if(f)f.classList.toggle('visible',t>300);});
+    // Mobile dropdown toggle
+    document.querySelectorAll('.dropdown > a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<=968){e.preventDefault();this.parentElement.classList.toggle('active');}});});
     if(window.location.hash==='#form-success'){const f=document.getElementById('contact-form');const s=document.getElementById('form-success');if(f)f.style.display='none';if(s)s.style.display='block';}
     </script>
 
