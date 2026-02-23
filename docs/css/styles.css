@@ -3608,3 +3608,37 @@ a.area-card:hover {
     text-decoration: none;
     color: inherit;
 }
+
+/* =========================
+   QA FIXES: Dropdown, Spacing, Hero Gaps
+   ========================= */
+
+/* Paragraph spacing for content sections */
+.service-content p,
+.location-content p,
+.blog-article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.service-content h2,
+.location-content h2,
+.blog-article-content h2 {
+    margin-top: 3rem;
+}
+
+.service-content h3,
+.location-content h3,
+.blog-article-content h3 {
+    margin-top: 2.5rem;
+}
+
+/* Hero gap fix */
+.page-hero + section {
+    padding-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .page-hero + section {
+        padding-top: 2rem;
+    }
+}
