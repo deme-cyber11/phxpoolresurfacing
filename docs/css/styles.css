@@ -3733,19 +3733,18 @@ a.area-card:hover {
 }
 
 /* ── HERO FULL MOBILE REBUILD (QA v2 Mar 2026) ──────────
-   Overrides conflicting 968px + 1024px rules that left 850px hero
-   Key culprits: hero-stats margin-top:4rem + padding-top:2rem
+   Uses section.hero (0-1-1) to beat all conflicting .hero (0-1-0) rules
+   Key fix: hero-stats margin-top:4rem + padding-top:2rem → 1rem each
    ──────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .hero {
+  section.hero {
     min-height: auto !important;
     padding: 1.5rem 1.25rem 2rem !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    overflow: visible !important;
   }
-  .hero-content {
+  section.hero .hero-content {
     padding: 0 !important;
     max-width: 100% !important;
     text-align: center !important;
@@ -3754,7 +3753,7 @@ a.area-card:hover {
     gap: 1rem !important;
     align-items: center !important;
   }
-  .hero-stats {
+  section.hero .hero-stats {
     position: static !important;
     margin-top: 1rem !important;
     padding-top: 1rem !important;
@@ -3765,15 +3764,15 @@ a.area-card:hover {
     flex-wrap: nowrap !important;
     width: 100% !important;
   }
-  .hero-stat {
+  section.hero .hero-stat {
     flex: 1 !important;
     text-align: center !important;
     min-width: 0 !important;
   }
-  .hero-stat-number {
+  section.hero .hero-stat-number {
     font-size: 1.4rem !important;
   }
-  .hero-stat-label {
+  section.hero .hero-stat-label {
     font-size: 0.7rem !important;
     white-space: nowrap !important;
   }
