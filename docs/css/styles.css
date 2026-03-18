@@ -3731,3 +3731,50 @@ a.area-card:hover {
     justify-content: center !important;
   }
 }
+
+/* ── HERO FULL MOBILE REBUILD (QA v2 Mar 2026) ──────────
+   Overrides conflicting 968px + 1024px rules that left 850px hero
+   Key culprits: hero-stats margin-top:4rem + padding-top:2rem
+   ──────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto !important;
+    padding: 1.5rem 1.25rem 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    overflow: visible !important;
+  }
+  .hero-content {
+    padding: 0 !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: center !important;
+  }
+  .hero-stats {
+    position: static !important;
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+    bottom: auto !important;
+    left: auto !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+  }
+  .hero-stat {
+    flex: 1 !important;
+    text-align: center !important;
+    min-width: 0 !important;
+  }
+  .hero-stat-number {
+    font-size: 1.4rem !important;
+  }
+  .hero-stat-label {
+    font-size: 0.7rem !important;
+    white-space: nowrap !important;
+  }
+}
