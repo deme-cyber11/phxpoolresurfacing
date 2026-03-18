@@ -3642,3 +3642,51 @@ a.area-card:hover {
         padding-top: 2rem;
     }
 }
+
+
+/* ── MOBILE HERO FIX (QA pass Mar 2026) ──────────────── */
+@media (max-width: 768px) {
+  .hero, .hero-section, .site-hero, section.hero,
+  [class*="hero-wrap"], [class*="hero-banner"] {
+    min-height: auto !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  body { overflow-x: hidden; }
+}
+
+/* Mobile CTA Bar (added QA Mar 2026) */
+.mobile-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--color-primary, #1a1a2e);
+  border-top: 3px solid var(--color-accent, #e94560);
+  padding: 0.625rem 1rem;
+  gap: 0.75rem;
+  z-index: 9999;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+.mobile-cta-bar a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: opacity 0.15s;
+}
+.mobile-cta-call { background: var(--color-accent, #e94560); color: #fff !important; }
+.mobile-cta-call:hover { opacity: 0.9; }
+.mobile-cta-quote { background: rgba(255,255,255,0.12); color: #fff !important; border: 1px solid rgba(255,255,255,0.25); }
+.mobile-cta-quote:hover { background: rgba(255,255,255,0.2); }
+@media (max-width: 768px) {
+  .mobile-cta-bar { display: flex; }
+  body { padding-bottom: 72px; }
+}
