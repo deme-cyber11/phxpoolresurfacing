@@ -799,6 +799,48 @@ gtag('config', 'G-2N3F5VYYHZ');
         if(img.complete && img.naturalWidth > 0){img.classList.add('loaded');}
         else{img.addEventListener('load',function(){img.classList.add('loaded');});}
     });
+
+    // Before/after image compare slider
+    (function(){
+        var el = document.querySelector('.image-compare');
+        if(!el) return;
+        var slider = el.querySelector('.compare-slider');
+        var after = el.querySelector('.compare-after');
+        var dragging = false;
+        function setPos(x){
+            var rect = el.getBoundingClientRect();
+            var pct = Math.min(Math.max((x - rect.left) / rect.width * 100, 0), 100);
+            slider.style.left = pct + '%';
+            after.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+        }
+        slider.addEventListener('mousedown', function(e){ dragging = true; e.preventDefault(); });
+        window.addEventListener('mouseup', function(){ dragging = false; });
+        window.addEventListener('mousemove', function(e){ if(dragging) setPos(e.clientX); });
+        slider.addEventListener('touchstart', function(e){ dragging = true; }, {passive:true});
+        window.addEventListener('touchend', function(){ dragging = false; });
+        window.addEventListener('touchmove', function(e){ if(dragging) setPos(e.touches[0].clientX); }, {passive:true});
+    })();
+
+    // Gallery lightbox
+    (function(){
+        var galleryImgs = document.querySelectorAll('.gallery-item img, .gallery-grid img');
+        if(!galleryImgs.length) return;
+        var overlay = document.createElement('div');
+        overlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center;';
+        var img = document.createElement('img');
+        img.style.cssText = 'max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.6);';
+        overlay.appendChild(img);
+        document.body.appendChild(overlay);
+        galleryImgs.forEach(function(i){
+            i.style.cursor = 'zoom-in';
+            i.addEventListener('click', function(){
+                img.src = i.src;
+                overlay.style.display = 'flex';
+            });
+        });
+        overlay.addEventListener('click', function(){ overlay.style.display = 'none'; });
+        document.addEventListener('keydown', function(e){ if(e.key === 'Escape') overlay.style.display = 'none'; });
+    })();
     </script>
 
     <!-- Floating Mobile CTA -->
