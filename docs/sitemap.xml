@@ -46,42 +46,52 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Location Pages -->
-
-  <!-- Suburb Location Pages (.html) -->
+  <!-- Location Pages (directory format) -->
   <url>
-    <loc>https://phxpoolresurfacing.com/locations/scottsdale.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://phxpoolresurfacing.com/locations/phoenix/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/locations/scottsdale/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/locations/tempe.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://phxpoolresurfacing.com/locations/mesa/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/locations/mesa.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://phxpoolresurfacing.com/locations/tempe/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/locations/chandler.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://phxpoolresurfacing.com/locations/chandler/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/locations/gilbert.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://phxpoolresurfacing.com/locations/gilbert/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phxpoolresurfacing.com/locations/glendale.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://phxpoolresurfacing.com/locations/glendale/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/locations/peoria/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -184,6 +194,5 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Location Pages (directory format - no .html duplicate) -->
 
 </urlset>
