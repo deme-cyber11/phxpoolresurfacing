@@ -2528,15 +2528,18 @@ footer::before {
         padding: 1rem;
         background: var(--color-surface-alt);
         border-radius: var(--radius-sm);
-        color: var(--color-text);
+        color: #1a1a2e !important;
     }
 
-    .trust-item .trust-label {
-        color: var(--color-text);
+    .trust-item .trust-label,
+    .trust-item span.trust-label {
+        color: #1a1a2e !important;
+        font-weight: 600;
     }
 
-    .trust-item .trust-detail {
-        color: var(--color-text-muted);
+    .trust-item .trust-detail,
+    .trust-item span.trust-detail {
+        color: #64748b !important;
     }
 
     .trust-icon {
