@@ -57,6 +57,23 @@
         @font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/dm-sans-latin.woff2') format('woff2');}
     </style>
     <link rel="stylesheet" href="/css/styles.css">
+<style>
+/* Inline override — force trust bar 2-col grid on mobile until CDN catches up */
+@media (max-width: 968px) {
+  .trust-items { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 0.75rem !important; justify-content: stretch !important; }
+  .trust-item { display: flex !important; align-items: center !important; }
+  .features-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .trust-bar { padding: 1rem !important; }
+  .trust-items { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem !important; }
+  .trust-item { padding: 0.75rem !important; gap: 0.6rem !important; background: rgba(255,255,255,0.08) !important; border-radius: 6px !important; }
+  .trust-icon { width: 36px !important; height: 36px !important; flex-shrink: 0 !important; }
+  .trust-label { font-size: 0.8rem !important; color: white !important; }
+  .trust-detail { font-size: 0.7rem !important; color: rgba(255,255,255,0.65) !important; }
+  header { background: rgba(26,26,46,0.98) !important; }
+}
+</style>
 
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
