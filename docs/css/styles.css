@@ -416,6 +416,13 @@ nav {
     .hero-tag {
         justify-content: center;
     }
+    /* Always show solid header on mobile — transparent nav + no hero image = ugly overlap */
+    header {
+        background: rgba(26, 26, 46, 0.98) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1rem 0;
+    }
 }
 
 /* Trust Bar - Editorial Strip */
@@ -2515,8 +2522,14 @@ footer::before {
 }
 
 @media (max-width: 480px) {
+    /* Trust bar: 2-column grid so items don't stack as 6 full-width cards */
+    .trust-bar {
+        padding: 1rem;
+    }
+
     .trust-items {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
     }
 
@@ -2524,27 +2537,29 @@ footer::before {
         flex-direction: row;
         justify-content: flex-start;
         text-align: left;
-        gap: 1rem;
-        padding: 1rem;
-        background: var(--color-surface-alt);
+        gap: 0.6rem;
+        padding: 0.75rem;
+        background: rgba(255,255,255,0.08);
         border-radius: var(--radius-sm);
-        color: #1a1a2e !important;
+        color: white !important;
     }
 
     .trust-item .trust-label,
     .trust-item span.trust-label {
-        color: #1a1a2e !important;
+        color: white !important;
         font-weight: 600;
+        font-size: 0.8rem;
     }
 
     .trust-item .trust-detail,
     .trust-item span.trust-detail {
-        color: #64748b !important;
+        color: rgba(255,255,255,0.65) !important;
+        font-size: 0.7rem;
     }
 
     .trust-icon {
-        width: 48px;
-        height: 48px;
+        width: 36px;
+        height: 36px;
         flex-shrink: 0;
     }
 
