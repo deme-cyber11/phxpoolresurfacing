@@ -436,10 +436,10 @@ nav {
 .trust-items {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
     justify-content: center;
     gap: 3rem;
-    flex-wrap: wrap;
 }
 
 .trust-item {
@@ -2475,7 +2475,7 @@ footer::before {
     }
 
     .trust-items {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.75rem;
     }
 
@@ -2484,9 +2484,12 @@ footer::before {
     }
 
     .services-grid,
-    .features-grid,
     .testimonials-grid {
         grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .process-grid {
@@ -2528,9 +2531,9 @@ footer::before {
     }
 
     .trust-items {
-        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
+        justify-content: stretch;
     }
 
     .trust-item {
@@ -2542,6 +2545,8 @@ footer::before {
         background: rgba(255,255,255,0.08);
         border-radius: var(--radius-sm);
         color: white !important;
+        display: flex;
+        align-items: center;
     }
 
     .trust-item .trust-label,
