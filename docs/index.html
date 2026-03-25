@@ -58,20 +58,24 @@
     </style>
     <link rel="stylesheet" href="/css/styles.css">
 <style>
-/* Inline override — force trust bar 2-col grid on mobile until CDN catches up */
+/* Mobile overrides */
+@media (max-width: 1024px) {
+  header { background: rgba(26,26,46,0.98) !important; backdrop-filter: blur(12px); padding: 1rem 0; }
+}
 @media (max-width: 968px) {
-  .trust-items { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 0.75rem !important; justify-content: stretch !important; }
-  .trust-item { display: flex !important; align-items: center !important; }
+  .trust-bar { background: #f8f9fa !important; padding: 1.25rem 1rem !important; }
+  .trust-items { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 0.6rem !important; justify-content: stretch !important; }
+  .trust-item { display: flex !important; align-items: center !important; gap: 0.75rem !important; background: white !important; border: 1px solid #e2e8f0 !important; border-radius: 8px !important; padding: 0.875rem !important; color: #1a1a2e !important; }
+  .trust-icon { background: #f1f5f9 !important; flex-shrink: 0 !important; }
+  .trust-label { color: #1a1a2e !important; font-weight: 600 !important; font-size: 0.85rem !important; }
+  .trust-detail { color: #64748b !important; font-size: 0.75rem !important; }
   .features-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 @media (max-width: 480px) {
-  .trust-bar { padding: 1rem !important; }
   .trust-items { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem !important; }
-  .trust-item { padding: 0.75rem !important; gap: 0.6rem !important; background: rgba(255,255,255,0.08) !important; border-radius: 6px !important; }
-  .trust-icon { width: 36px !important; height: 36px !important; flex-shrink: 0 !important; }
-  .trust-label { font-size: 0.8rem !important; color: white !important; }
-  .trust-detail { font-size: 0.7rem !important; color: rgba(255,255,255,0.65) !important; }
-  header { background: rgba(26,26,46,0.98) !important; }
+  .trust-item { padding: 0.75rem !important; gap: 0.6rem !important; }
+  .trust-label { font-size: 0.8rem !important; }
+  .trust-detail { font-size: 0.7rem !important; }
 }
 </style>
 
