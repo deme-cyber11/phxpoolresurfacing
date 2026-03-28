@@ -56,7 +56,7 @@
         @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/space-grotesk-latin.woff2') format('woff2');}
         @font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/dm-sans-latin.woff2') format('woff2');}
     </style>
-    <link rel="stylesheet" href="/css/styles.v1.css">
+    <link rel="stylesheet" href="/css/styles.v2.css">
 <style>
 /* Mobile overrides */
 @media (max-width: 1024px) {
@@ -73,9 +73,12 @@
 }
 @media (max-width: 480px) {
   .trust-items { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem !important; }
-  .trust-item { padding: 0.75rem !important; gap: 0.6rem !important; }
-  .trust-label { font-size: 0.8rem !important; }
-  .trust-detail { font-size: 0.7rem !important; }
+  .trust-item { padding: 0.75rem !important; gap: 0.6rem !important; background: white !important; border: 1px solid #e2e8f0 !important; color: #1a1a2e !important; }
+  /* Override external CSS specificity — .trust-item .trust-label sets white text at 480px */
+  .trust-item .trust-label, .trust-item span.trust-label { color: #1a1a2e !important; font-size: 0.8rem !important; font-weight: 600 !important; }
+  .trust-item .trust-detail, .trust-item span.trust-detail { color: #64748b !important; font-size: 0.7rem !important; }
+  .trust-icon { background: #f1f5f9 !important; }
+  .trust-icon svg { stroke: #c8102e !important; }
 }
 </style>
 
