@@ -73,12 +73,13 @@
 }
 @media (max-width: 480px) {
   .trust-items { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem !important; }
-  .trust-item { padding: 0.75rem !important; gap: 0.6rem !important; background: white !important; border: 1px solid #e2e8f0 !important; color: #1a1a2e !important; }
-  /* Override external CSS specificity — .trust-item .trust-label sets white text at 480px */
-  .trust-item .trust-label, .trust-item span.trust-label { color: #1a1a2e !important; font-size: 0.8rem !important; font-weight: 600 !important; }
-  .trust-item .trust-detail, .trust-item span.trust-detail { color: #64748b !important; font-size: 0.7rem !important; }
-  .trust-icon { background: #f1f5f9 !important; }
-  .trust-icon svg { stroke: #c8102e !important; }
+  /* Vertical layout: icon on top, text centered below — prevents label wrapping in narrow 2-col cards */
+  .trust-item { flex-direction: column !important; align-items: center !important; text-align: center !important; padding: 0.75rem 0.5rem !important; gap: 0.4rem !important; background: white !important; border: 1px solid #e2e8f0 !important; color: #1a1a2e !important; }
+  .trust-text { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 0.1rem !important; }
+  .trust-item .trust-label, .trust-item span.trust-label { color: #1a1a2e !important; font-size: 0.78rem !important; font-weight: 700 !important; white-space: nowrap !important; }
+  .trust-item .trust-detail, .trust-item span.trust-detail { color: #64748b !important; font-size: 0.68rem !important; white-space: nowrap !important; }
+  .trust-icon { width: 30px !important; height: 30px !important; background: #f1f5f9 !important; border-radius: 50% !important; }
+  .trust-icon svg { width: 16px !important; height: 16px !important; stroke: #c8102e !important; }
 }
 </style>
 
@@ -341,7 +342,7 @@
                     <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                     <div class="trust-text">
                         <span class="trust-label">Licensed &amp; Insured</span>
-                        <span class="trust-detail">AZ Licensed & Insured</span>
+                        <span class="trust-detail">State Certified</span>
                     </div>
                 </div>
                 <div class="trust-item">
