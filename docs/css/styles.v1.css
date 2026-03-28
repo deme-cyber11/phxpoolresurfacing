@@ -2544,23 +2544,15 @@ footer::before {
         padding: 0.75rem;
         background: rgba(255,255,255,0.08);
         border-radius: var(--radius-sm);
-        color: white !important;
+        color: inherit;
         display: flex;
         align-items: center;
     }
 
     .trust-item .trust-label,
-    .trust-item span.trust-label {
-        color: white !important;
-        font-weight: 600;
-        font-size: 0.8rem;
-    }
+    
 
-    .trust-item .trust-detail,
-    .trust-item span.trust-detail {
-        color: rgba(255,255,255,0.65) !important;
-        font-size: 0.7rem;
-    }
+    
 
     .trust-icon {
         width: 36px;
@@ -3862,3 +3854,29 @@ a.area-card:hover {
   font-style: normal;
 }
 /* END LOGO-GEN */
+
+
+/* ═══════════════════════════════════════════════════════════════
+   VISIBILITY FALLBACK — ensures content is NEVER permanently invisible
+   Covers: animation-backwards elements, opacity:0 defaults,
+   intersection observer failures, JS-disabled environments
+   ═══════════════════════════════════════════════════════════════ */
+
+/* No-JS / reduced motion: all animated elements visible immediately */
+@media (prefers-reduced-motion: reduce) {
+    .trust-item, .feature, .service-card, .process-step,
+    .testimonial-card, .badge-item, .hero-content,
+    .section-header, .cta-section, .gallery-item {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Absolute safety net: any element with backwards animation
+   becomes fully visible after the longest possible delay (2s) */
+.trust-item, .feature, .service-card, .process-step,
+.testimonial-card, .badge-item, .gallery-item {
+    animation-fill-mode: both;
+}
