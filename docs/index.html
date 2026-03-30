@@ -61,6 +61,12 @@
 /* Mobile overrides */
 @media (max-width: 1024px) {
   header { background: rgba(26,26,46,0.98) !important; backdrop-filter: blur(12px); padding: 1rem 0; }
+  /* Safari animation fix: hero-content starts at opacity:0 in slideInLeft — without forwards
+     fill-mode, Safari can leave it invisible if animation timing is interrupted on load */
+  .hero-content { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .hero h1, .hero p, .hero-tag, .cta-buttons { opacity: 1 !important; color: white !important; visibility: visible !important; }
+  /* Pad hero top so content clears the fixed nav (~70px) */
+  section.hero { padding-top: 80px !important; }
 }
 @media (max-width: 968px) {
   .trust-bar { background: #f8f9fa !important; padding: 1.25rem 1rem !important; }
@@ -76,8 +82,8 @@
   /* Vertical layout: icon on top, text centered below — prevents label wrapping in narrow 2-col cards */
   .trust-item { flex-direction: column !important; align-items: center !important; text-align: center !important; padding: 0.75rem 0.5rem !important; gap: 0.4rem !important; background: white !important; border: 1px solid #e2e8f0 !important; color: #1a1a2e !important; }
   .trust-text { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 0.1rem !important; }
-  .trust-item .trust-label, .trust-item span.trust-label { color: #1a1a2e !important; font-size: 0.78rem !important; font-weight: 700 !important; white-space: nowrap !important; }
-  .trust-item .trust-detail, .trust-item span.trust-detail { color: #64748b !important; font-size: 0.68rem !important; white-space: nowrap !important; }
+  .trust-item .trust-label, .trust-item span.trust-label { color: #1a1a2e !important; font-size: 0.78rem !important; font-weight: 700 !important; white-space: normal !important; line-height: 1.2 !important; }
+  .trust-item .trust-detail, .trust-item span.trust-detail { color: #64748b !important; font-size: 0.68rem !important; white-space: normal !important; }
   .trust-icon { width: 30px !important; height: 30px !important; background: #f1f5f9 !important; border-radius: 50% !important; }
   .trust-icon svg { width: 16px !important; height: 16px !important; stroke: #c8102e !important; }
 }
