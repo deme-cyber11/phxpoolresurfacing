@@ -55,7 +55,24 @@
     <style>
         @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/space-grotesk-latin.woff2') format('woff2');}
         @font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/dm-sans-latin.woff2') format('woff2');}
-    </style>
+    
+  /* Logo badge — clean initial mark, replaces SVG */
+  .logo-badge {
+    width: 38px !important; height: 38px !important;
+    background: var(--color-accent, #c8102e) !important;
+    border-radius: 8px !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+    font-family: var(--font-display, sans-serif) !important;
+    font-size: 1.1rem !important; font-weight: 900 !important;
+    color: white !important; letter-spacing: -0.02em !important;
+    flex-shrink: 0 !important;
+  }
+  /* Section title font size — too large on mobile */
+  @media (max-width: 768px) {
+    .section-title { font-size: 1.6rem !important; }
+    .section-subtitle { font-size: 0.95rem !important; }
+  }
+</style>
     <link rel="stylesheet" href="/css/styles.v2.css">
 <style>
 /* Mobile overrides */
@@ -273,7 +290,7 @@
     <header>
         <nav>
             <a href="/" class="logo">
-                <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#1a1a2e"/><g transform="translate(4.2,4.2) scale(0.0766)"><path d="M88,149.39a12,12,0,0,0,12-12V136h56v3.29a12,12,0,0,0,24,0V32a12,12,0,0,0-24,0v8H100V32a12,12,0,0,0-24,0V137.39A12,12,0,0,0,88,149.39ZM100,112V100h56v12Zm56-48V76H100V64ZM20,164a12,12,0,0,1,12-12c15.63,0,24,5.55,30.66,10,5.4,3.6,9,6,17.34,6s11.93-2.38,17.34-6c6.69-4.47,15-10,30.65-10s24,5.55,30.66,10c5.41,3.6,9,6,17.35,6s11.94-2.38,17.34-6c6.7-4.47,15-10,30.66-10a12,12,0,0,1,0,24c-8.37,0-11.94,2.38-17.35,6-6.69,4.47-15,10-30.65,10s-24-5.55-30.66-10c-5.41-3.6-9-6-17.35-6s-11.93,2.38-17.34,6c-6.69,4.47-15,10-30.65,10s-24-5.55-30.66-10c-5.4-3.6-9-6-17.34-6A12,12,0,0,1,20,164Zm216,44a12,12,0,0,1-12,12c-8.37,0-11.94,2.38-17.35,6-6.69,4.47-15,10-30.65,10s-24-5.55-30.66-10c-5.41-3.6-9-6-17.35-6s-11.93,2.38-17.34,6c-6.69,4.47-15,10-30.65,10s-24-5.55-30.66-10c-5.4-3.6-9-6-17.34-6a12,12,0,0,1,0-24c15.63,0,24,5.55,30.66,10,5.4,3.6,9,6,17.34,6s11.93-2.38,17.34-6c6.69-4.47,15-10,30.65-10s24,5.55,30.66,10c5.41,3.6,9,6,17.35,6s11.94-2.38,17.34-6c6.7-4.47,15-10,30.66-10A12,12,0,0,1,236,208Z"/></g></svg></div>
+                <div class="logo-icon logo-badge" aria-hidden="true">P</div>
                 <span class="logo-text">Phoenix Pool Resurfacing</span>
             </a>
             <button class="menu-toggle" id="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active');this.classList.toggle('active');" aria-label="Toggle navigation menu">
@@ -766,7 +783,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="page-section">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <p class="section-subtitle">Common questions about pool resurfacing in Phoenix</p>
@@ -819,7 +836,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="page-section">
             <div class="section-header">
                 <h2 class="section-title">Service Areas</h2>
                 <p class="section-subtitle">Serving the entire Phoenix Metro Area</p>
