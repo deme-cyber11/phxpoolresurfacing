@@ -61,12 +61,18 @@
 /* Mobile overrides */
 @media (max-width: 1024px) {
   header { background: rgba(26,26,46,0.98) !important; backdrop-filter: blur(12px); padding: 1rem 0; }
-  /* Safari animation fix: hero-content starts at opacity:0 in slideInLeft — without forwards
-     fill-mode, Safari can leave it invisible if animation timing is interrupted on load */
+  /* Safari animation fix: hero-content starts at opacity:0 in slideInLeft */
   .hero-content { animation: none !important; opacity: 1 !important; transform: none !important; }
   .hero h1, .hero p, .hero-tag, .cta-buttons { opacity: 1 !important; color: white !important; visibility: visible !important; }
   /* Pad hero top so content clears the fixed nav (~70px) */
   section.hero { padding-top: 80px !important; }
+  /* Cancel large desktop margins on h1/p — they fight the flex gap */
+  section.hero h1 { margin-bottom: 0.5rem !important; }
+  section.hero p { margin-bottom: 0.75rem !important; }
+  /* Hero-tag: allow wrapping + smaller text so it fits on mobile */
+  section.hero .hero-tag { white-space: normal !important; font-size: 0.7rem !important; line-height: 1.4 !important; justify-content: center !important; text-align: center !important; }
+  /* Keep stats on screen — remove absolute pos and excessive margins */
+  section.hero .hero-stats { position: static !important; margin-top: 0.75rem !important; padding-top: 0.75rem !important; }
 }
 @media (max-width: 968px) {
   .trust-bar { background: #f8f9fa !important; padding: 1.25rem 1rem !important; }
