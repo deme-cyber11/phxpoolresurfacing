@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://unpkg.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1a1a2e">
-    <title>Pool Resurfacing Job Details | PHX Pool Resurfacing</title>
+    <title>Pool Project Details | Phoenix Pool Resurfacing</title>
     <meta name="description" content="Submit your pool resurfacing project details for an accurate estimate. Phoenix Pool Resurfacing - Licensed & Insured.">
     <link rel="canonical" href="https://phxpoolresurfacing.com/estimate/">
     <meta name="robots" content="noindex, nofollow">
@@ -15,81 +15,268 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6ZBY16329"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D6ZBY16329');</script>
     <script defer src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
-    <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.v2.5.css">
     <style>
-        @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/space-grotesk-latin.woff2') format('woff2');}
-        @font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/dm-sans-latin.woff2') format('woff2');}
-    </style>
-    <link rel="stylesheet" href="/css/styles.v1.css">
-    <style>
-        .estimate-page { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
-        .estimate-header { text-align: center; margin-bottom: 2rem; }
-        .estimate-header h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
-        .estimate-header p { color: var(--color-text-muted, #94a3b8); font-size: 1rem; }
-        .estimate-form { background: var(--color-card-bg, #16213e); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.06); }
-        .estimate-form .form-section { margin-bottom: 1.75rem; }
-        .estimate-form .form-section h3 { font-size: 1rem; font-weight: 600; color: var(--color-accent, #e94560); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-        .estimate-form .form-group { margin-bottom: 1rem; }
-        .estimate-form label { display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.375rem; color: var(--color-text, #e2e8f0); }
-        .estimate-form input, .estimate-form select, .estimate-form textarea {
-            width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.04); color: var(--color-text, #e2e8f0); font-family: 'DM Sans', sans-serif;
-            font-size: 0.95rem; transition: border-color 0.2s;
+        /* Page layout */
+        .estimate-wrap {
+            background: var(--color-surface);
+            min-height: 100vh;
+            padding: 100px 0 80px;
         }
-        .estimate-form input:focus, .estimate-form select:focus, .estimate-form textarea:focus {
-            outline: none; border-color: var(--color-accent, #e94560);
+        .estimate-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
-        .estimate-form select { cursor: pointer; }
-        .estimate-form textarea { resize: vertical; min-height: 80px; }
-        .estimate-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        @media (max-width: 600px) { .estimate-form .form-row { grid-template-columns: 1fr; } }
-        .estimate-form .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
-        .estimate-form .checkbox-item { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
-        .estimate-form .checkbox-item input[type="checkbox"] { width: auto; cursor: pointer; accent-color: var(--color-accent, #e94560); }
-        .estimate-form .checkbox-item label { margin-bottom: 0; cursor: pointer; font-size: 0.9rem; }
-        .estimate-submit {
-            width: 100%; padding: 1rem; border: none; border-radius: 10px; cursor: pointer;
-            background: var(--color-accent, #e94560); color: #fff; font-size: 1.05rem; font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            transition: transform 0.2s, box-shadow 0.2s; margin-top: 1.5rem;
+
+        /* Page header */
+        .estimate-hero {
+            text-align: center;
+            margin-bottom: 48px;
         }
-        .estimate-submit:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(233,69,96,0.3); }
-        .form-success-message { display: none; text-align: center; padding: 3rem 1rem; }
-        .form-success-message h3 { font-size: 1.5rem; margin: 1rem 0 0.5rem; color: #4ade80; }
-        .form-success-message p { color: var(--color-text-muted, #94a3b8); }
-        .success-checkmark { width: 60px; height: 60px; margin: 0 auto; background: rgba(74,222,128,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .success-checkmark svg { width: 30px; height: 30px; stroke: #4ade80; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .photo-upload-note { font-size: 0.8rem; color: var(--color-text-muted, #94a3b8); margin-top: 0.375rem; }
+        .estimate-hero .section-label { display: block; margin-bottom: 12px; }
+        .estimate-hero h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 900;
+            color: var(--color-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .estimate-hero p {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* Card sections */
+        .form-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 36px;
+            margin-bottom: 24px;
+        }
+        .form-card__title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--color-surface);
+        }
+        .form-card__title i {
+            color: var(--color-accent);
+            font-size: 1.1rem;
+        }
+
+        /* Form fields */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 580px) { .form-row { grid-template-columns: 1fr; } }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group:last-child { margin-bottom: 0; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 6px;
+        }
+        .form-group label .req { color: var(--color-accent); margin-left: 2px; }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            background: var(--color-white);
+            color: var(--color-text);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            -webkit-appearance: none;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: #94a3b8; }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px var(--color-accent-glow);
+        }
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+        .form-group textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+
+        /* Checkbox grid */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        @media (max-width: 480px) { .checkbox-grid { grid-template-columns: 1fr; } }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            background: var(--color-white);
+        }
+        .checkbox-item:has(input:checked) {
+            border-color: var(--color-accent);
+            background: rgba(14, 165, 233, 0.05);
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            min-width: 16px;
+            accent-color: var(--color-accent);
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+        }
+        .checkbox-item input:focus { box-shadow: none; border: none; }
+        .checkbox-item label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text);
+            cursor: pointer;
+            margin: 0;
+        }
+
+        /* File upload */
+        .file-upload {
+            border: 2px dashed #e2e8f0;
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .file-upload:hover { border-color: var(--color-accent); background: rgba(14,165,233,0.03); }
+        .file-upload input { display: none; }
+        .file-upload i { font-size: 1.5rem; color: var(--color-accent); margin-bottom: 8px; display: block; }
+        .file-upload p { font-size: 0.875rem; color: var(--color-text-light); margin: 0; }
+        .file-upload p strong { color: var(--color-text); }
+
+        /* Submit button */
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: 80px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px var(--color-accent-glow);
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+        .submit-btn:hover {
+            background: var(--color-accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--color-accent-glow);
+        }
+
+        /* Trust bar */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+        }
+        .trust-item i { color: var(--color-accent); font-size: 1rem; }
+
+        /* Success state */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 60px 24px;
+        }
+        .success-icon {
+            width: 72px;
+            height: 72px;
+            background: rgba(14,165,233,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .success-icon svg { width: 36px; height: 36px; stroke: var(--color-accent); stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .form-success h3 { font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 8px; }
+        .form-success p { color: var(--color-text-light); font-size: 0.95rem; }
+        .form-success a { color: var(--color-accent); font-weight: 600; }
     </style>
 </head>
 <body>
-    <header class="header-solid">
-        <nav>
-            <a href="/" class="logo">
-                <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#1a1a2e"/><g transform="translate(4.2,4.2) scale(0.0766)"><path d="M88,149.39a12,12,0,0,0,12-12V136h56v3.29a12,12,0,0,0,24,0V32a12,12,0,0,0-24,0v8H100V32a12,12,0,0,0-24,0V137.39A12,12,0,0,0,88,149.39ZM100,112V100h56v12Zm56-48V76H100V64ZM20,164a12,12,0,0,1,12-12c15.63,0,24,5.55,30.66,10,5.4,3.6,9,6,17.34,6s11.93-2.38,17.34-6c6.69-4.47,15-10,30.65-10s24,5.55,30.66,10c5.41,3.6,9,6,17.35,6s11.94-2.38,17.34-6c6.7-4.47,15-10,30.66-10a12,12,0,0,1,0,24c-8.37,0-11.94,2.38-17.35,6-6.69,4.47-15,10-30.65,10s-24-5.55-30.66-10c-5.41-3.6-9-6-17.35-6s-11.93,2.38-17.34,6c-6.69,4.47-15,10-30.65,10s-24-5.55-30.66-10c-5.4-3.6-9-6-17.34-6A12,12,0,0,1,20,164Zm216,44a12,12,0,0,1-12,12c-8.37,0-11.94,2.38-17.35,6-6.69,4.47-15,10-30.65,10s-24-5.55-30.66-10c-5.41-3.6-9-6-17.35-6s-11.93,2.38-17.34,6c-6.69,4.47-15,10-30.65,10s-24-5.55-30.66-10c-5.4-3.6-9-6-17.34-6a12,12,0,0,1,0-24c15.63,0,24,5.55,30.66,10,5.4,3.6,9,6,17.34,6s11.93-2.38,17.34-6c6.69-4.47,15-10,30.65-10s24,5.55,30.66,10c5.41,3.6,9,6,17.35,6s11.94-2.38,17.34-6c6.7-4.47,15-10,30.66-10A12,12,0,0,1,236,208Z"/></g></svg></div>
-                <span class="logo-text">Phoenix Pool Resurfacing</span>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="/" class="nav__logo">
+                Phoenix <span>Pool</span>
             </a>
-            <button class="menu-toggle" id="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active');this.classList.toggle('active');" aria-label="Toggle navigation menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="/">Home</a></li>
+            <ul class="nav__links">
                 <li><a href="/services/pebble-tec/">Pebble Tec</a></li>
                 <li><a href="/services/tile-coping/">Tile & Coping</a></li>
                 <li><a href="/contact/">Contact</a></li>
-                <li><a href="tel:6232949154" class="nav-cta">(623) 294-9154</a></li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="estimate-page">
-            <div class="estimate-header">
-                <h1>Pool Project Details</h1>
-                <p>Help us understand your project so we can prepare an accurate estimate</p>
-            </div>
+            <a href="tel:6232949154" class="nav__cta">(623) 294-9154</a>
+        </div>
+    </nav>
 
-            <div class="estimate-form">
+    <main>
+        <div class="estimate-wrap">
+            <div class="estimate-container">
+
+                <!-- Header -->
+                <div class="estimate-hero reveal">
+                    <span class="section-label">Free Estimate</span>
+                    <h1>Tell Us About Your Pool</h1>
+                    <p>Fill out the details below and we'll prepare an accurate quote for your project.</p>
+                </div>
+
                 <form id="estimate-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="d6f71870-3ee4-474c-8056-b8f67f1ad6d4">
                     <input type="hidden" name="subject" value="Pool Resurfacing Job Details Submission">
@@ -97,15 +284,17 @@
                     <input type="checkbox" name="botcheck" style="display:none">
 
                     <!-- Contact Info -->
-                    <div class="form-section">
-                        <h3><i class="ph ph-user"></i> Your Information</h3>
+                    <div class="form-card reveal reveal-delay-1">
+                        <div class="form-card__title">
+                            <i class="ph ph-user-circle"></i> Your Information
+                        </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Full Name *</label>
+                                <label for="name">Full Name <span class="req">*</span></label>
                                 <input type="text" id="name" name="name" required placeholder="John Smith">
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number *</label>
+                                <label for="phone">Phone Number <span class="req">*</span></label>
                                 <input type="tel" id="phone" name="phone" required placeholder="(602) 555-1234">
                             </div>
                         </div>
@@ -113,74 +302,74 @@
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" placeholder="you@example.com">
                         </div>
-                        <div class="form-group">
-                            <label for="address">Property Address *</label>
+                        <div class="form-group" style="margin-bottom:0">
+                            <label for="address">Property Address <span class="req">*</span></label>
                             <input type="text" id="address" name="address" required placeholder="123 Main St, Phoenix, AZ 85001">
                         </div>
                     </div>
 
-                    <!-- Pool Details -->
-                    <div class="form-section">
-                        <h3><i class="ph ph-swimming-pool"></i> Pool Information</h3>
+                    <!-- Pool Info -->
+                    <div class="form-card reveal reveal-delay-2">
+                        <div class="form-card__title">
+                            <i class="ph ph-waves"></i> Pool Information
+                        </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="pool_size">Pool Size (approx.) *</label>
+                                <label for="pool_size">Pool Size (approx.) <span class="req">*</span></label>
                                 <select id="pool_size" name="pool_size" required>
                                     <option value="">Select size...</option>
-                                    <option value="Small (under 400 sq ft)">Small (under 400 sq ft)</option>
-                                    <option value="Medium (400-600 sq ft)">Medium (400-600 sq ft)</option>
-                                    <option value="Large (600-800 sq ft)">Large (600-800 sq ft)</option>
-                                    <option value="Extra Large (800+ sq ft)">Extra Large (800+ sq ft)</option>
+                                    <option value="Small (under 400 sq ft)">Small — under 400 sq ft</option>
+                                    <option value="Medium (400-600 sq ft)">Medium — 400–600 sq ft</option>
+                                    <option value="Large (600-800 sq ft)">Large — 600–800 sq ft</option>
+                                    <option value="Extra Large (800+ sq ft)">Extra Large — 800+ sq ft</option>
                                     <option value="Not sure">Not sure</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="pool_type">Pool Type *</label>
+                                <label for="pool_type">Pool Type <span class="req">*</span></label>
                                 <select id="pool_type" name="pool_type" required>
                                     <option value="">Select type...</option>
-                                    <option value="In-ground (concrete/gunite)">In-ground (concrete/gunite)</option>
-                                    <option value="In-ground (fiberglass)">In-ground (fiberglass)</option>
-                                    <option value="Above-ground">Above-ground</option>
-                                    <option value="Spa / Hot Tub">Spa / Hot Tub</option>
+                                    <option value="In-ground (concrete/gunite)">In-ground — concrete/gunite</option>
+                                    <option value="In-ground (fiberglass)">In-ground — fiberglass</option>
                                     <option value="Pool + Spa combo">Pool + Spa combo</option>
+                                    <option value="Spa / Hot Tub only">Spa / Hot Tub only</option>
                                     <option value="Not sure">Not sure</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="current_surface">Current Surface Type</label>
+                            <label for="current_surface">Current Surface Material</label>
                             <select id="current_surface" name="current_surface">
                                 <option value="">Select if known...</option>
                                 <option value="White plaster">White plaster</option>
                                 <option value="Pebble Tec / aggregate">Pebble Tec / aggregate</option>
                                 <option value="Quartz">Quartz</option>
-                                <option value="Tile">Tile</option>
                                 <option value="Fiberglass">Fiberglass</option>
                                 <option value="Not sure">Not sure</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Current Condition (check all that apply)</label>
-                            <div class="checkbox-group">
+                            <label>Current Condition (select all that apply)</label>
+                            <div class="checkbox-grid">
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="cond_cracking" name="condition[]" value="Cracking / chipping">
-                                    <label for="cond_cracking">Cracking / chipping</label>
+                                    <input type="checkbox" id="cond_crack" name="condition[]" value="Cracking / chipping">
+                                    <label for="cond_crack">Cracking / chipping</label>
                                 </div>
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="cond_stains" name="condition[]" value="Stains / discoloration">
-                                    <label for="cond_stains">Stains / discoloration</label>
+                                    <input type="checkbox" id="cond_stain" name="condition[]" value="Stains / discoloration">
+                                    <label for="cond_stain">Stains / discoloration</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="cond_rough" name="condition[]" value="Rough / abrasive texture">
                                     <label for="cond_rough">Rough / abrasive texture</label>
                                 </div>
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="cond_peeling" name="condition[]" value="Peeling / flaking">
-                                    <label for="cond_peeling">Peeling / flaking</label>
+                                    <input type="checkbox" id="cond_peel" name="condition[]" value="Peeling / flaking">
+                                    <label for="cond_peel">Peeling / flaking</label>
                                 </div>
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="cond_leaking" name="condition[]" value="Suspected leak">
-                                    <label for="cond_leaking">Suspected leak</label>
+                                    <input type="checkbox" id="cond_leak" name="condition[]" value="Suspected leak">
+                                    <label for="cond_leak">Suspected leak</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="cond_tile" name="condition[]" value="Tile damage / missing tiles">
@@ -188,29 +377,31 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="margin-bottom:0">
                             <label for="last_resurfaced">Last Resurfaced</label>
                             <select id="last_resurfaced" name="last_resurfaced">
                                 <option value="">Select if known...</option>
-                                <option value="Never">Never (original surface)</option>
+                                <option value="Never (original surface)">Never — original surface</option>
                                 <option value="Less than 5 years ago">Less than 5 years ago</option>
-                                <option value="5-10 years ago">5-10 years ago</option>
-                                <option value="10-15 years ago">10-15 years ago</option>
+                                <option value="5-10 years ago">5–10 years ago</option>
+                                <option value="10-15 years ago">10–15 years ago</option>
                                 <option value="15+ years ago">15+ years ago</option>
                                 <option value="Not sure">Not sure</option>
                             </select>
                         </div>
                     </div>
 
-                    <!-- Work Requested -->
-                    <div class="form-section">
-                        <h3><i class="ph ph-wrench"></i> Work Needed</h3>
+                    <!-- Work Needed -->
+                    <div class="form-card reveal reveal-delay-3">
+                        <div class="form-card__title">
+                            <i class="ph ph-wrench"></i> Work Needed
+                        </div>
                         <div class="form-group">
-                            <label>Services Requested (check all that apply) *</label>
-                            <div class="checkbox-group">
+                            <label>Services Requested <span class="req">*</span></label>
+                            <div class="checkbox-grid">
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="svc_pebble" name="services[]" value="Pebble Tec / aggregate finish" checked>
-                                    <label for="svc_pebble">Pebble Tec / aggregate finish</label>
+                                    <label for="svc_pebble">Pebble Tec finish</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="svc_tile" name="services[]" value="New tile / tile replacement" checked>
@@ -218,7 +409,7 @@
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="svc_coping" name="services[]" value="Coping repair / replacement">
-                                    <label for="svc_coping">Coping repair / replacement</label>
+                                    <label for="svc_coping">Coping repair</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="svc_plaster" name="services[]" value="Plaster resurfacing">
@@ -226,21 +417,13 @@
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="svc_deck" name="services[]" value="Pool deck resurfacing">
-                                    <label for="svc_deck">Pool deck resurfacing</label>
+                                    <label for="svc_deck">Pool deck</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="svc_drain" name="services[]" value="Draining & acid wash">
                                     <label for="svc_drain">Draining & acid wash</label>
                                 </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="svc_other" name="services[]" value="Other">
-                                    <label for="svc_other">Other</label>
-                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="tile_details">Tile Details</label>
-                            <textarea id="tile_details" name="tile_details" rows="3" placeholder="What areas need new tile? Waterline tile, step tile, spa tile? Any color/style preferences?"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="pebble_color">Pebble Tec Color Preference</label>
@@ -248,40 +431,45 @@
                                 <option value="">Select if known...</option>
                                 <option value="Midnight Blue">Midnight Blue</option>
                                 <option value="Aqua Blue">Aqua Blue</option>
-                                <option value="Desert Sand">Desert Sand</option>
                                 <option value="Ocean Blue">Ocean Blue</option>
-                                <option value="Sahara">Sahara</option>
                                 <option value="Sandy Beach">Sandy Beach</option>
+                                <option value="Desert Sand">Desert Sand</option>
+                                <option value="Sahara">Sahara</option>
                                 <option value="Black Pearl">Black Pearl</option>
-                                <option value="Not sure - need guidance">Not sure - need guidance</option>
-                                <option value="Other">Other (describe below)</option>
+                                <option value="Not sure - need guidance">Not sure — need guidance</option>
                             </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0">
+                            <label for="tile_details">Tile Notes</label>
+                            <textarea id="tile_details" name="tile_details" rows="3" placeholder="Which areas need tile work? Waterline, step tile, spa tile? Color or style preferences?"></textarea>
                         </div>
                     </div>
 
-                    <!-- Timeline & Budget -->
-                    <div class="form-section">
-                        <h3><i class="ph ph-calendar"></i> Timeline & Budget</h3>
+                    <!-- Timeline + Budget -->
+                    <div class="form-card reveal reveal-delay-4">
+                        <div class="form-card__title">
+                            <i class="ph ph-calendar-check"></i> Timeline & Budget
+                        </div>
                         <div class="form-row">
-                            <div class="form-group">
-                                <label for="timeline">Desired Timeline *</label>
+                            <div class="form-group" style="margin-bottom:0">
+                                <label for="timeline">Desired Timeline <span class="req">*</span></label>
                                 <select id="timeline" name="timeline" required>
                                     <option value="">When do you need this done?</option>
                                     <option value="ASAP">ASAP</option>
                                     <option value="Within 2 weeks">Within 2 weeks</option>
                                     <option value="Within 1 month">Within 1 month</option>
-                                    <option value="1-3 months">1-3 months</option>
-                                    <option value="Flexible / just getting quotes">Flexible / just getting quotes</option>
+                                    <option value="1-3 months">1–3 months</option>
+                                    <option value="Flexible">Flexible / just getting quotes</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="margin-bottom:0">
                                 <label for="budget">Budget Range</label>
                                 <select id="budget" name="budget">
                                     <option value="">Select if known...</option>
                                     <option value="Under $5,000">Under $5,000</option>
-                                    <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                                    <option value="$10,000 - $15,000">$10,000 - $15,000</option>
-                                    <option value="$15,000 - $20,000">$15,000 - $20,000</option>
+                                    <option value="$5,000 - $10,000">$5,000 – $10,000</option>
+                                    <option value="$10,000 - $15,000">$10,000 – $15,000</option>
+                                    <option value="$15,000 - $20,000">$15,000 – $20,000</option>
                                     <option value="$20,000+">$20,000+</option>
                                     <option value="Not sure">Not sure</option>
                                 </select>
@@ -289,60 +477,87 @@
                         </div>
                     </div>
 
-                    <!-- Additional Info -->
-                    <div class="form-section">
-                        <h3><i class="ph ph-note"></i> Additional Details</h3>
+                    <!-- Additional Details -->
+                    <div class="form-card reveal reveal-delay-5">
+                        <div class="form-card__title">
+                            <i class="ph ph-note-pencil"></i> Additional Details
+                        </div>
                         <div class="form-group">
                             <label for="additional">Anything else we should know?</label>
-                            <textarea id="additional" name="additional_details" rows="4" placeholder="Equipment that needs work, access issues, HOA requirements, previous quotes, etc."></textarea>
+                            <textarea id="additional" name="additional_details" rows="4" placeholder="Equipment upgrades, access issues, HOA requirements, previous quotes, etc."></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="photos">Pool Photos</label>
-                            <input type="file" id="photos" name="photos" multiple accept="image/*" style="padding:0.5rem;">
-                            <p class="photo-upload-note">Upload photos of your pool's current condition (optional but helpful for accurate estimates)</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="how_found">How did you hear about us?</label>
-                            <select id="how_found" name="how_found">
-                                <option value="">Select...</option>
-                                <option value="Google search">Google search</option>
-                                <option value="Referral">Referral / word of mouth</option>
-                                <option value="Social media">Social media</option>
-                                <option value="Repeat customer">Repeat customer</option>
-                                <option value="Other">Other</option>
-                            </select>
+                        <div class="form-group" style="margin-bottom:0">
+                            <label>Pool Photos <span style="font-weight:400;color:var(--color-text-light)">(optional — helps us prepare a more accurate estimate)</span></label>
+                            <label class="file-upload" for="photos">
+                                <input type="file" id="photos" name="photos" multiple accept="image/*">
+                                <i class="ph ph-camera"></i>
+                                <p><strong>Tap to upload photos</strong><br>Show us your pool's current condition</p>
+                            </label>
                         </div>
                     </div>
 
-                    <button type="submit" class="estimate-submit">
+                    <button type="submit" class="submit-btn">
                         <i class="ph ph-paper-plane-tilt"></i> Submit Project Details
                     </button>
+
+                    <div class="trust-bar">
+                        <div class="trust-item"><i class="ph ph-lock"></i> Your info stays private</div>
+                        <div class="trust-item"><i class="ph ph-clock"></i> Response within 24 hrs</div>
+                        <div class="trust-item"><i class="ph ph-phone-call"></i> (623) 294-9154</div>
+                    </div>
                 </form>
 
-                <div id="form-success" class="form-success-message">
-                    <div class="success-checkmark">
+                <!-- Success -->
+                <div id="form-success" class="form-card form-success">
+                    <div class="success-icon">
                         <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
                     </div>
-                    <h3>Thank You!</h3>
-                    <p>We've received your project details and will prepare your estimate.</p>
-                    <p>We'll be in touch within 24 hours. For immediate questions, call <a href="tel:6232949154" style="color:var(--color-accent);">(623) 294-9154</a></p>
+                    <h3>We Got It — Thanks!</h3>
+                    <p>We'll review your project details and reach out within 24 hours.</p>
+                    <p style="margin-top:8px">Need us sooner? Call <a href="tel:6232949154">(623) 294-9154</a></p>
                 </div>
+
             </div>
         </div>
     </main>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;">Phoenix Pool Resurfacing</div>
-                <p>Professional pool resurfacing services for the Phoenix Metro Area.</p>
-                <p><strong>Call:</strong> <a href="tel:6232949154" style="color:var(--color-accent);">(623) 294-9154</a></p>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">
+                <p>&copy; 2026 Phoenix Pool Resurfacing. All rights reserved.</p>
+                <p><a href="tel:6232949154">(623) 294-9154</a> &nbsp;|&nbsp; Licensed &amp; Insured</p>
             </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2026 Phoenix Pool Resurfacing. All rights reserved. Licensed & Insured.</p></div>
     </footer>
+
     <script>
-    if(window.location.hash==='#form-success'){const f=document.getElementById('estimate-form');const s=document.getElementById('form-success');if(f)f.style.display='none';if(s)s.style.display='block';}
-    document.querySelectorAll('.dropdown > a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<=968){e.preventDefault();this.parentElement.classList.toggle('active');}});});
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Form success state
+    if (window.location.hash === '#form-success') {
+        document.getElementById('estimate-form').style.display = 'none';
+        const s = document.getElementById('form-success');
+        s.style.display = 'block';
+    }
+
+    // File upload label update
+    document.getElementById('photos').addEventListener('change', function() {
+        const p = this.closest('.file-upload').querySelector('p');
+        if (this.files.length) {
+            p.innerHTML = '<strong>' + this.files.length + ' photo' + (this.files.length > 1 ? 's' : '') + ' selected</strong>';
+        }
+    });
     </script>
 </body>
 </html>
