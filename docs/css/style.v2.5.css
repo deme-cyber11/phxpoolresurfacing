@@ -314,7 +314,7 @@
     }
     .hero__stat-label {
       font-size: 0.875rem;
-      color: rgba(241, 245, 249, 0.6);
+      color: rgba(241, 245, 249, 0.88);
       font-weight: 500;
       margin-top: 4px;
     }
@@ -623,7 +623,7 @@
       margin-bottom: 64px;
     }
     .process__header .section-title { color: var(--color-white); }
-    .process__header .section-subtitle { color: rgba(241,245,249,0.6); margin: 0 auto; }
+    .process__header .section-subtitle { color: rgba(241,245,249,0.88); margin: 0 auto; }
 
     .process__grid {
       display: grid;
@@ -690,7 +690,7 @@
     }
     .process__card-desc {
       font-size: 0.9375rem;
-      color: rgba(241, 245, 249, 0.55);
+      color: rgba(241, 245, 249, 0.85);
       line-height: 1.6;
     }
 
@@ -804,7 +804,7 @@
     }
     .testimonials__stars-text {
       font-size: 0.9375rem;
-      color: rgba(241,245,249,0.5);
+      color: rgba(241,245,249,0.82);
       font-weight: 500;
     }
 
@@ -858,7 +858,7 @@
     }
     .testimonial-card__role {
       font-size: 0.8125rem;
-      color: rgba(241,245,249,0.45);
+      color: rgba(241,245,249,0.80);
       font-weight: 500;
     }
 
@@ -1172,7 +1172,7 @@
     .footer__brand-name span { color: var(--color-accent); }
     .footer__brand-desc {
       font-size: 0.9375rem;
-      color: rgba(241,245,249,0.45);
+      color: rgba(241,245,249,0.80);
       line-height: 1.7;
       margin-bottom: 24px;
     }
@@ -1198,7 +1198,7 @@
     .footer__social svg {
       width: 18px;
       height: 18px;
-      fill: rgba(241,245,249,0.6);
+      fill: rgba(241,245,249,0.88);
     }
     .footer__social:hover svg { fill: var(--color-white); }
 
@@ -1218,7 +1218,7 @@
     }
     .footer__links a {
       font-size: 0.9375rem;
-      color: rgba(241,245,249,0.5);
+      color: rgba(241,245,249,0.82);
       transition: color 0.2s;
     }
     .footer__links a:hover { color: var(--color-accent); }
@@ -1228,7 +1228,7 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 0.9375rem;
-      color: rgba(241,245,249,0.5);
+      color: rgba(241,245,249,0.82);
       margin-bottom: 14px;
     }
     .footer__contact-item svg {
@@ -1252,7 +1252,7 @@
     }
     .footer__copy {
       font-size: 0.8125rem;
-      color: rgba(241,245,249,0.35);
+      color: rgba(241,245,249,0.75);
     }
     .footer__legal {
       display: flex;
@@ -1260,7 +1260,7 @@
     }
     .footer__legal a {
       font-size: 0.8125rem;
-      color: rgba(241,245,249,0.35);
+      color: rgba(241,245,249,0.75);
       transition: color 0.2s;
     }
     .footer__legal a:hover { color: var(--color-accent); }

@@ -73,7 +73,7 @@
     .section-subtitle { font-size: 0.95rem !important; }
   }
 </style>
-    <link rel="stylesheet" href="/css/styles.v2.css">
+    <link rel="stylesheet" href="/css/style.v2.5.css">
 <style>
 /* Mobile overrides */
 @media (max-width: 768px) { .page-section { padding: 2rem 1.25rem !important; } }
@@ -134,7 +134,7 @@
         "telephone": "(623) 294-9154",
         "priceRange": "$$",
         "image": "https://phxpoolresurfacing.com/images/hero-main.webp",
-        "logo": "https://phxpoolresurfacing.com/apple-touch-icon.png",
+        "logo": {"@type": "ImageObject", "url": "https://phxpoolresurfacing.com/apple-touch-icon.png", "width": 180, "height": 180},
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "1801 E Camelback Rd Ste 102",
@@ -215,8 +215,7 @@
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pool Deck Resurfacing", "description": "Cool deck and travertine deck refinishing"}},
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Draining & Acid Wash", "description": "Pool cleaning and surface preparation"}}
             ]
-        },
-        "sameAs": []
+        }
     }
     </script>
 
@@ -445,7 +444,7 @@
         </section>
 
         <!-- TESTIMONIALS -->
-        <section class="page-section testimonials-section" style="background:#f8fafc;padding:60px 0;">
+        <section class="page-section testimonials-section" style="background:#ffffff;padding:60px 0;">
           <div class="container" style="max-width:1100px;margin:0 auto;padding:0 20px;">
             <h2 style="text-align:center;margin-bottom:8px;font-size:1.8rem;">What Phoenix Homeowners Are Saying</h2>
             <p style="text-align:center;color:#64748b;margin-bottom:40px;">Real experiences from real customers</p>
@@ -467,7 +466,7 @@
         </section>
 
         <!-- PRICING TRANSPARENCY SECTION -->
-        <section class="page-section" style="background:#ffffff;padding:64px 20px;">
+        <section class="page-section" style="background:#f8fafc;padding:64px 20px;">
           <div style="max-width:800px;margin:0 auto;">
             <h2 class="section-title" style="text-align:center;margin-bottom:28px;">What Does Pool Resurfacing Cost in Phoenix?</h2>
             <p style="color:#374151;line-height:1.85;font-size:1.05rem;margin-bottom:20px;">Most companies won't post this. We will, because a homeowner who understands the pricing makes a better decision and has better results.</p>
@@ -526,7 +525,7 @@
             </div>
         </section>
 
-        <section class="services-preview">
+        <section class="services-preview" style="background:#f8fafc;">
             <div class="section-header">
                 <h2 class="section-title">Pool Resurfacing Services</h2>
                 <p class="section-subtitle">Premium finishes designed for Arizona's demanding climate</p>
@@ -601,7 +600,7 @@
             </div>
         </section>
 
-        <section class="why-choose">
+        <section class="why-choose" style="background:#0a0e1a;">
             <div class="section-header">
                 <h2 class="section-title" style="color: white;">Why Phoenix Homeowners Choose Us</h2>
                 <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Arizona pool expertise you can trust</p>
@@ -625,7 +624,7 @@
             </div>
         </section>
 
-        <section class="trust-badges">
+        <section class="trust-badges" style="background:#f8fafc;">
             <div class="section-header">
                 <h2 class="section-title">Credentials &amp; Certifications</h2>
                 <p class="section-subtitle">Licensed, insured, and certified professionals</p>
@@ -730,7 +729,7 @@
             </div>
         </section>
 
-        <section>
+        <section style="background:#f8fafc;">
             <div class="section-header">
                 <h2 class="section-title">Our Recent Work</h2>
                 <p class="section-subtitle">Pool transformations across the Phoenix Metro Area</p>
@@ -874,22 +873,22 @@
                     <h3>Peoria</h3>
                     <p>Vistancia, Lake Pleasant</p>
                 </a>
-                <div class="area-card">
+                <a href="/locations/paradise-valley/" class="area-card">
                     <h3>Paradise Valley</h3>
                     <p>Camelback Mountain area</p>
-                </div>
+                </a>
                 <div class="area-card">
                     <h3>Cave Creek</h3>
                     <p>Tatum Ranch area</p>
                 </div>
-                <div class="area-card">
+                <a href="/locations/fountain-hills/" class="area-card">
                     <h3>Fountain Hills</h3>
                     <p>Eagle Mountain area</p>
-                </div>
-                <div class="area-card">
+                </a>
+                <a href="/locations/queen-creek/" class="area-card">
                     <h3>Queen Creek</h3>
                     <p>San Tan Valley area</p>
-                </div>
+                </a>
             </div>
         </section>
 
@@ -948,13 +947,14 @@
             </ul></div>
             <div class="footer-section"><h4>Company</h4><ul>
                 <li><a href="/about/">About Us</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="/contact/">Contact</a></li>
                 <li><a href="/privacy/">Privacy Policy</a></li>
                 <li><a href="/terms/">Terms of Service</a></li>
                 <li><a href="/">Home</a></li>
             </ul></div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2026 Phoenix Pool Resurfacing. All rights reserved. Licensed &amp; Insured. Licensed &amp; Insured</p></div>
+        <div class="footer-bottom"><p>&copy; 2026 Phoenix Pool Resurfacing. All rights reserved. Licensed &amp; Insured.</p></div>
     
     </footer>
     <script>
