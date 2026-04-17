@@ -122,11 +122,30 @@
       transform: translateY(-2px);
     }
 
-    /* Scroll Reveal */
+    /* Scroll Reveal
+       JS-failure safety net: reveal content after 2 seconds even if
+       IntersectionObserver never fires. The `html.js` guard lets the
+       normal scroll-reveal run when JS is available (set html.js in
+       the page's inline bootstrap), and falls back to the keyframe
+       animation otherwise. */
+    @keyframes visibility-fallback {
+      to { opacity: 1; transform: none; }
+    }
     .reveal {
       opacity: 0;
       transform: translateY(30px);
+      animation: visibility-fallback 0.8s ease-out 2s forwards;
+    }
+    html.js .reveal {
+      animation: none;
+      opacity: 0;
+      transform: translateY(30px);
       transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    html.js .reveal.visible,
+    html.js .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
     .reveal.visible {
       opacity: 1;
