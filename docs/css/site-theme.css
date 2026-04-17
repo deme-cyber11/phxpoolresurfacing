@@ -1,0 +1,7 @@
+/* Phoenix Pool Resurfacing — site-specific color overrides for v2.5 */
+:root {
+  --color-accent:      #e94560;
+  --color-accent-dark: #c73652;
+  --color-accent-glow: rgba(233, 69, 96, 0.3);
+  --color-warm:        #f4a261;
+}
