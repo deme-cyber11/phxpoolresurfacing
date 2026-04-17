@@ -30,3 +30,25 @@ main > section:first-of-type {
     padding-top: 2rem;
   }
 }
+
+/* Mobile contact grid — stack columns and prevent card overflow */
+@media (max-width: 640px) {
+  .contact-grid { grid-template-columns: 1fr !important; }
+  .contact-info-card,
+  .contact-info-column,
+  .contact-form-column { min-width: 0; max-width: 100%; }
+  .contact-email-link,
+  .contact-info-card a,
+  .contact-info-card span { word-break: break-word; overflow-wrap: anywhere; }
+}
+
+/* Wide content tables — horizontal scroll inside content instead of overflowing the page */
+main table,
+.content-container table,
+.content-section table,
+.blog-article-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
