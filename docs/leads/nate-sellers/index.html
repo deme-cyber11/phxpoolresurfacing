@@ -68,6 +68,17 @@
   .lead-title    { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.2rem; }
   .lead-subtitle { font-size: 0.85rem; color: var(--muted); }
 
+  .timeline-bar {
+    display: flex; align-items: center; gap: 0.6rem;
+    margin: -0.5rem -1.75rem 1.25rem;
+    padding: 0.65rem 1.75rem;
+    font-size: 0.95rem; font-weight: 700;
+  }
+  .timeline-bar-urgent { background: rgba(233,69,96,0.12); color: var(--accent); border-bottom: 1px solid rgba(233,69,96,0.2); }
+  .timeline-bar-open   { background: rgba(34,197,94,0.08);  color: var(--green);  border-bottom: 1px solid rgba(34,197,94,0.15); }
+  .timeline-bar-warm   { background: rgba(244,162,97,0.1);  color: var(--warm);   border-bottom: 1px solid rgba(244,162,97,0.2); }
+  .timeline-bar-icon   { font-size: 1.1rem; }
+
   .section-label {
     font-size: 0.82rem; font-weight: 800; letter-spacing: 0.06em;
     text-transform: uppercase; color: var(--text);
@@ -166,7 +177,10 @@
         <div class="lead-title">Sapphire Pools — Gibson Project</div>
         <div class="lead-subtitle">Gold Canyon, AZ · Submitted Apr 16, 2026</div>
       </div>
-      <span class="badge badge-urgent"><span class="badge-dot"></span>Ready Monday 4/20</span>
+    </div>
+
+    <div class="timeline-bar timeline-bar-urgent">
+      <span class="timeline-bar-icon">📅</span> Ready Monday, April 20 — Schedule ASAP
     </div>
 
     <div class="section-label">Contact</div>
@@ -269,7 +283,10 @@
         <div class="lead-title">Siennah Cottrell</div>
         <div class="lead-subtitle">West Phoenix, AZ · Submitted Apr 14, 2026</div>
       </div>
-      <span class="badge badge-open"><span class="badge-dot"></span>Open — flexible</span>
+    </div>
+
+    <div class="timeline-bar timeline-bar-open">
+      <span class="timeline-bar-icon">📅</span> Flexible — just getting quotes
     </div>
 
     <div class="section-label">Contact</div>
@@ -370,7 +387,10 @@
         <div class="lead-title">Ashleigh Hennessy</div>
         <div class="lead-subtitle">Central Phoenix, AZ · Submitted Apr 17, 2026</div>
       </div>
-      <span class="badge badge-urgent"><span class="badge-dot"></span>Next week</span>
+    </div>
+
+    <div class="timeline-bar timeline-bar-warm">
+      <span class="timeline-bar-icon">📅</span> Wants work done next week
     </div>
 
     <div class="section-label">Contact</div>
