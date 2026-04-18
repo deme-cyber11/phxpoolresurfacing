@@ -80,18 +80,20 @@
   .timeline-bar-icon   { font-size: 1.1rem; }
 
   .call-btn {
-    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-    margin: 1rem 0;
-    padding: 0.75rem 1.25rem;
-    background: var(--accent); color: white;
-    border-radius: 8px;
-    font-size: 0.95rem; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    margin: 0.9rem 0 0.75rem;
+    padding: 0.5rem 1.1rem;
+    background: rgba(233,69,96,0.18); color: var(--accent);
+    border: 1px solid rgba(233,69,96,0.45);
+    border-radius: 5px;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.02em;
     text-decoration: none;
-    transition: filter 0.1s;
+    transition: background 0.15s, border-color 0.15s;
   }
-  .call-btn:hover  { filter: brightness(1.1); }
-  .call-btn:active { filter: brightness(0.95); }
-  .call-btn-warm   { background: #c47a2e; }
+  .call-btn:hover  { background: rgba(233,69,96,0.26); border-color: rgba(233,69,96,0.7); }
+  .call-btn:active { background: rgba(233,69,96,0.32); }
+  .call-btn-warm   { background: rgba(196,122,46,0.15); color: var(--warm); border-color: rgba(196,122,46,0.4); }
+  .call-btn-warm:hover { background: rgba(196,122,46,0.25); }
 
   .section-label {
     font-size: 0.82rem; font-weight: 800; letter-spacing: 0.06em;
@@ -194,10 +196,10 @@
     </div>
 
     <div class="timeline-bar timeline-bar-urgent">
-      <span class="timeline-bar-icon">📅</span> Ready Monday, April 20 — Schedule ASAP
+      <span class="timeline-bar-icon">▸</span>Ready Monday, April 20 — Schedule ASAP
     </div>
 
-    <a href="tel:16028093243" class="call-btn">📞 Call Now — (602) 809-3243</a>
+    <a href="tel:16028093243" class="call-btn">→ Call Now — (602) 809-3243</a>
 
     <div class="section-label">Contact</div>
     <div class="info-grid">
@@ -302,10 +304,10 @@
     </div>
 
     <div class="timeline-bar timeline-bar-open">
-      <span class="timeline-bar-icon">📅</span> Flexible — just getting quotes
+      <span class="timeline-bar-icon">▸</span>Flexible — just getting quotes
     </div>
 
-    <a href="tel:16023213516" class="call-btn">📞 Call Now — (602) 321-3516</a>
+    <a href="tel:16023213516" class="call-btn">→ Call Now — (602) 321-3516</a>
 
     <div class="section-label">Contact</div>
     <div class="info-grid">
@@ -408,10 +410,10 @@
     </div>
 
     <div class="timeline-bar timeline-bar-warm">
-      <span class="timeline-bar-icon">📅</span> Wants work done next week
+      <span class="timeline-bar-icon">▸</span>Wants work done next week
     </div>
 
-    <a href="mailto:Ahennessy41215@gmail.com" class="call-btn call-btn-warm">✉️ Email Now — Ahennessy41215@gmail.com</a>
+    <a href="mailto:Ahennessy41215@gmail.com" class="call-btn call-btn-warm">→ Email Now — Ahennessy41215@gmail.com</a>
 
     <div class="section-label">Contact</div>
     <div class="info-grid">
