@@ -76,6 +76,7 @@ main table,
 
 /* Bullet points — restore padding stripped by * { padding: 0 } CSS reset */
 .svc-section ul,
+.loc-section ul,
 .blog-article-content ul,
 .content-section ul,
 .calc-content ul,
@@ -83,6 +84,7 @@ main table,
   padding-left: 1.6rem;
 }
 .svc-section li,
+.loc-section li,
 .blog-article-content li,
 .content-section li,
 .calc-content li {
