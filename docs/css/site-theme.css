@@ -73,3 +73,13 @@ main table,
   font-style: normal !important;
   color: rgba(241, 245, 249, 0.95) !important;
 }
+
+/* Location page testimonial section — fix low-contrast heading + italic quote */
+.testimonial-section h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.testimonial-section .testimonial-quote {
+  font-style: normal !important;
+}
