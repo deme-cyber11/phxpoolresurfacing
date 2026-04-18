@@ -53,6 +53,27 @@ main table,
   -webkit-overflow-scrolling: touch;
 }
 
+/* Tables: override width:100% so columns use natural width → overflow-x:auto kicks in */
+@media (max-width: 768px) {
+  .blog-article-content table {
+    width: auto !important;
+    min-width: 460px;
+  }
+}
+/* On narrow phones, drop the Lifespan column (4th) — reduces needed scroll width */
+@media (max-width: 480px) {
+  .blog-article-content table th:nth-child(4),
+  .blog-article-content table td:nth-child(4) {
+    display: none;
+  }
+}
+
+/* Remove decorative quote-mark pseudo-elements — faint, misaligned on mobile, confusing */
+.testimonial-card::before,
+.testimonial-section .testimonial-quote::before {
+  content: none !important;
+}
+
 /* Bullet points — restore padding stripped by * { padding: 0 } CSS reset */
 .svc-section ul,
 .blog-article-content ul,
