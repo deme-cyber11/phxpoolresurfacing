@@ -4,22 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Phoenix Pool Resurfacing — Leads</title>
+<title>Phoenix Pool Resurfacing — Leads for Nate Sellers</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:        #0f0f1a;
-    --surface:   #1a1a2e;
-    --card:      #1e2035;
-    --border:    rgba(255,255,255,0.08);
-    --accent:    #e94560;
-    --accent-d:  #c73652;
-    --warm:      #f4a261;
-    --text:      #e8e8f0;
-    --muted:     #9090aa;
-    --green:     #22c55e;
-    --radius:    12px;
+    --bg:      #0f0f1a;
+    --surface: #1a1a2e;
+    --card:    #1e2035;
+    --border:  rgba(255,255,255,0.08);
+    --accent:  #e94560;
+    --warm:    #f4a261;
+    --text:    #e8e8f0;
+    --muted:   #9090aa;
+    --green:   #22c55e;
+    --radius:  12px;
   }
 
   body {
@@ -30,128 +29,110 @@
     padding: 2rem 1rem 4rem;
   }
 
-  .container { max-width: 760px; margin: 0 auto; }
+  .container { max-width: 780px; margin: 0 auto; }
 
-  /* Header */
   .header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2.5rem; padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border);
   }
   .logo-badge {
-    width: 44px; height: 44px;
-    background: var(--accent);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem; font-weight: 900;
-    color: white; letter-spacing: -0.02em;
-    flex-shrink: 0;
+    width: 44px; height: 44px; background: var(--accent);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: 900; color: white; flex-shrink: 0;
   }
-  .header-text h1 { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+  .header-text h1 { font-size: 1.2rem; font-weight: 700; }
   .header-text p  { font-size: 0.8rem; color: var(--muted); }
 
-  /* Badge */
   .badge {
     display: inline-flex; align-items: center; gap: 0.35rem;
     font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
-    text-transform: uppercase; border-radius: 999px;
-    padding: 0.3rem 0.75rem;
+    text-transform: uppercase; border-radius: 999px; padding: 0.3rem 0.75rem;
   }
   .badge-urgent { background: rgba(233,69,96,0.15); color: var(--accent); }
   .badge-open   { background: rgba(34,197,94,0.12); color: var(--green); }
   .badge-dot    { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
-  /* Lead card */
   .lead-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.75rem;
-    margin-bottom: 1.5rem;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.75rem; margin-bottom: 1.5rem;
   }
-  .lead-card:first-of-type { border-top: 3px solid var(--accent); }
-  .lead-card:not(:first-of-type) { border-top: 3px solid var(--green); }
+  .lead-card:nth-child(1) { border-top: 3px solid var(--accent); }
+  .lead-card:nth-child(2) { border-top: 3px solid var(--green); }
+  .lead-card:nth-child(3) { border-top: 3px solid var(--warm); }
 
   .lead-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-    flex-wrap: wrap;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;
   }
-  .lead-title { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+  .lead-title    { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.2rem; }
   .lead-subtitle { font-size: 0.85rem; color: var(--muted); }
 
-  /* Section */
   .section-label {
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--muted);
     margin: 1.25rem 0 0.6rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.4rem; border-bottom: 1px solid var(--border);
   }
 
-  /* Grid */
   .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.6rem 1.5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.5rem;
   }
   @media (max-width: 500px) { .info-grid { grid-template-columns: 1fr; } }
 
   .info-row { display: flex; flex-direction: column; gap: 0.1rem; }
   .info-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-  .info-value { font-size: 0.92rem; color: var(--text); font-weight: 500; }
+  .info-value { font-size: 0.92rem; font-weight: 500; }
   .info-value a { color: var(--accent); text-decoration: none; }
   .info-value a:hover { text-decoration: underline; }
 
-  /* Specs list */
   .specs-list {
-    list-style: none;
-    display: flex; flex-wrap: wrap; gap: 0.5rem;
-    margin-top: 0.25rem;
+    list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem;
   }
   .specs-list li {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.3rem 0.65rem;
-    font-size: 0.82rem; color: var(--text);
+    background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.3rem 0.65rem; font-size: 0.82rem;
   }
 
-  /* Note box */
   .note-box {
-    background: rgba(244,162,97,0.08);
-    border: 1px solid rgba(244,162,97,0.25);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    font-size: 0.85rem; color: var(--warm);
-    margin-top: 1rem;
+    background: rgba(244,162,97,0.08); border: 1px solid rgba(244,162,97,0.25);
+    border-radius: 8px; padding: 0.75rem 1rem;
+    font-size: 0.85rem; color: var(--warm); margin-top: 1rem;
   }
 
-  /* Footer */
+  /* Photo gallery */
+  .photo-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem; margin-top: 0.5rem;
+  }
+  .photo-grid img {
+    width: 100%; border-radius: 8px; border: 1px solid var(--border);
+    object-fit: cover; aspect-ratio: 4/3; cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .photo-grid img:hover { opacity: 0.85; }
+  .photo-caption { font-size: 0.75rem; color: var(--muted); margin-top: 0.35rem; text-align: center; }
+
+  /* Lightbox */
+  #lb { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92);
+    z-index:9999; align-items:center; justify-content:center; cursor:zoom-out; }
+  #lb.open { display:flex; }
+  #lb img { max-width:92vw; max-height:90vh; border-radius:10px; object-fit:contain; }
+
   .footer {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.78rem; color: var(--muted);
-    text-align: center;
+    margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+    font-size: 0.78rem; color: var(--muted); text-align: center;
   }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- Header -->
   <div class="header">
     <div class="logo-badge">PR</div>
     <div class="header-text">
-      <h1>Phoenix Pool Resurfacing</h1>
-      <p>Lead packet — confidential · phxpoolresurfacing.com</p>
+      <h1>Phoenix Pool Resurfacing — Lead Packet</h1>
+      <p>Prepared for Nate Sellers · phxpoolresurfacing.com · Confidential</p>
     </div>
   </div>
 
@@ -184,8 +165,8 @@
         <span class="info-value"><a href="mailto:ted@sapphirepoolsaz.com">ted@sapphirepoolsaz.com</a></span>
       </div>
       <div class="info-row">
-        <span class="info-label">Office Address</span>
-        <span class="info-value">524 S. Shade Rock Ln., Queen Valley, AZ 85118</span>
+        <span class="info-label">Office</span>
+        <span class="info-value">524 S. Shade Rock Ln., Queen Valley AZ 85118</span>
       </div>
     </div>
 
@@ -196,8 +177,8 @@
         <span class="info-value">GIBSON</span>
       </div>
       <div class="info-row">
-        <span class="info-label">Site Address</span>
-        <span class="info-value">11106 E Rio Bravo Rd, Gold Canyon, AZ 85118</span>
+        <span class="info-label">Address</span>
+        <span class="info-value">11106 E Rio Bravo Rd, Gold Canyon AZ 85118</span>
       </div>
       <div class="info-row">
         <span class="info-label">Pool Size</span>
@@ -227,20 +208,16 @@
       <li>✅ Drain covers on site</li>
     </ul>
 
-    <div class="section-label">Timeline</div>
-    <div class="info-grid">
-      <div class="info-row">
-        <span class="info-label">Ready Date</span>
-        <span class="info-value">Monday, April 20, 2026</span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">Last Resurfaced</span>
-        <span class="info-value">Never — original surface (new build)</span>
+    <div class="section-label">Photos</div>
+    <div class="photo-grid">
+      <div>
+        <img src="photos/ted-pool-shell.jpg" alt="Gibson pool shell — bare gunite" onclick="openLb(this)">
+        <div class="photo-caption">Bare gunite shell — new build</div>
       </div>
     </div>
 
     <div class="note-box">
-      Ted is the pool builder (Sapphire Pools) subbing out the resurface — professional contact, clean specs. Full engineering drawings available on request.
+      Ted is the pool builder (Sapphire Pools) subbing out the resurface — professional contact, clean specs. Engineering drawings available on request.
     </div>
   </div>
 
@@ -270,7 +247,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Address</span>
-        <span class="info-value">5569 W Christy Dr, Phoenix, AZ</span>
+        <span class="info-value">5569 W Christy Dr, Phoenix AZ</span>
       </div>
     </div>
 
@@ -282,7 +259,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Pool Type</span>
-        <span class="info-value">In-ground concrete/gunite</span>
+        <span class="info-value">In-ground concrete/gunite · Freeform</span>
       </div>
       <div class="info-row">
         <span class="info-label">Current Surface</span>
@@ -298,7 +275,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Tile</span>
-        <span class="info-value">Grey waterline tile</span>
+        <span class="info-value">Grey waterline tile (brown penny band visible in photos)</span>
       </div>
     </div>
 
@@ -315,8 +292,24 @@
         <span class="info-value">Flexible — getting quotes</span>
       </div>
       <div class="info-row">
-        <span class="info-label">Notes</span>
-        <span class="info-value">Not sure on finish — needs guidance. Photos submitted (3 images).</span>
+        <span class="info-label">Pebble Color</span>
+        <span class="info-value">Not sure — needs guidance</span>
+      </div>
+    </div>
+
+    <div class="section-label">Photos</div>
+    <div class="photo-grid">
+      <div>
+        <img src="photos/siennah-pool-1.jpg" alt="Siennah pool — drained overhead view" onclick="openLb(this)">
+        <div class="photo-caption">Overhead — drained, surface worn</div>
+      </div>
+      <div>
+        <img src="photos/siennah-pool-2.jpg" alt="Siennah pool — side angle drained" onclick="openLb(this)">
+        <div class="photo-caption">Side angle — freeform shape, penny tile band</div>
+      </div>
+      <div>
+        <img src="photos/siennah-pool-3.jpg" alt="Siennah pool — filled" onclick="openLb(this)">
+        <div class="photo-caption">Pool filled — current state</div>
       </div>
     </div>
   </div>
@@ -361,8 +354,8 @@
 
     <div class="section-label">Requested Services</div>
     <ul class="specs-list">
-      <li>Pebble Tec patch repairs</li>
-      <li>3 areas · ~3" diameter each</li>
+      <li>Pebble Tec patch repairs — 3 areas</li>
+      <li>~3" diameter each</li>
     </ul>
 
     <div class="section-label">Repair Details</div>
@@ -385,15 +378,49 @@
       </div>
     </div>
 
+    <div class="section-label">Photos</div>
+    <div class="photo-grid">
+      <div>
+        <img src="photos/ashleigh-repairs.jpg" alt="Ashleigh repair areas" onclick="openLb(this)">
+        <div class="photo-caption">3 repair areas — light, hole, failing patch</div>
+      </div>
+      <div>
+        <img src="photos/finish-samples-1.jpg" alt="Pebble Tec finish samples with jewels" onclick="openLb(this)">
+        <div class="photo-caption">Finish samples — w/ jewels option</div>
+      </div>
+      <div>
+        <img src="photos/finish-samples-2.jpg" alt="Universal Mini Pebble — Kool and Caribbean" onclick="openLb(this)">
+        <div class="photo-caption">Universal Mini Pebble: Kool (white) · Caribbean (grey)</div>
+      </div>
+    </div>
+
     <div class="note-box">
-      Small repair job — homeowner, motivated, photos provided. Did not fill out form (came in via direct message). Job address differs from home address — confirm on-site.
+      Homeowner, motivated, next week urgency. Job address differs from home address — confirm location on first call. Did not submit via online form (came in via direct message).
     </div>
   </div>
 
   <div class="footer">
-    Phoenix Pool Resurfacing · phxpoolresurfacing.com · Confidential lead packet
+    Phoenix Pool Resurfacing · phxpoolresurfacing.com · Confidential — prepared for Nate Sellers
   </div>
 
 </div>
+
+<!-- Lightbox -->
+<div id="lb" onclick="closeLb()">
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+  function openLb(img) {
+    document.getElementById('lb-img').src = img.src;
+    document.getElementById('lb').classList.add('open');
+  }
+  function closeLb() {
+    document.getElementById('lb').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLb();
+  });
+</script>
 </body>
 </html>
