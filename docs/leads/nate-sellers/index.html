@@ -21,6 +21,7 @@
     --text:    #e8e8f0;
     --muted:   #9090aa;
     --green:   #22c55e;
+    --blue:    #60a5fa;
     --radius:  12px;
   }
 
@@ -63,6 +64,7 @@
   .lead-card:nth-child(1) { border-top: 3px solid var(--accent); }
   .lead-card:nth-child(2) { border-top: 3px solid var(--green); }
   .lead-card:nth-child(3) { border-top: 3px solid var(--warm); }
+  .lead-card:nth-child(4) { border-top: 3px solid var(--blue); }
 
   .lead-header {
     display: flex; justify-content: space-between; align-items: flex-start;
@@ -80,6 +82,7 @@
   .timeline-bar-urgent { background: rgba(233,69,96,0.12); color: var(--accent); border-bottom: 1px solid rgba(233,69,96,0.2); }
   .timeline-bar-open   { background: rgba(34,197,94,0.08);  color: var(--green);  border-bottom: 1px solid rgba(34,197,94,0.15); }
   .timeline-bar-warm   { background: rgba(244,162,97,0.1);  color: var(--warm);   border-bottom: 1px solid rgba(244,162,97,0.2); }
+  .timeline-bar-blue   { background: rgba(96,165,250,0.08); color: var(--blue);   border-bottom: 1px solid rgba(96,165,250,0.15); }
   .timeline-bar-icon   { font-size: 1.1rem; }
 
   .call-btn {
@@ -97,6 +100,8 @@
   .call-btn:active { background: rgba(233,69,96,0.32); }
   .call-btn-warm   { background: rgba(196,122,46,0.15); color: var(--warm); border-color: rgba(196,122,46,0.4); }
   .call-btn-warm:hover { background: rgba(196,122,46,0.25); }
+  .call-btn-blue   { background: rgba(96,165,250,0.15); color: var(--blue); border-color: rgba(96,165,250,0.4); }
+  .call-btn-blue:hover { background: rgba(96,165,250,0.25); }
 
   .section-label {
     font-size: 0.82rem; font-weight: 800; letter-spacing: 0.06em;
@@ -489,6 +494,87 @@
 
     <div class="note-box">
       Homeowner, motivated, next week urgency. Job address differs from home address — confirm location on first call. Did not submit via online form (came in via direct message).
+    </div>
+  </div>
+
+  <!-- ── LEAD 4: Maggie Penman ── -->
+  <div class="lead-card">
+    <div class="lead-header">
+      <div>
+        <div class="lead-title">Maggie Penman</div>
+        <div class="lead-subtitle">Glendale, AZ · Submitted Apr 20, 2026</div>
+      </div>
+    </div>
+
+    <div class="timeline-bar timeline-bar-blue">
+      <span class="timeline-bar-icon">▸</span>Flexible — just getting quotes
+    </div>
+
+    <a href="tel:16023491351" class="call-btn call-btn-blue">→ Call Now — (602) 349-1351</a>
+
+    <div class="section-label">Contact</div>
+    <div class="info-grid">
+      <div class="info-row">
+        <span class="info-label">Name</span>
+        <span class="info-value">Maggie Penman</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Phone</span>
+        <span class="info-value"><a href="tel:16023491351">(602) 349-1351</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Email</span>
+        <span class="info-value"><span>maggie.penman@icloud.com</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Address</span>
+        <span class="info-value">7137 W Planada Ln, Glendale AZ 85310</span>
+      </div>
+    </div>
+
+    <div class="section-label">Pool Details</div>
+    <div class="info-grid">
+      <div class="info-row">
+        <span class="info-label">Pool Size</span>
+        <span class="info-value">Not sure</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Pool Type</span>
+        <span class="info-value">In-ground concrete/gunite</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Current Surface</span>
+        <span class="info-value">Pebble Tec / aggregate</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Condition</span>
+        <span class="info-value">Cracking / chipping</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Last Resurfaced</span>
+        <span class="info-value">Never — original surface</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Pool Age</span>
+        <span class="info-value">~30 years old</span>
+      </div>
+    </div>
+
+    <div class="section-label">Requested Services</div>
+    <ul class="specs-list">
+      <li>Pebble Tec / aggregate finish</li>
+    </ul>
+
+    <div class="section-label">Timeline &amp; Notes</div>
+    <div class="info-grid">
+      <div class="info-row">
+        <span class="info-label">Timeline</span>
+        <span class="info-value">Flexible — getting quotes</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      30-year-old pool, never resurfaced — original Pebble Tec surface cracking/chipping throughout. Maggie specifically noted contractor must be certified.
     </div>
   </div>
 
