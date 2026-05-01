@@ -7693,6 +7693,9 @@
                     }
 
                     try {
+                        // Web3Forms API endpoint
+                        formData.append('access_key', 'c5f38967-a52a-4fc1-be13-263babdeeca4');
+
                         const response = await fetch('https://lead-manager-api.irontigerdigital.workers.dev/ingest', {
                             method: 'POST',
                             body: formData
@@ -7700,7 +7703,7 @@
 
                         const data = await response.json();
 
-                        if (data.ok) {
+                        if (data.success) {
                             // Show success message
                             document.getElementById('formSuccess').style.display = 'block';
 
