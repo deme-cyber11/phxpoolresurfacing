@@ -4,469 +4,991 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Lead Packet — Nate Sellers | Phoenix Pool Resurfacing</title>
+<title>Phoenix Pool Resurfacing — Lead Packet · Nate Sellers</title>
+<link rel="canonical" href="https://phxpoolresurfacing.com/leads/nate-sellers/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0c2638">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:        #f4f5f7;
-    --white:     #ffffff;
-    --pool:      #0284c7;
-    --pool-lt:   #e0f2fe;
-    --urgent:    #dc2626;
-    --urgent-lt: #fef2f2;
-    --warm:      #c2410c;
-    --warm-lt:   #fff7ed;
-    --open:      #15803d;
-    --open-lt:   #f0fdf4;
-    --text:      #111827;
-    --sub:       #374151;
-    --muted:     #6b7280;
-    --border:    #e5e7eb;
-    --radius:    10px;
-    --shadow:    0 1px 3px rgba(0,0,0,0.07), 0 4px 14px rgba(0,0,0,0.06);
+    --paper:    #f5f1e8;
+    --paper-2:  #ebe5d3;
+    --ink:      #1a1a1a;
+    --ink-2:    #3a3a3a;
+    --muted:    #6b6655;
+    --hairline: #d8d2c0;
+    --accent:   #0c4a6e;
+    --accent-soft: rgba(12, 74, 110, 0.08);
+    --terracotta: #a8451f;
+    --moss:     #4a6741;
+    --gold:     #8a6d2a;
+    --paper-card: #fffdf7;
+    --shadow-sm: 0 1px 2px rgba(20, 14, 0, 0.04);
+    --shadow:    0 1px 2px rgba(20, 14, 0, 0.04), 0 12px 28px rgba(20, 14, 0, 0.06);
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
+  html { scroll-behavior: smooth; }
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    padding: 2rem 1rem 5rem;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  .container { max-width: 760px; margin: 0 auto; }
-
-  /* ── Header ── */
-  .header {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 2rem; padding-bottom: 1.25rem;
-    border-bottom: 2px solid var(--border);
-    flex-wrap: wrap; gap: 0.75rem;
-  }
-  .brand { font-size: 1.05rem; font-weight: 700; color: var(--pool); }
-  .brand span { color: var(--text); }
-  .brand-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
-  .header-meta { font-size: 0.8rem; color: var(--muted); text-align: right; }
-  .header-meta strong { display: block; color: var(--sub); font-size: 0.9rem; }
-
-  /* ── Lead card ── */
-  .lead-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 1.5rem;
+  .cover {
+    position: relative;
+    min-height: 88vh;
+    background:
+      linear-gradient(180deg, rgba(8,30,46,0.55) 0%, rgba(8,30,46,0.85) 100%),
+      url('photos/allie-pool-1.jpg') center / cover no-repeat;
+    color: #f5f1e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5rem 2rem 3rem;
     overflow: hidden;
   }
-
-  .card-header {
-    padding: 1.2rem 1.5rem;
-    border-bottom: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
   }
-  .lead-name { font-size: 1.15rem; font-weight: 700; line-height: 1.25; }
-  .lead-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+  .monogram {
+    width: 52px; height: 52px;
+    border: 1.5px solid rgba(245, 241, 232, 0.5);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-weight: 600; font-size: 1.45rem;
+    font-style: italic;
+    letter-spacing: -0.04em;
+  }
+  .cover-meta-right { text-align: right; opacity: 0.78; line-height: 1.7; }
+  .cover-meta-right span { display: block; }
+
+  .cover-bottom { max-width: 720px; }
+  .cover-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.78;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .cover-eyebrow::before {
+    content: ''; width: 28px; height: 1px; background: rgba(245, 241, 232, 0.6);
+  }
+  .cover h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 6.5vw, 4.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.4rem;
+    font-variation-settings: 'opsz' 144;
+  }
+  .cover h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: #e7d9b6;
+  }
+  .cover-sub {
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.82;
+    max-width: 540px;
+    font-weight: 400;
+  }
+  .cover-stat-row {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2.2rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid rgba(245, 241, 232, 0.18);
+    flex-wrap: wrap;
+  }
+  .cover-stat { font-family: var(--sans); }
+  .cover-stat-value {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.85rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.35rem;
+    font-variation-settings: 'opsz' 96;
+  }
+  .cover-stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  .page { max-width: 920px; margin: 0 auto; padding: 0 2rem; }
+
+  .contents { padding: 5.5rem 0 3.5rem; border-bottom: 1px solid var(--hairline); }
+  .section-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .section-eyebrow::before {
+    content: ''; width: 24px; height: 1px; background: var(--muted);
+  }
+  .contents h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 2.5rem;
+    color: var(--ink);
+    max-width: 620px;
+    font-variation-settings: 'opsz' 96;
+  }
+  .toc-list { list-style: none; border-top: 1px solid var(--hairline); }
+  .toc-item {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--hairline);
+    text-decoration: none;
+    color: var(--ink);
+    transition: padding 0.18s ease;
+  }
+  .toc-item:hover { padding-left: 0.5rem; }
+  .toc-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--muted);
+    font-variation-settings: 'opsz' 24;
+  }
+  .toc-main { display: flex; flex-direction: column; gap: 0.2rem; }
+  .toc-name {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    font-variation-settings: 'opsz' 48;
+  }
+  .toc-desc {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .toc-status {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--terracotta);
+    white-space: nowrap;
+  }
+  .toc-status.flexible { color: var(--moss); }
+  .toc-status.scheduled { color: var(--gold); }
+
+  .spread {
+    padding: 5rem 0 4rem;
+    border-bottom: 1px solid var(--hairline);
+    scroll-margin-top: 1.5rem;
+  }
+  .spread:last-of-type { border-bottom: 0; }
+
+  .spread-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
+    font-variation-settings: 'opsz' 24;
+  }
+  .spread-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+    font-variation-settings: 'opsz' 144;
+  }
+  .spread-loc {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.6rem;
+  }
+  .spread-loc strong { color: var(--ink-2); font-weight: 500; }
 
   .status-pill {
-    display: inline-flex; align-items: center; gap: 0.35rem;
-    font-size: 0.7rem; font-weight: 700;
-    border-radius: 999px; padding: 0.25rem 0.65rem;
-    white-space: nowrap; flex-shrink: 0; margin-top: 0.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.35rem 0.7rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 2px;
+    border: 1px solid rgba(12, 74, 110, 0.18);
+    margin-bottom: 1.8rem;
   }
-  .status-pill::before {
-    content: ''; width: 6px; height: 6px;
-    border-radius: 50%; background: currentColor; flex-shrink: 0;
+  .status-pill.urgent {
+    background: rgba(168, 69, 31, 0.08);
+    color: var(--terracotta);
+    border-color: rgba(168, 69, 31, 0.22);
   }
-  .s-urgent { background: var(--urgent-lt); color: var(--urgent); }
-  .s-open   { background: var(--open-lt);   color: var(--open); }
-  .s-warm   { background: var(--warm-lt);   color: var(--warm); }
-  .s-pool   { background: var(--pool-lt);   color: var(--pool); }
-
-  .card-body { padding: 1.25rem 1.5rem; }
-
-  /* ── Alert bar ── */
-  .alert-bar {
-    border-radius: 6px; padding: 0.55rem 0.9rem;
-    font-size: 0.85rem; font-weight: 600;
-    margin-bottom: 1.1rem;
+  .status-pill.flexible {
+    background: rgba(74, 103, 65, 0.08);
+    color: var(--moss);
+    border-color: rgba(74, 103, 65, 0.22);
   }
-  .alert-urgent { background: var(--urgent-lt); border: 1px solid #fecaca; color: var(--urgent); }
-  .alert-warm   { background: var(--warm-lt);   border: 1px solid #fed7aa; color: var(--warm); }
-
-  /* ── Buttons ── */
-  .btn-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
-
-  .btn-call, .btn-email {
-    display: inline-flex; align-items: center; gap: 0.35rem;
-    padding: 0.5rem 1rem; border-radius: 6px;
-    font-weight: 600; font-size: 0.875rem;
-    text-decoration: none; transition: background 0.15s;
+  .status-pill.scheduled {
+    background: rgba(138, 109, 42, 0.1);
+    color: var(--gold);
+    border-color: rgba(138, 109, 42, 0.25);
   }
-  .btn-call  { background: #16a34a; color: #fff; }
-  .btn-call:hover { background: #15803d; }
-  .btn-email { background: var(--pool-lt); color: var(--pool); border: 1px solid #bae6fd; }
-  .btn-email:hover { background: #bae6fd; }
+  .status-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
-  /* ── Section heading ── */
-  .sh {
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em;
-    text-transform: uppercase; color: var(--muted);
-    margin: 1.2rem 0 0.55rem;
+  .spread-lede {
+    font-family: var(--serif);
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 640px;
+    margin-bottom: 2.4rem;
+    font-weight: 400;
+    font-variation-settings: 'opsz' 48;
   }
-  .sh:first-child { margin-top: 0; }
+  .spread-lede strong { color: var(--ink); font-weight: 500; }
 
-  /* ── Info grid ── */
-  .info-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
-  }
-  @media (max-width: 520px) { .info-grid { grid-template-columns: 1fr; } }
-
-  .ir {
-    display: grid; grid-template-columns: 100px 1fr;
-    gap: 0.5rem; align-items: baseline;
-    padding: 0.42rem 0;
-    border-bottom: 1px solid #f3f4f6;
+  .cta-row { display: flex; gap: 0.8rem; margin-bottom: 2.8rem; flex-wrap: wrap; }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1.35rem;
+    font-family: var(--sans);
     font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.15s ease;
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
   }
-  .ir:last-child { border-bottom: none; }
-  .ik { color: var(--muted); font-size: 0.78rem; }
-  .iv { font-weight: 500; }
-  .iv a { color: var(--pool); text-decoration: none; }
-  .iv a:hover { text-decoration: underline; }
+  .cta:hover { background: var(--accent); border-color: var(--accent); }
+  .cta-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+  }
+  .cta-secondary:hover {
+    border-color: var(--ink);
+    background: var(--paper-card);
+    color: var(--ink);
+  }
+  .cta-icon { font-size: 0.95em; opacity: 0.85; }
 
-  /* ── Tags ── */
-  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .spread-body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  @media (max-width: 720px) {
+    .spread-body { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  .sidebar { border-top: 1px solid var(--ink); padding-top: 1.2rem; }
+  .sidebar-block { margin-bottom: 2rem; }
+  .sidebar-block:last-child { margin-bottom: 0; }
+  .sidebar-label {
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-value {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .sidebar-value a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(12, 74, 110, 0.3);
+    transition: border-color 0.15s;
+  }
+  .sidebar-value a:hover { border-color: var(--accent); }
+  .sidebar-value .quiet { color: var(--muted); font-weight: 400; font-size: 0.85rem; }
+
+  .main-col h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--ink);
+    margin: 0 0 0.9rem;
+    letter-spacing: -0.01em;
+    font-variation-settings: 'opsz' 48;
+  }
+  .main-col h3:not(:first-child) { margin-top: 2.4rem; }
+
+  .spec-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    column-gap: 1.5rem;
+    row-gap: 0;
+  }
+  .spec-grid dt {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .spec-grid dd {
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    color: var(--ink);
+    font-weight: 500;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .spec-grid dt:last-of-type, .spec-grid dd:last-of-type { border-bottom: 0; }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.3rem; }
   .tag {
-    background: #f3f4f6; border: 1px solid var(--border);
-    border-radius: 5px; padding: 0.25rem 0.65rem;
-    font-size: 0.82rem; color: var(--sub);
+    display: inline-flex;
+    align-items: center;
+    padding: 0.32rem 0.7rem;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--paper-2);
+    border-radius: 2px;
   }
 
-  /* ── Note ── */
-  .note {
-    background: #fffbeb; border-left: 3px solid #fbbf24;
-    border-radius: 0 6px 6px 0;
-    padding: 0.65rem 1rem; font-size: 0.84rem;
-    color: #92400e; margin-top: 1.1rem;
+  .pull-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+    padding: 1.4rem 1.5rem;
+    margin-top: 2rem;
+    background: var(--paper-card);
+    border-left: 2px solid var(--accent);
+    box-shadow: var(--shadow-sm);
+    font-variation-settings: 'opsz' 36;
+  }
+  .pull-note .quote-mark {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-right: 0.3rem;
   }
 
-  /* ── Photos ── */
-  .photo-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    gap: 0.65rem; margin-top: 0.5rem;
+  .plate-row { margin-top: 3rem; display: grid; gap: 1rem; }
+  .plate-row.feature { grid-template-columns: 1fr; }
+  .plate-row.duo { grid-template-columns: 2fr 1fr; }
+  .plate-row.trio { grid-template-columns: 1.6fr 1fr 1fr; }
+  @media (max-width: 720px) {
+    .plate-row.duo, .plate-row.trio { grid-template-columns: 1fr; }
   }
-  .photo-grid img {
-    width: 100%; border-radius: 6px; border: 1px solid var(--border);
-    object-fit: cover; aspect-ratio: 4/3; cursor: zoom-in;
-    transition: box-shadow 0.15s;
+  .plate {
+    background: var(--paper-card);
+    border: 1px solid var(--hairline);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
   }
-  .photo-grid img:hover { box-shadow: 0 0 0 3px var(--pool); }
-  .photo-cap { font-size: 0.72rem; color: var(--muted); margin-top: 0.3rem; }
+  .plate img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: opacity 0.15s;
+  }
+  .plate img:hover { opacity: 0.92; }
+  .plate-caption {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding: 0.7rem 0.95rem;
+    border-top: 1px solid var(--hairline);
+    line-height: 1.45;
+    font-weight: 500;
+  }
+  .plate-caption .num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+    margin-right: 0.4rem;
+  }
 
-  /* ── Lightbox ── */
   #lb {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.88); z-index: 9999;
-    align-items: center; justify-content: center; cursor: zoom-out;
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(8, 14, 22, 0.96);
+    z-index: 9999;
+    align-items: center; justify-content: center;
+    cursor: zoom-out;
+    padding: 2rem;
   }
   #lb.open { display: flex; }
-  #lb img { max-width: 92vw; max-height: 90vh; border-radius: 8px; object-fit: contain; }
+  #lb img { max-width: 92vw; max-height: 90vh; object-fit: contain; box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
 
-  /* ── Footer ── */
-  .footer {
-    margin-top: 2.5rem; padding-top: 1.25rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.76rem; color: var(--muted); text-align: center;
+  .colophon {
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-top: 1px solid var(--hairline);
+    margin-top: 2rem;
+  }
+  .colophon-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+    font-variation-settings: 'opsz' 96;
+  }
+  .colophon-meta {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .colophon-meta span { display: inline; margin: 0 0.4rem; opacity: 0.5; }
+
+  @media (max-width: 600px) {
+    .cover { padding: 2rem 1.3rem 2.5rem; min-height: 80vh; }
+    .cover-stat-row { gap: 1.5rem; }
+    .page { padding: 0 1.3rem; }
+    .contents { padding: 4rem 0 2.5rem; }
+    .spread { padding: 3.5rem 0 3rem; }
+    .toc-item { grid-template-columns: 40px 1fr; gap: 1rem; }
+    .toc-status { display: none; }
+    .spec-grid { grid-template-columns: 110px 1fr; }
+    .pull-note { padding: 1.1rem 1.2rem; font-size: 1rem; }
   }
 </style>
-<link rel="canonical" href="https://phxpoolresurfacing.com/leads/nate-sellers/">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#f4f5f7">
 </head>
 <body>
-<div class="container">
 
-  <div class="header">
-    <div>
-      <div class="brand">Phoenix Pool <span>Resurfacing</span></div>
-      <div class="brand-sub">phxpoolresurfacing.com</div>
-    </div>
-    <div class="header-meta">
-      <strong>Nate Sellers</strong>
-      Confidential Lead Packet
+<section class="cover">
+  <div class="cover-top">
+    <div class="monogram">P<span style="opacity:0.7">r</span></div>
+    <div class="cover-meta-right">
+      <span>Lead Packet · No. 04</span>
+      <span>May 2026</span>
     </div>
   </div>
 
-  <!-- ── Allie Holt (newest — May 9, 2026) ── -->
-  <div class="lead-card">
-    <div class="card-header">
-      <div>
-        <div class="lead-name">Allie Holt</div>
-        <div class="lead-meta">Waddell, AZ 85355 &middot; May 9, 2026</div>
+  <div class="cover-bottom">
+    <div class="cover-eyebrow">Phoenix Pool Resurfacing</div>
+    <h1>Five qualified leads,<br><em>prepared for Nate Sellers.</em></h1>
+    <p class="cover-sub">A curated brief of inbound resurfacing inquiries across the Phoenix metro — verified contact, scoped specs, project photography. Two are time-sensitive.</p>
+
+    <div class="cover-stat-row">
+      <div class="cover-stat">
+        <div class="cover-stat-value">5</div>
+        <div class="cover-stat-label">Leads in this brief</div>
       </div>
-      <span class="status-pill s-urgent">Urgent</span>
-    </div>
-    <div class="card-body">
-      <div class="alert-bar alert-urgent">Pool nearly ready for inspection — quartz finish needs to be scheduled</div>
-
-      <div class="btn-row">
-        <a href="tel:16237389437" class="btn-call">Call (623) 738-9437</a>
-        <a href="mailto:rallieholt@gmail.com" class="btn-email">Email Allie</a>
+      <div class="cover-stat">
+        <div class="cover-stat-value">2</div>
+        <div class="cover-stat-label">Urgent — call first</div>
       </div>
-
-      <div class="sh">Contact</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Phone</span><span class="iv"><a href="tel:16237389437">(623) 738-9437</a></span></div>
-        <div class="ir"><span class="ik">Email</span><span class="iv"><a href="mailto:rallieholt@gmail.com">rallieholt@gmail.com</a></span></div>
-        <div class="ir"><span class="ik">Address</span><span class="iv">8213 N 173 Ln, Waddell AZ 85355</span></div>
+      <div class="cover-stat">
+        <div class="cover-stat-value">3</div>
+        <div class="cover-stat-label">Quartz / Pebble Tec</div>
       </div>
-
-      <div class="sh">Pool Details</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Size</span><span class="iv">15&rsquo; &times; 17&rsquo; &middot; 4.5&rsquo; depth (~255 sq ft)</span></div>
-        <div class="ir"><span class="ik">Type</span><span class="iv">In-ground gunite &middot; Roman steps</span></div>
-        <div class="ir"><span class="ik">Status</span><span class="iv">Drained &amp; prepped &middot; waterline tile installed</span></div>
-        <div class="ir"><span class="ik">Work scope</span><span class="iv">Quartz finish only — no chip-out needed</span></div>
-      </div>
-
-      <div class="sh">Services Requested</div>
-      <div class="tags"><span class="tag">Quartz finish</span></div>
-
-      <div class="sh">Photos</div>
-      <div class="photo-grid">
-        <div>
-          <img src="photos/allie-pool-1.jpg" alt="Allie Holt pool — drained gunite with Roman steps" onclick="openLb(this)">
-          <div class="photo-cap">Drained shell — Roman steps, mosaic tile in</div>
-        </div>
-        <div>
-          <img src="photos/allie-pool-2.jpg" alt="Allie Holt pool — second angle" onclick="openLb(this)">
-          <div class="photo-cap">Second angle</div>
-        </div>
-      </div>
-
-      <div class="note">Shell is already prepped — drained, cleaned, waterline tile installed. Straight quartz application, no demo. Intake details still coming.</div>
-    </div>
-  </div>
-
-  <!-- ── Maggie Penman ── -->
-  <div class="lead-card">
-    <div class="card-header">
-      <div>
-        <div class="lead-name">Maggie Penman</div>
-        <div class="lead-meta">Glendale, AZ &middot; Apr 20, 2026</div>
-      </div>
-      <span class="status-pill s-pool">Getting quotes</span>
-    </div>
-    <div class="card-body">
-      <div class="btn-row">
-        <a href="tel:16232949154" class="btn-call">Call (623) 294-9154</a>
-      </div>
-
-      <div class="sh">Contact</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Phone</span><span class="iv"><a href="tel:16232949154">(623) 294-9154</a></span></div>
-        <div class="ir"><span class="ik">Email</span><span class="iv">maggie.penman@icloud.com</span></div>
-        <div class="ir"><span class="ik">Address</span><span class="iv">7137 W Planada Ln, Glendale AZ 85310</span></div>
-      </div>
-
-      <div class="sh">Pool Details</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Type</span><span class="iv">In-ground concrete/gunite</span></div>
-        <div class="ir"><span class="ik">Surface</span><span class="iv">Pebble Tec / aggregate</span></div>
-        <div class="ir"><span class="ik">Condition</span><span class="iv">Cracking / chipping</span></div>
-        <div class="ir"><span class="ik">Pool age</span><span class="iv">~30 years — never resurfaced</span></div>
-      </div>
-
-      <div class="sh">Services Requested</div>
-      <div class="tags"><span class="tag">Pebble Tec / aggregate finish</span></div>
-
-      <div class="note">30-year original surface, never resurfaced. Maggie noted contractor must be certified.</div>
-    </div>
-  </div>
-
-  <!-- ── Sapphire Pools / Ted Miller / Gibson Project ── -->
-  <div class="lead-card">
-    <div class="card-header">
-      <div>
-        <div class="lead-name">Sapphire Pools — Gibson Project</div>
-        <div class="lead-meta">Gold Canyon, AZ &middot; Apr 16, 2026 &middot; Ted Miller</div>
-      </div>
-      <span class="status-pill s-urgent">Ready Mon Apr 20</span>
-    </div>
-    <div class="card-body">
-      <div class="alert-bar alert-urgent">Ready Monday, April 20 — schedule ASAP</div>
-
-      <div class="btn-row">
-        <a href="tel:16232949154" class="btn-call">Call (623) 294-9154</a>
-        <a href="mailto:ted@sapphirepoolsaz.com" class="btn-email">Email Ted</a>
-      </div>
-
-      <div class="sh">Contact</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Name</span><span class="iv">Ted Miller</span></div>
-        <div class="ir"><span class="ik">Company</span><span class="iv">Sapphire Pools</span></div>
-        <div class="ir"><span class="ik">Phone</span><span class="iv"><a href="tel:16232949154">(623) 294-9154</a></span></div>
-        <div class="ir"><span class="ik">Email</span><span class="iv"><a href="mailto:ted@sapphirepoolsaz.com">ted@sapphirepoolsaz.com</a></span></div>
-        <div class="ir"><span class="ik">Office</span><span class="iv">524 S. Shade Rock Ln., Queen Valley AZ 85118</span></div>
-      </div>
-
-      <div class="sh">Job Site — Gibson</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Address</span><span class="iv">11106 E Rio Bravo Rd, Gold Canyon AZ 85118</span></div>
-        <div class="ir"><span class="ik">Pool size</span><span class="iv">44&rsquo; &times; 10&rsquo; (600&ndash;800 sq ft) &middot; New shell</span></div>
-        <div class="ir"><span class="ik">Spa</span><span class="iv">7&rsquo; &times; 7&rsquo; &middot; 5&rsquo;&ndash;3.5" depths</span></div>
-        <div class="ir"><span class="ik">Plan specs</span><span class="iv">SA-780, P-117, IA-1167</span></div>
-      </div>
-
-      <div class="sh">Job Specs</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Finish</span><span class="iv">Ocean Blue Sheen</span></div>
-        <div class="ir"><span class="ik">Application</span><span class="iv">Slurry truck</span></div>
-        <div class="ir"><span class="ik">Edge</span><span class="iv">76" rolled edge</span></div>
-        <div class="ir"><span class="ik">Spa tile</span><span class="iv">Full tile spa</span></div>
-        <div class="ir"><span class="ik">Acid wash</span><span class="iv">OK to do in yard</span></div>
-        <div class="ir"><span class="ik">Drain covers</span><span class="iv">On site</span></div>
-      </div>
-
-      <div class="sh">Photos</div>
-      <div class="photo-grid">
-        <div>
-          <img src="photos/ted-pool-shell.jpg" alt="Gibson pool — bare gunite shell" onclick="openLb(this)">
-          <div class="photo-cap">Bare gunite shell — new build</div>
-        </div>
-        <div>
-          <img src="photos/gibson-plan.jpg" alt="Gibson engineering plan" onclick="openLb(this)">
-          <div class="photo-cap">Engineering plan — 44&rsquo; &times; 10&rsquo; + spa</div>
-        </div>
-      </div>
-
-      <div class="note">Ted is the pool builder (Sapphire Pools) subbing out the resurface — professional contact, clean specs. Engineering drawings available on request.</div>
-    </div>
-  </div>
-
-  <!-- ── Siennah Cottrell ── -->
-  <div class="lead-card">
-    <div class="card-header">
-      <div>
-        <div class="lead-name">Siennah Cottrell</div>
-        <div class="lead-meta">West Phoenix, AZ &middot; Apr 14, 2026</div>
-      </div>
-      <span class="status-pill s-open">Getting quotes</span>
-    </div>
-    <div class="card-body">
-      <div class="btn-row">
-        <a href="tel:16232949154" class="btn-call">Call (623) 294-9154</a>
-        <a href="mailto:siennahc@live.com" class="btn-email">Email Siennah</a>
-      </div>
-
-      <div class="sh">Contact</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Phone</span><span class="iv"><a href="tel:16232949154">(623) 294-9154</a></span></div>
-        <div class="ir"><span class="ik">Email</span><span class="iv"><a href="mailto:siennahc@live.com">siennahc@live.com</a></span></div>
-        <div class="ir"><span class="ik">Address</span><span class="iv">5569 W Christy Dr, Phoenix AZ</span></div>
-      </div>
-
-      <div class="sh">Pool Details</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Size</span><span class="iv">Medium (400&ndash;600 sq ft) &middot; Freeform</span></div>
-        <div class="ir"><span class="ik">Type</span><span class="iv">In-ground concrete/gunite</span></div>
-        <div class="ir"><span class="ik">Surface</span><span class="iv">Pebble Tec / aggregate</span></div>
-        <div class="ir"><span class="ik">Condition</span><span class="iv">Cracking / chipping</span></div>
-        <div class="ir"><span class="ik">Tile</span><span class="iv">Grey waterline, brown penny band (see photos)</span></div>
-        <div class="ir"><span class="ik">Pebble color</span><span class="iv">Not decided — needs guidance</span></div>
-      </div>
-
-      <div class="sh">Services Requested</div>
-      <div class="tags">
-        <span class="tag">Pebble Tec / aggregate finish</span>
-        <span class="tag">Tile replacement</span>
-      </div>
-
-      <div class="sh">Photos</div>
-      <div class="photo-grid">
-        <div>
-          <img src="photos/siennah-pool-1.jpg" alt="Siennah pool — overhead drained" onclick="openLb(this)">
-          <div class="photo-cap">Overhead — drained, surface worn</div>
-        </div>
-        <div>
-          <img src="photos/siennah-pool-2.jpg" alt="Siennah pool — side angle" onclick="openLb(this)">
-          <div class="photo-cap">Side angle — freeform, penny tile band</div>
-        </div>
-        <div>
-          <img src="photos/siennah-pool-3.jpg" alt="Siennah pool — filled" onclick="openLb(this)">
-          <div class="photo-cap">Filled — current condition</div>
-        </div>
-        <div>
-          <img src="photos/finish-samples-1.jpg" alt="Pebble Tec finish samples" onclick="openLb(this)">
-          <div class="photo-cap">Finish samples — with jewels option</div>
-        </div>
-        <div>
-          <img src="photos/finish-samples-2.jpg" alt="Mini Pebble — Kool and Caribbean" onclick="openLb(this)">
-          <div class="photo-cap">Universal Mini Pebble: Kool (white) &middot; Caribbean (grey)</div>
-        </div>
+      <div class="cover-stat">
+        <div class="cover-stat-value">$0</div>
+        <div class="cover-stat-label">No fee — sample packet</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ── Ashleigh Hennessy ── -->
-  <div class="lead-card">
-    <div class="card-header">
-      <div>
-        <div class="lead-name">Ashleigh Hennessy</div>
-        <div class="lead-meta">Central Phoenix, AZ &middot; Apr 17, 2026</div>
-      </div>
-      <span class="status-pill s-warm">Wants work next week</span>
+<div class="page">
+  <section class="contents">
+    <div class="section-eyebrow">Inside this brief</div>
+    <h2>Five inbound prospects across Glendale, Waddell, Gold Canyon, West Phoenix &amp; Biltmore.</h2>
+
+    <ol class="toc-list">
+      <a href="#allie" class="toc-item">
+        <div class="toc-num">01</div>
+        <div class="toc-main">
+          <div class="toc-name">Allie Holt</div>
+          <div class="toc-desc">Waddell · Quartz finish · Shell prepped, awaiting plaster</div>
+        </div>
+        <div class="toc-status">Urgent · Call first</div>
+      </a>
+      <a href="#sapphire" class="toc-item">
+        <div class="toc-num">02</div>
+        <div class="toc-main">
+          <div class="toc-name">Sapphire Pools — Gibson Project</div>
+          <div class="toc-desc">Gold Canyon · Ocean Blue Sheen · Builder sub-out</div>
+        </div>
+        <div class="toc-status">Urgent · Ready Apr 20</div>
+      </a>
+      <a href="#ashleigh" class="toc-item">
+        <div class="toc-num">03</div>
+        <div class="toc-main">
+          <div class="toc-name">Ashleigh Hennessy</div>
+          <div class="toc-desc">Biltmore · Pebble Tec patch repairs · 3 areas</div>
+        </div>
+        <div class="toc-status scheduled">Wants next week</div>
+      </a>
+      <a href="#maggie" class="toc-item">
+        <div class="toc-num">04</div>
+        <div class="toc-main">
+          <div class="toc-name">Maggie Penman</div>
+          <div class="toc-desc">Glendale · 30-yr-old Pebble Tec, never resurfaced</div>
+        </div>
+        <div class="toc-status flexible">Flexible · Quoting</div>
+      </a>
+      <a href="#siennah" class="toc-item">
+        <div class="toc-num">05</div>
+        <div class="toc-main">
+          <div class="toc-name">Siennah Cottrell</div>
+          <div class="toc-desc">West Phoenix · Pebble Tec + new tile · Freeform shape</div>
+        </div>
+        <div class="toc-status flexible">Flexible · Quoting</div>
+      </a>
+    </ol>
+  </section>
+
+  <article class="spread" id="allie">
+    <div class="spread-num">No. 01 — May 9, 2026</div>
+    <h2 class="spread-title">Allie Holt</h2>
+    <p class="spread-loc"><strong>Waddell, AZ 85355</strong> · Submitted via direct message</p>
+
+    <div class="status-pill urgent">
+      <span class="dot"></span>Urgent · Pool nearly ready for inspection
     </div>
-    <div class="card-body">
-      <div class="alert-bar alert-warm">Wants work done next week — motivated homeowner</div>
 
-      <div class="btn-row">
-        <a href="mailto:Ahennessy41215@gmail.com" class="btn-email">Email Ashleigh &mdash; Ahennessy41215@gmail.com</a>
+    <p class="spread-lede"><strong>Allie's pool is shell-prepped and waiting.</strong> Drained, cleaned, waterline tile already installed. She needs a quartz finish coat applied — no demo, no chip-out, no surprises. The kind of job that closes on the first call.</p>
+
+    <div class="cta-row">
+      <a href="tel:16237389437" class="cta"><span class="cta-icon">→</span>Call (623) 738-9437</a>
+      <a href="mailto:rallieholt@gmail.com" class="cta cta-secondary"><span class="cta-icon">✉</span>Email Allie</a>
+    </div>
+
+    <div class="spread-body">
+      <aside class="sidebar">
+        <div class="sidebar-block">
+          <div class="sidebar-label">Contact</div>
+          <div class="sidebar-value">
+            Allie Holt<br>
+            <a href="tel:16237389437">(623) 738-9437</a><br>
+            <a href="mailto:rallieholt@gmail.com">rallieholt@gmail.com</a>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Address</div>
+          <div class="sidebar-value">
+            8213 N 173 Ln<br>
+            Waddell AZ 85355
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Submitted</div>
+          <div class="sidebar-value">May 9, 2026</div>
+        </div>
+      </aside>
+
+      <div class="main-col">
+        <h3>The pool</h3>
+        <dl class="spec-grid">
+          <dt>Dimensions</dt><dd>15' × 17' · 4.5' depth (~255 sq ft surface)</dd>
+          <dt>Construction</dt><dd>In-ground gunite · Roman steps</dd>
+          <dt>Current state</dt><dd>Drained &amp; prepped · waterline tile installed</dd>
+          <dt>Inspection</dt><dd>Nearly ready</dd>
+        </dl>
+
+        <h3>Requested</h3>
+        <div class="tag-row">
+          <span class="tag">Quartz finish</span>
+        </div>
+
+        <div class="pull-note"><span class="quote-mark">"</span>Shell is drained, cleaned, waterline tile in. Plaster/finish coat only — no demo. Costa still gathering full intake; address &amp; email confirmed.</div>
       </div>
+    </div>
 
-      <div class="sh">Contact</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Email</span><span class="iv"><a href="mailto:Ahennessy41215@gmail.com">Ahennessy41215@gmail.com</a></span></div>
-        <div class="ir"><span class="ik">Home</span><span class="iv">6556 N Arizona Biltmore Cir, Phoenix AZ 85016</span></div>
+    <div class="plate-row duo">
+      <figure class="plate">
+        <img src="photos/allie-pool-1.jpg" alt="Allie Holt pool — drained gunite shell with Roman steps and waterline tile" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 01</span>Drained shell — Roman steps, mosaic waterline tile installed</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="photos/allie-pool-2.jpg" alt="Allie Holt pool — second view of prepped shell" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 02</span>Pool shell — second angle</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <article class="spread" id="sapphire">
+    <div class="spread-num">No. 02 — April 16, 2026</div>
+    <h2 class="spread-title">Sapphire Pools<br><em style="font-style:italic;font-weight:400;color:var(--muted);font-size:0.62em;">— Gibson project</em></h2>
+    <p class="spread-loc"><strong>Gold Canyon, AZ</strong> · Builder subbing out the resurface</p>
+
+    <div class="status-pill urgent">
+      <span class="dot"></span>Urgent · Ready Monday April 20
+    </div>
+
+    <p class="spread-lede"><strong>Ted Miller is the builder.</strong> Sapphire Pools is constructing the Gibson project and subbing out the resurface — clean specs, engineering plans on file, slurry-truck application. A professional B2B contact, not a homeowner.</p>
+
+    <div class="cta-row">
+      <a href="tel:16232949154" class="cta"><span class="cta-icon">→</span>Call (623) 294-9154</a>
+      <a href="mailto:ted@sapphirepoolsaz.com" class="cta cta-secondary"><span class="cta-icon">✉</span>Email Ted</a>
+    </div>
+
+    <div class="spread-body">
+      <aside class="sidebar">
+        <div class="sidebar-block">
+          <div class="sidebar-label">Contact</div>
+          <div class="sidebar-value">
+            Ted Miller<br>
+            <span class="quiet">Sapphire Pools</span><br>
+            <a href="tel:16232949154">(623) 294-9154</a><br>
+            <a href="mailto:ted@sapphirepoolsaz.com">ted@sapphirepoolsaz.com</a>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Office</div>
+          <div class="sidebar-value">
+            524 S. Shade Rock Ln<br>
+            Queen Valley AZ 85118
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Job site</div>
+          <div class="sidebar-value">
+            11106 E Rio Bravo Rd<br>
+            Gold Canyon AZ 85118
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-col">
+        <h3>The pool</h3>
+        <dl class="spec-grid">
+          <dt>Project</dt><dd>GIBSON</dd>
+          <dt>Dimensions</dt><dd>44' × 10' · 600–800 sq ft</dd>
+          <dt>Construction</dt><dd>In-ground concrete/gunite · new shell</dd>
+          <dt>Spa</dt><dd>7' × 7' · depths 5'–3.5"</dd>
+          <dt>Plan specs</dt><dd>SA-780 · P-117 · IA-1167</dd>
+        </dl>
+
+        <h3>Job specs</h3>
+        <dl class="spec-grid">
+          <dt>Finish</dt><dd>Ocean Blue Sheen</dd>
+          <dt>Application</dt><dd>Slurry truck</dd>
+          <dt>Edge</dt><dd>76" rolled edge</dd>
+          <dt>Spa tile</dt><dd>All-tile spa</dd>
+          <dt>Acid wash</dt><dd>OK to do in yard</dd>
+          <dt>Drain covers</dt><dd>On site</dd>
+        </dl>
+
+        <div class="pull-note"><span class="quote-mark">"</span>Professional builder relationship — Ted is sourcing a resurface partner. Engineering drawings available on request. Recurring work potential if the Gibson goes well.</div>
       </div>
+    </div>
 
-      <div class="sh">Job Site</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Location</span><span class="iv">E Lincoln Dr &amp; N 32nd St, Phoenix AZ 85253</span></div>
-        <div class="ir"><span class="ik">Pool type</span><span class="iv">In-ground &middot; existing Pebble Tec surface</span></div>
+    <div class="plate-row duo">
+      <figure class="plate">
+        <img src="photos/ted-pool-shell.jpg" alt="Gibson pool shell — bare gunite, new build" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 03</span>Bare gunite shell — new build, ready for finish</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="photos/gibson-plan.jpg" alt="Gibson engineering plan — Sapphire Pools" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 04</span>Engineering plan — SA-780 · 44' × 10' + spa</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <article class="spread" id="ashleigh">
+    <div class="spread-num">No. 03 — April 17, 2026</div>
+    <h2 class="spread-title">Ashleigh Hennessy</h2>
+    <p class="spread-loc"><strong>Biltmore, Phoenix AZ</strong> · Direct inquiry · motivated</p>
+
+    <div class="status-pill scheduled">
+      <span class="dot"></span>Wants work done next week
+    </div>
+
+    <p class="spread-lede"><strong>Three small Pebble Tec patch repairs</strong> — fill around a pool light, fill a hole in the surface, replace a failing patch. Roughly 3" diameter each. Quick in-and-out job at a Biltmore address.</p>
+
+    <div class="cta-row">
+      <a href="mailto:Ahennessy41215@gmail.com" class="cta"><span class="cta-icon">✉</span>Email Ashleigh</a>
+    </div>
+
+    <div class="spread-body">
+      <aside class="sidebar">
+        <div class="sidebar-block">
+          <div class="sidebar-label">Contact</div>
+          <div class="sidebar-value">
+            Ashleigh Hennessy<br>
+            <a href="mailto:Ahennessy41215@gmail.com">Ahennessy41215@gmail.com</a>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Home address</div>
+          <div class="sidebar-value">
+            6556 N Arizona Biltmore Cir<br>
+            Phoenix AZ 85016
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Job location</div>
+          <div class="sidebar-value">
+            E Lincoln Dr &amp; N 32nd St<br>
+            Phoenix AZ 85253
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-col">
+        <h3>The pool</h3>
+        <dl class="spec-grid">
+          <dt>Construction</dt><dd>In-ground · existing Pebble Tec surface</dd>
+          <dt>Timeline</dt><dd>Next week</dd>
+        </dl>
+
+        <h3>Repair scope</h3>
+        <dl class="spec-grid">
+          <dt>Area 1</dt><dd>Fill around pool light fixture</dd>
+          <dt>Area 2</dt><dd>Fill entire hole in surface</dd>
+          <dt>Area 3</dt><dd>Remove failing patch material + replace</dd>
+        </dl>
+
+        <h3>Requested</h3>
+        <div class="tag-row">
+          <span class="tag">Pebble Tec patch repairs</span>
+          <span class="tag">~3" diameter each</span>
+        </div>
+
+        <div class="pull-note"><span class="quote-mark">"</span>Job address differs from home address — confirm location on first call. Came in via DM, not the form, so intake is light.</div>
       </div>
+    </div>
 
-      <div class="sh">Services Requested</div>
-      <div class="tags"><span class="tag">Pebble Tec patch repairs &mdash; 3 areas (~3" dia. each)</span></div>
+    <div class="plate-row feature">
+      <figure class="plate">
+        <img src="photos/ashleigh-repairs.jpg" alt="Ashleigh — three repair areas: light, hole, failing patch" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 05</span>Three repair areas — light, hole, failing patch</figcaption>
+      </figure>
+    </div>
+  </article>
 
-      <div class="sh">Repair Areas</div>
-      <div class="info-grid">
-        <div class="ir"><span class="ik">Area 1</span><span class="iv">Fill around pool light fixture</span></div>
-        <div class="ir"><span class="ik">Area 2</span><span class="iv">Fill hole in surface</span></div>
-        <div class="ir"><span class="ik">Area 3</span><span class="iv">Remove failing patch + replace</span></div>
+  <article class="spread" id="maggie">
+    <div class="spread-num">No. 04 — April 20, 2026</div>
+    <h2 class="spread-title">Maggie Penman</h2>
+    <p class="spread-loc"><strong>Glendale, AZ 85310</strong> · Quoting · contractor must be certified</p>
+
+    <div class="status-pill flexible">
+      <span class="dot"></span>Flexible — getting quotes
+    </div>
+
+    <p class="spread-lede"><strong>30-year-old pool, never resurfaced.</strong> Original Pebble Tec is cracking and chipping throughout. Maggie's gathering quotes and specifically called out that her contractor must be certified — credibility wins this one.</p>
+
+    <div class="cta-row">
+      <a href="tel:16232949154" class="cta"><span class="cta-icon">→</span>Call (623) 294-9154</a>
+      <a href="mailto:maggie.penman@icloud.com" class="cta cta-secondary"><span class="cta-icon">✉</span>Email Maggie</a>
+    </div>
+
+    <div class="spread-body">
+      <aside class="sidebar">
+        <div class="sidebar-block">
+          <div class="sidebar-label">Contact</div>
+          <div class="sidebar-value">
+            Maggie Penman<br>
+            <a href="tel:16232949154">(623) 294-9154</a><br>
+            <a href="mailto:maggie.penman@icloud.com">maggie.penman@icloud.com</a>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Address</div>
+          <div class="sidebar-value">
+            7137 W Planada Ln<br>
+            Glendale AZ 85310
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Submitted</div>
+          <div class="sidebar-value">April 20, 2026</div>
+        </div>
+      </aside>
+
+      <div class="main-col">
+        <h3>The pool</h3>
+        <dl class="spec-grid">
+          <dt>Dimensions</dt><dd>Not sure — needs measurement</dd>
+          <dt>Construction</dt><dd>In-ground concrete/gunite</dd>
+          <dt>Current surface</dt><dd>Pebble Tec / aggregate</dd>
+          <dt>Condition</dt><dd>Cracking / chipping</dd>
+          <dt>Last resurfaced</dt><dd>Never — original surface</dd>
+          <dt>Pool age</dt><dd>~30 years</dd>
+        </dl>
+
+        <h3>Requested</h3>
+        <div class="tag-row">
+          <span class="tag">Pebble Tec / aggregate finish</span>
+        </div>
+
+        <div class="pull-note"><span class="quote-mark">"</span>Lead specifically noted contractor must be certified. Lead with credentials and reference jobs — this isn't a price-shopper.</div>
       </div>
+    </div>
+  </article>
 
-      <div class="sh">Photos</div>
-      <div class="photo-grid">
-        <div>
-          <img src="photos/ashleigh-repairs.jpg" alt="Ashleigh repair areas" onclick="openLb(this)">
-          <div class="photo-cap">3 repair areas — light, hole, failing patch</div>
+  <article class="spread" id="siennah">
+    <div class="spread-num">No. 05 — April 14, 2026</div>
+    <h2 class="spread-title">Siennah Cottrell</h2>
+    <p class="spread-loc"><strong>West Phoenix, AZ</strong> · Pebble Tec + new tile · freeform shape</p>
+
+    <div class="status-pill flexible">
+      <span class="dot"></span>Flexible — getting quotes
+    </div>
+
+    <p class="spread-lede"><strong>Freeform pool, original Pebble Tec, due for a refresh.</strong> Siennah wants a Pebble Tec finish plus new tile — and she's open on color, looking for guidance. Easier upsell on jewels or premium aggregate.</p>
+
+    <div class="cta-row">
+      <a href="tel:16232949154" class="cta"><span class="cta-icon">→</span>Call (623) 294-9154</a>
+      <a href="mailto:siennahc@live.com" class="cta cta-secondary"><span class="cta-icon">✉</span>Email Siennah</a>
+    </div>
+
+    <div class="spread-body">
+      <aside class="sidebar">
+        <div class="sidebar-block">
+          <div class="sidebar-label">Contact</div>
+          <div class="sidebar-value">
+            Siennah Cottrell<br>
+            <a href="tel:16232949154">(623) 294-9154</a><br>
+            <a href="mailto:siennahc@live.com">siennahc@live.com</a>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Address</div>
+          <div class="sidebar-value">
+            5569 W Christy Dr<br>
+            Phoenix AZ
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Submitted</div>
+          <div class="sidebar-value">April 14, 2026</div>
+        </div>
+      </aside>
+
+      <div class="main-col">
+        <h3>The pool</h3>
+        <dl class="spec-grid">
+          <dt>Dimensions</dt><dd>Medium · 400–600 sq ft</dd>
+          <dt>Construction</dt><dd>In-ground concrete/gunite · freeform</dd>
+          <dt>Current surface</dt><dd>Pebble Tec / aggregate</dd>
+          <dt>Condition</dt><dd>Cracking / chipping</dd>
+          <dt>Last resurfaced</dt><dd>Never — original surface</dd>
+          <dt>Tile</dt><dd>Grey waterline · brown penny band</dd>
+          <dt>Pebble color</dt><dd>Open — wants guidance</dd>
+        </dl>
+
+        <h3>Requested</h3>
+        <div class="tag-row">
+          <span class="tag">Pebble Tec / aggregate finish</span>
+          <span class="tag">New tile / replacement</span>
         </div>
       </div>
-
-      <div class="note">Job site differs from home address — confirm location on first contact. Came in via direct message, not the online form.</div>
     </div>
-  </div>
 
-  <div class="footer">
-    Phoenix Pool Resurfacing &middot; phxpoolresurfacing.com<br>
-    Confidential &mdash; prepared for Nate Sellers
-  </div>
+    <div class="plate-row trio">
+      <figure class="plate">
+        <img src="photos/siennah-pool-1.jpg" alt="Siennah pool — drained overhead view" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 06</span>Overhead — drained, surface worn</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="photos/siennah-pool-2.jpg" alt="Siennah pool — side angle drained" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 07</span>Side angle — freeform shape, penny tile band</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="photos/siennah-pool-3.jpg" alt="Siennah pool — filled, current state" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 08</span>Pool filled — current state</figcaption>
+      </figure>
+    </div>
 
+    <div class="plate-row duo">
+      <figure class="plate">
+        <img src="photos/finish-samples-1.jpg" alt="Pebble Tec finish samples with jewels option" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 09</span>Finish samples — with jewels option</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="photos/finish-samples-2.jpg" alt="Universal Mini Pebble — Kool and Caribbean" onclick="openLb(this)" loading="lazy">
+        <figcaption class="plate-caption"><span class="num">Plate 10</span>Universal Mini Pebble — Kool (white) · Caribbean (grey)</figcaption>
+      </figure>
+    </div>
+  </article>
 </div>
+
+<footer class="colophon">
+  <div class="colophon-mark">Phoenix Pool Resurfacing</div>
+  <div class="colophon-meta">
+    phxpoolresurfacing.com<span>·</span>Confidential<span>·</span>Prepared for Nate Sellers
+  </div>
+</footer>
 
 <div id="lb" onclick="closeLb()">
   <img id="lb-img" src="" alt="">
@@ -475,10 +997,12 @@
 <script>
   function openLb(img) {
     document.getElementById('lb-img').src = img.src;
+    document.getElementById('lb-img').alt = img.alt;
     document.getElementById('lb').classList.add('open');
   }
   function closeLb() {
     document.getElementById('lb').classList.remove('open');
+    document.getElementById('lb-img').src = '';
   }
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLb();
