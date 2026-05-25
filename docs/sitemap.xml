@@ -154,6 +154,12 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://phxpoolresurfacing.com/blog/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://phxpoolresurfacing.com/blog/pool-resurfacing-cost-phoenix.html</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -162,6 +168,42 @@
   <url>
     <loc>https://phxpoolresurfacing.com/blog/when-to-resurface-pool-arizona.html</loc>
     <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/blog/phoenix-pool-resurfacing.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/blog/pool-resurfacing-cost-calculator-phoenix.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/blog/pebble-tec-vs-plaster-vs-quartz-phoenix.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/blog/acid-wash-pool-phoenix.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/blog/signs-pool-needs-resurfacing-phoenix.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://phxpoolresurfacing.com/blog/pool-resurfacing-timeline-phoenix.html</loc>
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
