@@ -76,7 +76,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 <body>
 
 <nav class="nav">
-  <div class="nav__logo"><span>PHX</span> Pool Resurfacing</div>
+  <div class="nav__logo">Phoenix <span>Pro</span></div>
   <a href="tel:6232949154" class="nav__cta">(623) 294-9154</a>
 </nav>
 
@@ -84,12 +84,12 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 
   <div class="page-header">
     <span class="page-header__eyebrow">Free Estimate</span>
-    <h1>Request a Free Estimate from PHX Pool Resurfacing</h1>
+    <h1>Pool Project Details</h1>
     <p>Tell us about your pool so we can prepare an accurate quote.</p>
   </div>
 
   <form id="form" action="https://lead-manager-api.irontigerdigital.workers.dev/ingest" method="POST">
-    <input type="hidden" name="site_domain" value="phxpoolresurfacing.com">
+    <input type="hidden" name="site" value="phxpoolresurfacing.com">
     <input type="hidden" name="_subject" value="New Estimate Request — Phoenix Pool Resurfacing">
     <input type="hidden" name="_redirect" value="https://phxpoolresurfacing.com/estimate/#success">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -113,12 +113,26 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
         </div>
       </div>
       <div class="field">
-        <label for="email">Email Address</label>
+        <label for="email">Email Address <span class="req">*</span></label>
         <input type="email" id="email" name="email" required placeholder="you@example.com">
       </div>
+      <div class="field">
+        <label for="address">Street Address <span class="req">*</span></label>
+        <input type="text" id="address" name="address" required placeholder="123 Main St" autocomplete="address-line1">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="city">City <span class="req">*</span></label>
+          <input type="text" id="city" name="city" required placeholder="City" autocomplete="address-level2">
+        </div>
+        <div class="field">
+          <label for="state">State <span class="req">*</span></label>
+          <input type="text" id="state" name="state" required placeholder="TX" maxlength="2" autocomplete="address-level1" oninput="this.value=this.value.toUpperCase()">
+        </div>
+      </div>
       <div class="field" style="margin-bottom:0">
-        <label for="address">Property Address <span class="req">*</span></label>
-        <input type="text" id="address" name="address" required placeholder="123 Main St, City, State ZIP">
+        <label for="zip">ZIP Code <span class="req">*</span></label>
+        <input type="text" id="zip" name="zip" required placeholder="00000" pattern="[0-9]{5}(-[0-9]{4})?" inputmode="numeric" autocomplete="postal-code">
       </div>
     </div>
 
@@ -283,8 +297,8 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
         Additional Details
       </div>
       <div class="field">
-        <label for="notes">Project Description <span class="req">*</span></label>
-        <textarea id="notes" name="notes" rows="4" required placeholder="Describe the project in more detail, any concerns, previous quotes received, access issues, etc."></textarea>
+        <label for="notes">Anything else we should know?</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Describe the project in more detail, any concerns, previous quotes received, access issues, etc."></textarea>
       </div>
       <div class="field" style="margin-bottom:0">
         <label>Photos <span class="hint">(optional — helps us give a more accurate estimate)</span></label>
@@ -332,38 +346,26 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 <script>
 if(window.location.hash==='#success'){document.getElementById('form').style.display='none';document.getElementById('success').style.display='block';}
 document.getElementById('photos').addEventListener('change',function(){document.getElementById('upload-label').textContent=this.files.length?this.files.length+' photo'+(this.files.length>1?'s':'')+' selected':'Tap to upload photos';});
+document.getElementById('form').addEventListener('submit',function(e){
+  var checked=document.querySelectorAll('input[name="services[]"]:checked');
+  if(checked.length===0){
+    e.preventDefault();
+    var grid=document.querySelector('.check-grid');
+    grid.style.outline='2px solid #ef4444';
+    grid.style.borderRadius='10px';
+    grid.style.padding='4px';
+    grid.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  var city=document.getElementById('city').value.trim();
+  var state=document.getElementById('state').value.trim();
+  var zip=document.getElementById('zip').value.trim();
+  var addr=document.getElementById('address');
+  addr.value=addr.value.trim()+', '+city+', '+state+' '+zip;
+});
+document.querySelectorAll('input[name="services[]"]').forEach(function(cb){
+  cb.addEventListener('change',function(){document.querySelector('.check-grid').style.outline='';});
+});
 </script>
 </body>
 </html>
-<h2>Professional Estimate in Phoenix, AZ</h2>
-<p>Embarking on a pool resurfacing or replastering project in Phoenix, AZ, is a significant investment that deserves meticulous planning and clear understanding. At PHX Pool Resurfacing, we understand that an accurate, transparent, and comprehensive estimate is the foundational step towards a successful and satisfying pool transformation. The intense Arizona sun and unique environmental factors can accelerate wear and tear on pool surfaces, making timely resurfacing crucial for both aesthetics and structural integrity. Our professional estimate service is designed to demystify the process, providing Phoenix homeowners with a precise roadmap and budget for their pool's revival. It addresses common pain points like hidden costs, material confusion, and project scope uncertainties, ensuring you make informed decisions tailored to your specific needs and the demands of our desert climate. Get started on reclaiming your pool's beauty and longevity with confidence.</p>
-
-<h2>What Is Estimate?</h2>
-<p>An estimate from PHX Pool Resurfacing is more than just a price quote; it's a detailed assessment and proposed plan for your pool's resurfacing or replastering needs. Our process begins with an on-site evaluation of your existing pool structure, surface condition, and surrounding environment. We meticulously inspect for cracks, delamination, staining, and other signs of wear, taking into account the pool's size, shape, and unique features. We then discuss material options, such as durable quartz, elegant pebble finishes, or traditional plaster, explaining the characteristics and benefits of each. The estimate will encompass all aspects of the project, including necessary preparation, repairs, material costs, labor, and cleanup, providing a transparent breakdown that is technical yet easy for homeowners to understand. This ensures you have a clear picture of the scope and investment required.</p>
-
-<h2>Benefits of Professional Estimate</h2>
-<ul>
-<li><strong>Cost Clarity and Budgeting:</strong> Our detailed estimate provides a transparent breakdown of all anticipated costs, eliminating guesswork and helping you allocate your budget effectively. You'll understand where every dollar goes, preventing unexpected expenses during your pool resurfacing project.</li>
-<li><strong>Informed Decision-Making:</strong> With a comprehensive estimate, you gain access to expert recommendations on materials and processes best suited for your pool and the Phoenix climate. This empowers you to make confident choices about your investment, aligning with your aesthetic preferences and practical needs.</li>
-<li><strong>Customized Solutions for Your Pool:</strong> Every pool in Phoenix is unique, and our estimate reflects that. We don't offer one-size-fits-all solutions; instead, our assessment leads to a tailored plan that addresses your pool's specific condition, dimensions, and desired finish, ensuring optimal results.</li>
-<li><strong>Avoidance of Hidden Surprises:</strong> A professional estimate thoroughly outlines the entire scope of work, from initial preparation to final cleanup. This proactive approach minimizes the risk of unforeseen challenges or additional charges emerging mid-project, providing peace of mind from start to finish.</li>
-</ul>
-
-<h2>Our Estimate Process</h2>
-<p>At PHX Pool Resurfacing, our estimate process is streamlined and client-focused, ensuring clarity and convenience for every Phoenix homeowner. We believe in open communication and a thorough evaluation to provide the most accurate and transparent proposal possible for your pool resurfacing or replastering project. From your initial contact to the final presentation of your customized plan, our team prioritizes your understanding and satisfaction. We are dedicated to delivering a precise roadmap for your pool's revitalization, detailing every aspect so you can proceed with confidence, knowing exactly what to expect from start to finish with PHX Pool Resurfacing.</p>
-<ol>
-<li><strong>Initial Inquiry & Scheduling:</strong> Contact us via phone or our website to express your interest in pool resurfacing. We'll gather basic information about your pool and property, then promptly schedule a convenient on-site consultation.</li>
-<li><strong>On-Site Consultation & Evaluation:</strong> A PHX Pool Resurfacing expert will visit your Phoenix home to thoroughly assess your pool's current condition, measuring its dimensions and discussing your vision, material preferences, and any specific concerns. This allows for a precise understanding of your needs.</li>
-<li><strong>Detailed Assessment & Material Selection:</strong> We'll identify any necessary repairs, structural considerations, and preparation work required before resurfacing. During this visit, we'll present various finish options like plaster, quartz, and pebble, explaining their durability, aesthetics, and cost implications to help you choose.</li>
-<li><strong>Proposal Presentation & Q&A:</strong> Following the assessment, we will provide a comprehensive, written estimate detailing the scope of work, materials chosen, project timeline, and a transparent cost breakdown. We’ll then review it with you, answer all your questions, and adjust as needed to ensure complete satisfaction.</li>
-</ol>
-
-<h2>Why Phoenix, AZ Properties Need Estimate</h2>
-<p>Phoenix, AZ, is renowned for its intense sunshine, high temperatures, and hard water, all of which contribute significantly to the wear and tear on pool surfaces. These unique local conditions make a professional pool resurfacing estimate particularly vital for property owners. The constant UV exposure can degrade plaster surfaces faster than in cooler climates, leading to fading, chalking, and premature cracking. Additionally, the prevalence of calcium and mineral deposits in Phoenix's water supply can stain and roughen pool interiors over time, necessitating expert assessment to plan effective solutions. A detailed estimate from PHX Pool Resurfacing accounts for these specific environmental challenges, helping homeowners choose durable, resilient materials and a resurfacing plan that stands up to the demands of desert living, ultimately preserving property value and enhancing lifestyle in this pool-centric city.</p>
-
-<h2>Common Questions About Estimate</h2>
-<div class="faq-item"><h3>How much does Estimate cost in Phoenix, AZ?</h3><p>At PHX Pool Resurfacing, we are pleased to offer our professional estimates for pool resurfacing in Phoenix, AZ, completely free of charge. Our goal is to provide you with a transparent and accurate assessment without any upfront commitment. The cost for actual pool resurfacing in Phoenix typically ranges from $4,000 for basic plaster finishes on smaller pools up to $15,000 or more for larger pools with premium pebble or quartz finishes, depending on size, materials, and complexity of existing damage.</p></div>
-<div class="faq-item"><h3>How long does Estimate take?</h3><p>The on-site consultation for your pool resurfacing estimate typically takes between 30 to 60 minutes, allowing our expert to thoroughly assess your pool and discuss your needs. Following the visit, you can expect to receive your detailed written proposal within 24-48 hours. We prioritize efficiency to help you move forward with your pool transformation plans promptly.</p></div>
-<div class="faq-item"><h3>How do I know if I need Estimate?</h3><p>You likely need an estimate for pool resurfacing if you notice any of these signs: a rough or abrasive pool surface that snags swimsuits, widespread staining or discoloration that won't clean off, visible cracks or delamination in the plaster, leaks that can't be attributed to plumbing, or a general dullness and aged appearance. If your pool is over 7-10 years old and exhibits any of these symptoms, a professional assessment is highly recommended to prevent further deterioration and costly repairs.</p></div>
-
-<p class="cta-text">Ready to schedule Estimate in Phoenix, AZ? Contact PHX Pool Resurfacing today for a free estimate. We serve the entire Phoenix, AZ area with fast scheduling and guaranteed results.</p>
