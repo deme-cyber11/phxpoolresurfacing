@@ -328,6 +328,94 @@ footer strong { color: var(--accent-dark); }
 }
 #lb.open { display: flex; }
 #lb img { max-width: 92vw; max-height: 90vh; object-fit: contain; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+
+/* ── Tab bar ── */
+.tab-bar {
+  display: flex;
+  gap: .5rem;
+  margin: 1.25rem 0 1rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0;
+}
+.tab-btn {
+  padding: .55rem 1.1rem;
+  font-size: .82rem;
+  font-weight: 700;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--gray);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  border-radius: 4px 4px 0 0;
+  transition: color .15s, border-color .15s;
+  font-family: inherit;
+  letter-spacing: .02em;
+}
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Status board ── */
+.sb-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem 1rem;
+  align-items: center;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+.sb-row:first-child { border-radius: 10px 10px 0 0; }
+.sb-row:last-child { border-bottom: none; border-radius: 0 0 10px 10px; }
+.sb-name { font-weight: 700; font-size: .88rem; }
+.sb-desc { font-size: .75rem; color: var(--gray); margin-top: .1rem; }
+.sb-badge {
+  padding: .3rem .75rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  font-family: inherit;
+  letter-spacing: .03em;
+  transition: opacity .15s;
+  user-select: none;
+}
+.sb-badge:active { opacity: .75; }
+.sb-badge[data-status="Active"]        { background: #d1fae5; color: #065f46; }
+.sb-badge[data-status="Contacted"]     { background: #dbeafe; color: #1e40af; }
+.sb-badge[data-status="Quote Sent"]    { background: #fef3c7; color: #92400e; }
+.sb-badge[data-status="Closed / Lost"] { background: #fee2e2; color: #991b1b; }
+.sb-wrap {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  overflow: hidden;
+  margin-top: .5rem;
+}
+.sb-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem 1rem;
+  padding: .5rem 1rem;
+  background: var(--dark);
+  color: rgba(255,255,255,.6);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sb-hint {
+  font-size: .72rem;
+  color: var(--gray);
+  text-align: center;
+  margin-top: .75rem;
+}
 </style>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
@@ -349,8 +437,14 @@ footer strong { color: var(--accent-dark); }
 <div class="summary-row">
   <div class="summary-stat"><div class="val">19</div><div class="lbl">Total leads</div></div>
   <div class="summary-stat"><div class="val">3</div><div class="lbl">Quartz / Pebble Tec</div></div>
-
 </div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('leads')">Lead Details</button>
+  <button class="tab-btn" onclick="switchTab('status')">Status Board</button>
+</div>
+
+<div id="tab-leads" class="tab-panel active">
 
 
 
@@ -1532,6 +1626,91 @@ footer strong { color: var(--accent-dark); }
   <a href="tel:+12255354918" class="cta-btn secondary">Call (225) 535-4918</a>
 </div>
 
+</div><!-- /#tab-leads -->
+
+<div id="tab-status" class="tab-panel">
+  <div class="sb-wrap">
+    <div class="sb-header"><span>Lead</span><span>Status</span></div>
+    <div class="sb-row">
+      <div><div class="sb-name">Peter Thompson</div><div class="sb-desc">1719 E Samuel Dr, Phoenix 85024 · Plaster replaster, small pool</div></div>
+      <button class="sb-badge" data-id="peter-thompson" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Pat Farrell</div><div class="sb-desc">15802 S 43rd Pl, Phoenix 85048 · Replaster + deck resurfacing, 13k gal</div></div>
+      <button class="sb-badge" data-id="pat-farrell" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Al Felicione</div><div class="sb-desc">7705 E Crisscross Way, Carefree 85377 · Pebble Tec interior, large pool</div></div>
+      <button class="sb-badge" data-id="al-felicione" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Diana Fisher</div><div class="sb-desc">Peoria, AZ · Pebble Tec cracking + step edging lifting</div></div>
+      <button class="sb-badge" data-id="diana-fisher" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Ronnie Whitney</div><div class="sb-desc">Mesa, AZ · Plaster resurface + tile</div></div>
+      <button class="sb-badge" data-id="ronnie-whitney" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Rebecca Stone</div><div class="sb-desc">Desert Hills, AZ · Plaster surface, small pool</div></div>
+      <button class="sb-badge" data-id="rebecca-stone" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Kevin Csatlos</div><div class="sb-desc">Scottsdale, AZ · Full Pebble Tec replacement, 30-yr surface</div></div>
+      <button class="sb-badge" data-id="kevin-csatlos" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Danny Warner</div><div class="sb-desc">Phoenix, AZ · Plaster to Pebble Tec + saltwater conversion</div></div>
+      <button class="sb-badge" data-id="danny-warner" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Scott Marohnich</div><div class="sb-desc">Scottsdale, AZ · Pebble Tec chip out + resurface, 400 sq ft</div></div>
+      <button class="sb-badge" data-id="scott-marohnich" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Mac Cobb</div><div class="sb-desc">Phoenix, AZ · Small old plaster pool</div></div>
+      <button class="sb-badge" data-id="mac-cobb" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Tony Nguyen</div><div class="sb-desc">Chandler, AZ · Pebble Tec on pool bottom (text only)</div></div>
+      <button class="sb-badge" data-id="tony-nguyen" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Greg Miller</div><div class="sb-desc">Avondale, AZ · 18,000 gal plaster pool, business property</div></div>
+      <button class="sb-badge" data-id="greg-miller" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Anthony Nguyen</div><div class="sb-desc">Chandler, AZ · Plaster replaster</div></div>
+      <button class="sb-badge" data-id="anthony-nguyen" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Julie Kesserwani</div><div class="sb-desc">Phoenix, AZ · 15+ yr Pebble Tec, full resurface</div></div>
+      <button class="sb-badge" data-id="julie-kesserwani" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Allie Holt</div><div class="sb-desc">Waddell, AZ 85355 · Quartz finish, shell prepped</div></div>
+      <button class="sb-badge" data-id="allie-holt" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Maggie Penman</div><div class="sb-desc">Glendale, AZ 85310 · 30-yr-old Pebble Tec, never resurfaced</div></div>
+      <button class="sb-badge" data-id="maggie-penman" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Ashleigh Hennessy</div><div class="sb-desc">Biltmore, Phoenix · Pebble Tec patch repairs, 3 areas</div></div>
+      <button class="sb-badge" data-id="ashleigh-hennessy" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Sapphire Pools — Gibson Project</div><div class="sb-desc">Gold Canyon, AZ · Ocean Blue Sheen, builder sub-out</div></div>
+      <button class="sb-badge" data-id="sapphire-gibson" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+    <div class="sb-row">
+      <div><div class="sb-name">Siennah Cottrell</div><div class="sb-desc">West Phoenix, AZ · Pebble Tec + new tile, freeform</div></div>
+      <button class="sb-badge" data-id="siennah-cottrell" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+  </div>
+  <p class="sb-hint">Tap a status to cycle: Active → Contacted → Quote Sent → Closed / Lost. Saves in your browser.</p>
+</div><!-- /#tab-status -->
+
 <div class="terms">
   <strong>About these leads:</strong>
   <ul>
@@ -1562,6 +1741,39 @@ function closeLb() {
   document.getElementById('lb-img').src = '';
 }
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLb(); });
+
+// Tab switching
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// Status cycling (persisted in localStorage)
+var STATUSES = ['Active', 'Contacted', 'Quote Sent', 'Closed / Lost'];
+var LS_PREFIX = 'phx-nate-sb-';
+
+function cycleStatus(btn) {
+  var id = btn.dataset.id;
+  var cur = btn.dataset.status;
+  var idx = STATUSES.indexOf(cur);
+  var next = STATUSES[(idx + 1) % STATUSES.length];
+  btn.dataset.status = next;
+  btn.textContent = next;
+  localStorage.setItem(LS_PREFIX + id, next);
+}
+
+// Restore saved statuses on load
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.sb-badge').forEach(function(btn) {
+    var saved = localStorage.getItem(LS_PREFIX + btn.dataset.id);
+    if (saved && STATUSES.includes(saved)) {
+      btn.dataset.status = saved;
+      btn.textContent = saved;
+    }
+  });
+});
 </script>
 </body>
 </html>
