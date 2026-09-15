@@ -1840,12 +1840,25 @@ function cycleStatus(btn) {
   }).catch(function() {});
 }
 
-// On load: apply localStorage immediately (instant), then fetch KV to get cross-device state
+// On load: apply localStorage immediately (instant) and migrate non-defaults to KV
+var toMigrate = [];
 document.querySelectorAll('.sb-badge').forEach(function(btn) {
   var saved = localStorage.getItem(LS_PREFIX + btn.dataset.id);
-  if (saved && STATUSES.includes(saved)) applyStatus(btn, saved);
+  if (saved && STATUSES.includes(saved)) {
+    applyStatus(btn, saved);
+    if (saved !== 'Active') toMigrate.push({ id: btn.dataset.id, status: saved });
+  }
+});
+// Push any non-default localStorage statuses to KV so other devices pick them up
+toMigrate.forEach(function(item) {
+  fetch(API_BASE + '/api/packet-status', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pin: API_PIN, packet: PACKET, id: item.id, status: item.status })
+  }).catch(function() {});
 });
 
+// Then fetch authoritative KV state and override (catches changes made on other devices)
 fetch(API_BASE + '/api/packet-status?pin=' + API_PIN + '&packet=' + PACKET)
   .then(function(r) { return r.json(); })
   .then(function(data) {
