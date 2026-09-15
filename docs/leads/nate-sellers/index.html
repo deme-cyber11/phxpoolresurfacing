@@ -1764,15 +1764,13 @@ function cycleStatus(btn) {
   localStorage.setItem(LS_PREFIX + id, next);
 }
 
-// Restore saved statuses on load
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.sb-badge').forEach(function(btn) {
-    var saved = localStorage.getItem(LS_PREFIX + btn.dataset.id);
-    if (saved && STATUSES.includes(saved)) {
-      btn.dataset.status = saved;
-      btn.textContent = saved;
-    }
-  });
+// Restore saved statuses — runs inline (DOM already built, script is at bottom of body)
+document.querySelectorAll('.sb-badge').forEach(function(btn) {
+  var saved = localStorage.getItem(LS_PREFIX + btn.dataset.id);
+  if (saved && STATUSES.includes(saved)) {
+    btn.dataset.status = saved;
+    btn.textContent = saved;
+  }
 });
 </script>
 </body>
