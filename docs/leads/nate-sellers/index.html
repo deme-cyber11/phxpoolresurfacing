@@ -1814,28 +1814,48 @@ function switchTab(name) {
   event.currentTarget.classList.add('active');
 }
 
-// Status cycling (persisted in localStorage)
+// Status cycling — persisted in Cloudflare KV (cross-device) via lead-manager-api
 var STATUSES = ['Active', 'Contacted', 'Quote Sent', 'Closed / Lost'];
 var LS_PREFIX = 'phx-nate-sb-';
+var API_BASE = 'https://lead-manager-api.irontigerdigital.workers.dev';
+var API_PIN  = '3636';
+var PACKET   = 'phx-nate';
+
+function applyStatus(btn, status) {
+  btn.dataset.status = status;
+  btn.textContent = status;
+  localStorage.setItem(LS_PREFIX + btn.dataset.id, status);
+}
 
 function cycleStatus(btn) {
   var id = btn.dataset.id;
   var cur = btn.dataset.status;
-  var idx = STATUSES.indexOf(cur);
-  var next = STATUSES[(idx + 1) % STATUSES.length];
-  btn.dataset.status = next;
-  btn.textContent = next;
-  localStorage.setItem(LS_PREFIX + id, next);
+  var next = STATUSES[(STATUSES.indexOf(cur) + 1) % STATUSES.length];
+  applyStatus(btn, next);
+  // Persist to KV (fire-and-forget — UI already updated)
+  fetch(API_BASE + '/api/packet-status', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pin: API_PIN, packet: PACKET, id: id, status: next })
+  }).catch(function() {});
 }
 
-// Restore saved statuses — runs inline (DOM already built, script is at bottom of body)
+// On load: apply localStorage immediately (instant), then fetch KV to get cross-device state
 document.querySelectorAll('.sb-badge').forEach(function(btn) {
   var saved = localStorage.getItem(LS_PREFIX + btn.dataset.id);
-  if (saved && STATUSES.includes(saved)) {
-    btn.dataset.status = saved;
-    btn.textContent = saved;
-  }
+  if (saved && STATUSES.includes(saved)) applyStatus(btn, saved);
 });
+
+fetch(API_BASE + '/api/packet-status?pin=' + API_PIN + '&packet=' + PACKET)
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (!data.statuses) return;
+    document.querySelectorAll('.sb-badge').forEach(function(btn) {
+      var remote = data.statuses[btn.dataset.id];
+      if (remote && STATUSES.includes(remote)) applyStatus(btn, remote);
+    });
+  })
+  .catch(function() {});
 </script>
 </body>
 </html>
