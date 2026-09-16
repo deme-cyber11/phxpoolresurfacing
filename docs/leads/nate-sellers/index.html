@@ -416,6 +416,7 @@ footer strong { color: var(--accent-dark); }
   text-align: center;
   margin-top: .75rem;
 }
+.sb-badge.sb-saving{opacity:.55}.sb-badge.sb-error{background:#fdecea!important;color:#b42318!important;border-color:#b42318!important}
 </style>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
@@ -2011,61 +2012,102 @@ function switchTab(name) {
   event.currentTarget.classList.add('active');
 }
 
-// Status cycling — persisted in Cloudflare KV (cross-device) via lead-manager-api
+// ── Status board — saved to the server so every device and every person
+// with this link sees the same thing. ─────────────────────────────────────
+// 2026-09-16: the previous version sent the PIN in a place the server did not
+// read, so EVERY save was rejected — and it never checked the response, so the
+// new status was painted from this browser's local storage and looked saved.
+// It was only ever saved on the device that clicked. Now: the server is the
+// source of truth (strongly consistent D1), every save is checked, a failed
+// save reverts and says so, and open pages refresh themselves.
 var STATUSES = ['Active', 'Contacted', 'Quote Sent', 'Closed / Lost'];
 var LS_PREFIX = 'phx-nate-sb-';
-var API_BASE = 'https://lead-manager-api.irontigerdigital.workers.dev';
-var API_PIN  = '3636';
-var PACKET   = 'phx-nate';
+var API = 'https://lead-manager-api.irontigerdigital.workers.dev/api/packet-status?pin=3636';
+var PACKET = 'phx-nate';
+var pending = {};  // id -> true while a save is in flight (don't let a poll overwrite it)
 
-function applyStatus(btn, status) {
+function paint(btn, status, note) {
   btn.dataset.status = status;
   btn.textContent = status;
-  localStorage.setItem(LS_PREFIX + btn.dataset.id, status);
+  btn.classList.remove('sb-saving', 'sb-error');
+  if (note === 'saving') btn.classList.add('sb-saving');
+  if (note === 'error') { btn.classList.add('sb-error'); btn.textContent = status + ' — not saved, tap to retry'; }
+}
+
+function save(btn, status, at) {
+  var id = btn.dataset.id;
+  pending[id] = true;
+  return fetch(API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pin: '3636', packet: PACKET, id: id, status: status, at: at })
+  })
+    .then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.ok) throw new Error(j.error || r.status); return j; }); })
+    .then(function (j) {
+      delete pending[id];
+      paint(btn, j.status);            // server's answer wins (it may be newer)
+      try { localStorage.setItem(LS_PREFIX + id, j.status); } catch (e) {}
+      return true;
+    })
+    .catch(function () {
+      delete pending[id];
+      paint(btn, status, 'error');
+      btn.dataset.retry = status;
+      return false;
+    });
 }
 
 function cycleStatus(btn) {
   var id = btn.dataset.id;
-  var cur = btn.dataset.status;
-  var next = STATUSES[(STATUSES.indexOf(cur) + 1) % STATUSES.length];
-  applyStatus(btn, next);
-  // Persist to KV (fire-and-forget — UI already updated)
-  fetch(API_BASE + '/api/packet-status', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ pin: API_PIN, packet: PACKET, id: id, status: next })
-  }).catch(function() {});
+  if (pending[id]) return;
+  var base = btn.dataset.retry || btn.dataset.status;
+  var next = btn.dataset.retry ? base : STATUSES[(STATUSES.indexOf(base) + 1) % STATUSES.length];
+  delete btn.dataset.retry;
+  var prev = btn.dataset.status;
+  paint(btn, next, 'saving');
+  save(btn, next, Date.now()).then(function (ok) {
+    if (!ok) btn.dataset.prev = prev;
+  });
 }
 
-// On load: apply localStorage immediately (instant) and migrate non-defaults to KV
-var toMigrate = [];
-document.querySelectorAll('.sb-badge').forEach(function(btn) {
-  var saved = localStorage.getItem(LS_PREFIX + btn.dataset.id);
-  if (saved && STATUSES.includes(saved)) {
-    applyStatus(btn, saved);
-    if (saved !== 'Active') toMigrate.push({ id: btn.dataset.id, status: saved });
-  }
-});
-// Push any non-default localStorage statuses to KV so other devices pick them up
-toMigrate.forEach(function(item) {
-  fetch(API_BASE + '/api/packet-status', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ pin: API_PIN, packet: PACKET, id: item.id, status: item.status })
-  }).catch(function() {});
-});
-
-// Then fetch authoritative KV state and override (catches changes made on other devices)
-fetch(API_BASE + '/api/packet-status?pin=' + API_PIN + '&packet=' + PACKET)
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    if (!data.statuses) return;
-    document.querySelectorAll('.sb-badge').forEach(function(btn) {
-      var remote = data.statuses[btn.dataset.id];
-      if (remote && STATUSES.includes(remote)) applyStatus(btn, remote);
+function refresh() {
+  return fetch(API + '&packet=' + PACKET + '&cb=' + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var remote = (data && data.statuses) || {};
+      document.querySelectorAll('.sb-badge').forEach(function (btn) {
+        var id = btn.dataset.id;
+        if (pending[id] || btn.dataset.retry) return;
+        if (remote[id] && STATUSES.indexOf(remote[id]) > -1) {
+          paint(btn, remote[id]);
+          try { localStorage.setItem(LS_PREFIX + id, remote[id]); } catch (e) {}
+        }
+      });
+      return remote;
     });
-  })
-  .catch(function() {});
+}
+
+// Load: paint the cached value instantly, then let the server correct it.
+document.querySelectorAll('.sb-badge').forEach(function (btn) {
+  try {
+    var cached = localStorage.getItem(LS_PREFIX + btn.dataset.id);
+    if (cached && STATUSES.indexOf(cached) > -1) paint(btn, cached);
+  } catch (e) {}
+});
+refresh().then(function (remote) {
+  // One-time rescue: statuses set on this device that never reached the server
+  // (every save before the fix). Sent with at=0 so they can NEVER override a
+  // value someone saved on the server since.
+  document.querySelectorAll('.sb-badge').forEach(function (btn) {
+    var id = btn.dataset.id, cached = null;
+    try { cached = localStorage.getItem(LS_PREFIX + id); } catch (e) {}
+    if (cached && cached !== 'Active' && !remote[id] && STATUSES.indexOf(cached) > -1) save(btn, cached, 0);
+  });
+}).catch(function () {});
+
+// Keep every open copy of this page in sync.
+setInterval(function () { if (!document.hidden) refresh().catch(function () {}); }, 20000);
+document.addEventListener('visibilitychange', function () { if (!document.hidden) refresh().catch(function () {}); });
 </script>
 </body>
 </html>
