@@ -222,7 +222,9 @@
                             <p>Fill out the form and we'll contact you within 24 hours</p>
                         </div>
 
-                        <form id="contact-form" action="https://lead-manager-api.irontigerdigital.workers.dev/ingest" method="POST">
+                        <div id="form-error" style="display:none;background:#fef2f2;border:1.5px solid #ef4444;border-radius:10px;padding:20px;color:#7f1d1d;margin-bottom:16px" role="alert" aria-live="assertive"></div>
+                        <form id="contact-form" action="https://lead-manager-api.irontigerdigital.workers.dev/ingest" method="POST" data-success="form-success" data-error="form-error" data-strict="false" data-fallback-tel="(623) 294-9154">
+      <input type="hidden" name="site_domain" value="phxpoolresurfacing.com">
                             <input type="hidden" name="_subject" value="New Lead — Phoenix Pool Resurfacing">
                             <input type="hidden" name="_next" value="https://phxpoolresurfacing.com/contact/#form-success">
                             <input type="hidden" name="_honey" style="display:none">
@@ -230,25 +232,25 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name"><i class="ph ph-user"></i> Your Name *</label>
-                                    <input type="text" id="name" name="name" required placeholder="John Smith">
+                                    <input type="text" id="name" name="name" required placeholder="John Smith" autocomplete="name" maxlength="80">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone"><i class="ph ph-phone"></i> Phone Number *</label>
-                                    <input type="tel" id="phone" name="phone" required placeholder="(623) 294-9154">
+                                    <input type="tel" id="phone" name="phone" required placeholder="(623) 294-9154" autocomplete="tel" inputmode="tel" maxlength="20" pattern="\+?1?[\s.\-]?\(?[0-9]{3}\)?[\s.\-]?[0-9]{3}[\s.\-]?[0-9]{4}" title="10-digit US phone number, e.g. (555) 123-4567">
                                 </div>
                             </div>
 
                             <div class="form-row">
                             <div class="form-group">
                                     <label for="email"><i class="ph ph-envelope"></i> Email Address *</label>
-                                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                                    <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" maxlength="120">
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="city"><i class="ph ph-map-pin"></i> City/Area *</label>
-                                    <select id="city" name="city" required>
+                                    <select id="city" name="city" required autocomplete="address-level2" maxlength="60">
                                         <option value="">Select your area...</option>
                                         <option value="Phoenix">Phoenix</option>
                                         <option value="Scottsdale">Scottsdale</option>
@@ -260,6 +262,14 @@
                                         <option value="Peoria">Peoria</option>
                                         <option value="Other">Other</option>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" name="state" autocomplete="address-level1" maxlength="2" pattern="[A-Za-z]{2}" title="2-letter state code">
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP Code *</label>
+                                    <input type="text" id="zip" name="zip" required autocomplete="postal-code" inputmode="numeric" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" title="5-digit ZIP">
                                 </div>
                                 <div class="form-group">
                                     <label for="service"><i class="ph ph-wrench"></i> Service Needed *</label>
@@ -278,7 +288,7 @@
 
                             <div class="form-group">
                                 <label for="address"><i class="ph ph-house"></i> Property Address *</label>
-                                <input type="text" id="address" name="address" required placeholder="123 Main St, Phoenix, AZ 85001">
+                                <input type="text" id="address" name="address" required placeholder="123 Main St, Phoenix, AZ 85001" autocomplete="address-line1" maxlength="120">
                             </div>
 
                             <div class="form-row">
@@ -295,7 +305,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="timeline"><i class="ph ph-calendar"></i> Desired Timeline</label>
-                                    <select id="timeline" name="timeline">
+                                    <select id="timeline" name="timeline" required>
                                         <option value="">Select timeline...</option>
                                         <option value="ASAP">ASAP</option>
                                         <option value="Within 1 month">Within 1 month</option>
@@ -308,7 +318,7 @@
 
                             <div class="form-group">
                                 <label for="message"><i class="ph ph-chat-text"></i> Describe Your Project *</label>
-                                <textarea id="message" name="message" required rows="4" placeholder="Please describe the current condition of your pool, what work you're looking for, and any other details that would help us prepare your estimate..."></textarea>
+                                <textarea id="message" name="message" required rows="4" placeholder="Please describe the current condition of your pool, what work you're looking for, and any other details that would help us prepare your estimate..." minlength="10" maxlength="2000"></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary contact-submit-btn">
@@ -388,5 +398,6 @@
 <!-- Mobile CTA Bar (added QA Mar 2026) -->
 
 
+<script src="/js/form.js" defer></script>
 </body>
 </html>
