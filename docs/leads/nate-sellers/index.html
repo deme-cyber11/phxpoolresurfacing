@@ -432,12 +432,12 @@ footer strong { color: var(--accent-dark); }
 <div class="hero">
   <span class="badge">Prepared for Nate Sellers</span>
   <h2>Phoenix Pool Resurfacing Leads</h2>
-  <p>25 inbound homeowner inquiries across the Phoenix metro — verified contact info, scoped specs, and project photos.</p>
+  <p><span id="stat-intro">30</span> inbound homeowner inquiries across the Phoenix metro — verified contact info, scoped specs, and project photos.</p>
 </div>
 
 <div class="summary-row">
-  <div class="summary-stat"><div class="val">26</div><div class="lbl">Total leads</div></div>
-  <div class="summary-stat"><div class="val">3</div><div class="lbl">Quartz / Pebble Tec</div></div>
+  <div class="summary-stat"><div class="val" id="stat-total">30</div><div class="lbl">Total leads</div></div>
+  <div class="summary-stat"><div class="val" id="stat-finish">16</div><div class="lbl">Quartz / Pebble Tec</div></div>
 </div>
 
 <div class="tab-bar">
@@ -2416,6 +2416,22 @@ refresh().then(function (remote) {
 // Keep every open copy of this page in sync.
 setInterval(function () { if (!document.hidden) refresh().catch(function () {}); }, 20000);
 document.addEventListener('visibilitychange', function () { if (!document.hidden) refresh().catch(function () {}); });
+</script>
+
+<script>
+(function () {
+  var cards = document.querySelectorAll('#tab-leads .card');
+  var total = cards.length;
+  if (!total) return;                       // never blank the page out on a selector change
+  var finish = 0;
+  for (var i = 0; i < cards.length; i++) {
+    if (/quartz|pebble/i.test(cards[i].textContent || '')) finish++;
+  }
+  var set = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
+  set('stat-total', total);
+  set('stat-intro', total);
+  set('stat-finish', finish);
+})();
 </script>
 </body>
 </html>
