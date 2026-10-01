@@ -571,3 +571,5 @@ body.pm main > section:is(.why, .areas, .process, .testimonials) { padding-top: 
   body.pm .pm-stats__icon { width: 32px; height: 32px; border-radius: 10px; }
   body.pm .pm-stats__icon svg { width: 17px; height: 17px; }
 }
+/* footer phone link: inline coral reads faint on the deep footer (contrast-sweep spread 68) */
+body.pm footer a[href^="tel:"] { color: #ff8fa0 !important; font-weight: 700; }
