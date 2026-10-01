@@ -36,9 +36,9 @@
         @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/space-grotesk-latin.woff2') format('woff2');}
         @font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/dm-sans-latin.woff2') format('woff2');}
     </style>
-    <link rel="stylesheet" href="/css/styles.v1.css">
-  <link rel="stylesheet" href="/css/style.v2.5.css">
-  <link rel="stylesheet" href="/css/site-theme.css">
+    <link rel="stylesheet" href="/css/styles.v1.css?v=20261001">
+  <link rel="stylesheet" href="/css/style.v2.5.css?v=20261001">
+  <link rel="stylesheet" href="/css/site-theme.css?v=20261001">
 
     <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -92,8 +92,9 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "vqc68ce75g");
   </script>
+    <link rel="stylesheet" href="/css/pm.css?v=20261001">
 </head>
-<body>
+<body class="pm pm-res">
     <div class="scroll-progress" id="scroll-progress"></div>
     <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
@@ -152,7 +153,7 @@
     </header>
     <main>
         <!-- Hero -->
-        <section class="page-hero" style="background-image: url('/images/hero-main.webp');">
+        <section class="page-hero" style="--hero-img:url('/images/hero-sun-city.webp')">
             <div class="container">
                 <span class="section-label" style="color:rgba(255,255,255,0.9);">Seasonal Guide · Phoenix</span>
                 <h1>When Is the Best Time to Resurface Your Pool in Phoenix?</h1>
@@ -206,7 +207,7 @@
 <p>Any contractor willing to resurface your Phoenix pool in July is either unaware of how plaster chemistry works or willing to cut corners. The warranty on a summer resurface isn’t worth the paper it’s printed on.</p>
 
 <h2>Month-by-Month Quick Reference</h2>
-<table style="width:100%;border-collapse:collapse;font-size:0.95rem;margin:24px 0;">
+<div class="pm-table-wrap"><table style="width:100%;border-collapse:collapse;font-size:0.95rem;margin:24px 0;">
   <thead>
     <tr style="background:#c8102e;color:white;">
       <th style="padding:10px 14px;text-align:left;">Month</th>
@@ -216,16 +217,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr style="background:#f8fafc;"><td style="padding:9px 14px;">October</td><td style="padding:9px 14px;">86°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;">✓ Best</td><td style="padding:9px 14px;">Monsoon done, ideal temps</td></tr>
-    <tr><td style="padding:9px 14px;">November</td><td style="padding:9px 14px;">74°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;">✓ Excellent</td><td style="padding:9px 14px;">Peak window, low demand</td></tr>
-    <tr style="background:#f8fafc;"><td style="padding:9px 14px;">December</td><td style="padding:9px 14px;">64°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;">✓ Good</td><td style="padding:9px 14px;">Watch overnight lows</td></tr>
-    <tr><td style="padding:9px 14px;">January</td><td style="padding:9px 14px;">67°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;">✓ Good</td><td style="padding:9px 14px;">Watch overnight lows</td></tr>
-    <tr style="background:#f8fafc;"><td style="padding:9px 14px;">February</td><td style="padding:9px 14px;">71°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;">✓ Good</td><td style="padding:9px 14px;">Warming trend, reliable</td></tr>
-    <tr><td style="padding:9px 14px;">March</td><td style="padding:9px 14px;">79°F</td><td style="padding:9px 14px;color:#ca8a04;font-weight:600;">⚠ Act fast</td><td style="padding:9px 14px;">Book early, finish by Apr 15</td></tr>
-    <tr style="background:#f8fafc;"><td style="padding:9px 14px;">April</td><td style="padding:9px 14px;">88°F</td><td style="padding:9px 14px;color:#dc2626;font-weight:600;">✗ Risky</td><td style="padding:9px 14px;">Late April = heat risk</td></tr>
-    <tr><td style="padding:9px 14px;">May–Sept</td><td style="padding:9px 14px;">100°F+</td><td style="padding:9px 14px;color:#dc2626;font-weight:600;">✗ Avoid</td><td style="padding:9px 14px;">Summer — plaster fails</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:9px 14px;">October</td><td style="padding:9px 14px;">86°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;"><svg class="pm-i pm-i--ok" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg> Best</td><td style="padding:9px 14px;">Monsoon done, ideal temps</td></tr>
+    <tr><td style="padding:9px 14px;">November</td><td style="padding:9px 14px;">74°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;"><svg class="pm-i pm-i--ok" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg> Excellent</td><td style="padding:9px 14px;">Peak window, low demand</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:9px 14px;">December</td><td style="padding:9px 14px;">64°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;"><svg class="pm-i pm-i--ok" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg> Good</td><td style="padding:9px 14px;">Watch overnight lows</td></tr>
+    <tr><td style="padding:9px 14px;">January</td><td style="padding:9px 14px;">67°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;"><svg class="pm-i pm-i--ok" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg> Good</td><td style="padding:9px 14px;">Watch overnight lows</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:9px 14px;">February</td><td style="padding:9px 14px;">71°F</td><td style="padding:9px 14px;color:#16a34a;font-weight:600;"><svg class="pm-i pm-i--ok" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg> Good</td><td style="padding:9px 14px;">Warming trend, reliable</td></tr>
+    <tr><td style="padding:9px 14px;">March</td><td style="padding:9px 14px;">79°F</td><td style="padding:9px 14px;color:#ca8a04;font-weight:600;"><svg class="pm-i pm-i--warn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"/></svg> Act fast</td><td style="padding:9px 14px;">Book early, finish by Apr 15</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:9px 14px;">April</td><td style="padding:9px 14px;">88°F</td><td style="padding:9px 14px;color:#dc2626;font-weight:600;"><svg class="pm-i pm-i--bad" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM8.28 7.22a.75.75 0 0 0-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 1 0 1.06 1.06L10 11.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L11.06 10l1.72-1.72a.75.75 0 0 0-1.06-1.06L10 8.94 8.28 7.22Z" clip-rule="evenodd"/></svg> Risky</td><td style="padding:9px 14px;">Late April = heat risk</td></tr>
+    <tr><td style="padding:9px 14px;">May–Sept</td><td style="padding:9px 14px;">100°F+</td><td style="padding:9px 14px;color:#dc2626;font-weight:600;"><svg class="pm-i pm-i--bad" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM8.28 7.22a.75.75 0 0 0-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 1 0 1.06 1.06L10 11.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L11.06 10l1.72-1.72a.75.75 0 0 0-1.06-1.06L10 8.94 8.28 7.22Z" clip-rule="evenodd"/></svg> Avoid</td><td style="padding:9px 14px;">Summer — plaster fails</td></tr>
   </tbody>
-</table>
+</table></div>
 
 <h2>What About the 28-Day Cure Period?</h2>
 <p>Pool plaster requires 28 days of careful water chemistry management before the surface is fully hardened. During this period, you need to run the pump continuously, brush the surface twice daily for the first two weeks, and balance chemistry daily. This isn’t optional — it’s what determines whether your new surface lasts 10 years or 5.</p>
@@ -257,21 +258,21 @@
             <h2>Related Articles</h2>
             <div class="articles-grid">
                 <a href="/resources/pool-resurfacing-cost/" class="article-card">
-                    <img src="/images/hero-main.webp" alt="2026 Cost Guide" loading="lazy" width="800" height="533">
+                    <img src="/images/blog-cost-guide.webp" alt="2026 Cost Guide" loading="lazy" width="800" height="533">
                     <div class="article-card-content">
                         <h3>2026 Cost Guide</h3>
                         <p>Complete pricing breakdown</p>
                     </div>
                 </a>
                 <a href="/resources/pool-resurfacing-timeline/" class="article-card">
-                    <img src="/images/gallery-quartz.webp" alt="Timeline Guide" loading="lazy" width="800" height="533">
+                    <img src="/images/hero-avondale.webp" alt="Timeline Guide" loading="lazy" width="800" height="533">
                     <div class="article-card-content">
                         <h3>Timeline Guide</h3>
                         <p>Day-by-day expectations</p>
                     </div>
                 </a>
                 <a href="/resources/signs-pool-needs-resurfacing/" class="article-card">
-                    <img src="/images/gallery-tile-coping.webp" alt="Signs You Need It" loading="lazy" width="800" height="533">
+                    <img src="/images/blog-warning-signs.webp" alt="Signs You Need It" loading="lazy" width="800" height="533">
                     <div class="article-card-content">
                         <h3>Signs You Need It</h3>
                         <p>Warning signs to watch for</p>

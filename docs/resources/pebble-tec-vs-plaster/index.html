@@ -36,9 +36,9 @@
         @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/space-grotesk-latin.woff2') format('woff2');}
         @font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/dm-sans-latin.woff2') format('woff2');}
     </style>
-    <link rel="stylesheet" href="/css/styles.v1.css">
-  <link rel="stylesheet" href="/css/style.v2.5.css">
-  <link rel="stylesheet" href="/css/site-theme.css">
+    <link rel="stylesheet" href="/css/styles.v1.css?v=20261001">
+  <link rel="stylesheet" href="/css/style.v2.5.css?v=20261001">
+  <link rel="stylesheet" href="/css/site-theme.css?v=20261001">
 
     <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -92,8 +92,9 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "vqc68ce75g");
   </script>
+    <link rel="stylesheet" href="/css/pm.css?v=20261001">
 </head>
-<body>
+<body class="pm pm-res">
     <div class="scroll-progress" id="scroll-progress"></div>
     <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
@@ -153,7 +154,7 @@
     <main>
 
         <!-- Hero -->
-        <section class="page-hero" style="background-image: url('/images/gallery-quartz.webp');">
+        <section class="page-hero" style="--hero-img:url('/images/content-quality-finish.webp')">
             <div class="container">
                 <span class="section-label" style="color:rgba(255,255,255,0.9);">Finish Comparison · Phoenix</span>
                 <h1>Pebble Tec vs Plaster: Which Pool Finish is Right for You?</h1>
@@ -190,7 +191,7 @@
                     <p>After resurfacing hundreds of pools in the Phoenix area, we've helped homeowners navigate this exact decision. Here's everything you need to know to make an informed choice.</p>
 
                     <h2>Quick Comparison</h2>
-                    <table>
+                    <div class="pm-table-wrap"><table>
                         <thead>
                             <tr>
                                 <th>Factor</th>
@@ -230,7 +231,7 @@
                                 <td>Excellent</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h2>Understanding Plaster Pool Finishes</h2>
                     <p>Pool plaster has been the standard finish for decades. It's a mixture of white cement, marble dust (or limestone), and water that creates a smooth, classic look.</p>
@@ -316,7 +317,7 @@
 
 
         <!-- Related Resources -->
-        <section style="padding: 3rem 5%; max-width: 900px; margin: 0 auto;">
+        <section class="pm-related" style="padding: 3rem 5%; max-width: 900px; margin: 0 auto;">
             <h3>Related Resources</h3>
             <ul style="list-style: none; padding: 0; display: grid; gap: 1rem;">
                 <li><a href="/resources/pool-finish-colors/" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">→ Pool Finish Color Guide</a></li>
@@ -340,21 +341,21 @@
             <h2>Related Articles</h2>
             <div class="articles-grid">
                 <a href="/resources/pool-resurfacing-cost/" class="article-card">
-                    <img src="/images/hero-main.webp" alt="Cost Guide" loading="lazy" width="800" height="533">
+                    <img src="/images/blog-cost-guide.webp" alt="Cost Guide" loading="lazy" width="800" height="533">
                     <div class="article-card-content">
                         <h3>2026 Pool Resurfacing Cost Guide</h3>
                         <p>Complete pricing breakdown</p>
                     </div>
                 </a>
                 <a href="/resources/signs-pool-needs-resurfacing/" class="article-card">
-                    <img src="/images/hero-main.webp" alt="Warning Signs" loading="lazy" width="800" height="533">
+                    <img src="/images/blog-warning-signs.webp" alt="Warning Signs" loading="lazy" width="800" height="533">
                     <div class="article-card-content">
                         <h3>5 Signs Your Pool Needs Help</h3>
                         <p>Don't ignore these warnings</p>
                     </div>
                 </a>
                 <a href="/services/pebble-tec/" class="article-card">
-                    <img src="/images/gallery-tile-coping.webp" alt="Pebble Tec" loading="lazy" width="800" height="533">
+                    <img src="/images/gallery-pebble-tec.webp" alt="Pebble Tec" loading="lazy" width="800" height="533">
                     <div class="article-card-content">
                         <h3>Pebble Tec Services</h3>
                         <p>Learn about this premium option</p>

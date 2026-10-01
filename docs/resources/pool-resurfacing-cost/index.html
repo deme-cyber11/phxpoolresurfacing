@@ -36,9 +36,9 @@
         @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/space-grotesk-latin.woff2') format('woff2');}
         @font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/dm-sans-latin.woff2') format('woff2');}
     </style>
-    <link rel="stylesheet" href="/css/styles.v1.css">
-  <link rel="stylesheet" href="/css/style.v2.5.css">
-  <link rel="stylesheet" href="/css/site-theme.css">
+    <link rel="stylesheet" href="/css/styles.v1.css?v=20261001">
+  <link rel="stylesheet" href="/css/style.v2.5.css?v=20261001">
+  <link rel="stylesheet" href="/css/site-theme.css?v=20261001">
 
     <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -92,8 +92,9 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "vqc68ce75g");
   </script>
+    <link rel="stylesheet" href="/css/pm.css?v=20261001">
 </head>
-<body>
+<body class="pm pm-res">
     <div class="scroll-progress" id="scroll-progress"></div>
     <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
@@ -153,7 +154,7 @@
     <main>
 
         <!-- Hero -->
-        <section class="page-hero" style="background-image: url('/images/hero-main.webp');">
+        <section class="page-hero" style="--hero-img:url('/images/hero-mesa.webp')">
             <div class="container">
                 <span class="section-label" style="color:rgba(255,255,255,0.9);">Cost Guide · Phoenix · 2026</span>
                 <h1>Pool Resurfacing Cost in Phoenix: 2026 Complete Price Guide</h1>
@@ -190,7 +191,7 @@
                     <p>In this guide, we'll break down the costs for every type of pool finish available in the Phoenix area so you can budget appropriately for your project.</p>
 
                     <h2>Quick Cost Summary</h2>
-                    <table>
+                    <div class="pm-table-wrap"><table>
                         <thead>
                             <tr>
                                 <th>Finish Type</th>
@@ -219,7 +220,7 @@
                                 <td>15-20+ years</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
                     <p class="cost-table-note"><strong>Note:</strong> The figures above reflect material costs only. Total project pricing — including labor, draining, prep, and startup — typically ranges from <strong>$4,500–$7,500 for plaster</strong>, <strong>$6,500–$10,000 for quartz</strong>, and <strong>$7,000–$12,000 for Pebble Tec</strong> on a standard residential pool.</p>
 
                     <h2>Plaster Pool Resurfacing Cost</h2>
@@ -296,7 +297,7 @@
 
 
         <!-- Related Resources -->
-        <section style="padding: 3rem 5%; max-width: 900px; margin: 0 auto;">
+        <section class="pm-related" style="padding: 3rem 5%; max-width: 900px; margin: 0 auto;">
             <h3>Related Resources</h3>
             <ul style="list-style: none; padding: 0; display: grid; gap: 1rem;">
                 <li><a href="/resources/cost-calculator/" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">→ Pool Resurfacing Cost Calculator</a></li>
@@ -320,21 +321,21 @@
             <h2>Related Articles</h2>
             <div class="articles-grid">
                 <a href="/resources/pebble-tec-vs-plaster/" class="article-card">
-                    <img src="/images/gallery-quartz.webp" alt="Comparison" loading="lazy" width="800" height="533">
+                    <img src="/images/content-quality-finish.webp" alt="Comparison" loading="lazy" width="800" height="533">
                     <div class="article-card-content">
                         <h3>Pebble Tec vs Plaster</h3>
                         <p>Compare finishes side-by-side</p>
                     </div>
                 </a>
                 <a href="/resources/signs-pool-needs-resurfacing/" class="article-card">
-                    <img src="/images/hero-main.webp" alt="Warning Signs" loading="lazy" width="800" height="533">
+                    <img src="/images/blog-warning-signs.webp" alt="Warning Signs" loading="lazy" width="800" height="533">
                     <div class="article-card-content">
                         <h3>5 Signs Your Pool Needs Help</h3>
                         <p>Don't ignore these warnings</p>
                     </div>
                 </a>
                 <a href="/services/plaster-resurfacing/" class="article-card">
-                    <img src="/images/hero-main.webp" alt="Plaster" loading="lazy" width="800" height="533">
+                    <img src="/images/gallery-plaster.webp" alt="Plaster" loading="lazy" width="800" height="533">
                     <div class="article-card-content">
                         <h3>Plaster Resurfacing</h3>
                         <p>Learn about this classic option</p>
