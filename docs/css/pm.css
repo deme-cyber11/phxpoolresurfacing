@@ -573,3 +573,50 @@ body.pm main > section:is(.why, .areas, .process, .testimonials) { padding-top: 
 }
 /* footer phone link: inline coral reads faint on the deep footer (contrast-sweep spread 68) */
 body.pm footer a[href^="tel:"] { color: #ff8fa0 !important; font-weight: 700; }
+
+/* ---------- phone + tablet pass (2026-10-01 r2). Media-scoped only: 1180px and wider is untouched. ---------- */
+@media (min-width: 969px) and (max-width: 1179px) {
+  /* tablet landscape / small laptop: the desktop nav wrapped (logo on 2 lines, phone pill broken in half, arrows under the labels) */
+  body.pm header nav { padding: 0 1.25rem; }
+  body.pm .logo { gap: .6rem; }
+  body.pm .logo-text { white-space: nowrap; font-size: 1.02rem; }
+  body.pm .nav-links { gap: .15rem; }
+  body.pm .nav-links > li > a { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; white-space: nowrap; padding: 0 .55rem; }
+  body.pm .nav-links > li > a.nav-cta { padding: 0 .85rem !important; margin-left: .3rem; }
+}
+@media (max-width: 1179px) {
+  body.pm .reviews-widget a.reviews-cta { display: inline-flex; align-items: center; min-height: 44px; }
+  body.pm nav.breadcrumb a, body.pm .breadcrumb a, body.pm .faq-section > nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; }
+  body.pm .preset-sizes .preset-btn { min-height: 44px; }
+  body.pm .back-to-top { width: 44px; height: 44px; }
+  body.pm header .logo { min-height: 44px; }
+  /* water-quality guide: its own small header and floating buttons */
+  body.pm-guide .site-header .logo, body.pm-guide .site-header nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; }
+  body.pm-guide .floating-cta .fcta-call, body.pm-guide .floating-cta .fcta-quote { min-height: 44px; }
+  body.pm-guide .cta-block a.cta-form { display: flex; align-items: center; justify-content: center; min-height: 44px; }
+  body.pm a.contact-phone-link { display: inline-flex; align-items: center; min-height: 44px; }
+}
+@media (max-width: 968px) {
+  body.pm .logo { min-height: 44px; }
+}
+@media (max-width: 768px) {
+  /* pages without the bottom call bar: their floating call/estimate buttons only appeared after 300px of scroll,
+     so a phone visitor saw no call action on the first screens */
+  body.pm:not(:has(.mobile-cta-bar)) .floating-cta { opacity: 1; transform: none; pointer-events: auto; }
+  /* water-quality guide header: logo and Free Estimate on one row, links on a second row */
+  body.pm-guide .site-header { display: grid; grid-template-columns: auto auto auto 1fr; column-gap: 4px; align-items: center; padding: 8px 18px 4px; }
+  body.pm-guide .site-header .logo { grid-column: 1 / 4; grid-row: 1; white-space: nowrap; }
+  body.pm-guide .site-header nav { display: contents; }
+  body.pm-guide .site-header nav a { grid-row: 2; justify-self: start; margin-left: 0; padding: 0 6px; }
+  body.pm-guide .site-header nav a:first-child { padding-left: 0; }
+  body.pm-guide .site-header nav a.nav-cta { grid-column: 4; grid-row: 1; justify-self: end; white-space: nowrap; padding: 0 14px; }
+}
+@media (max-width: 720px) {
+  body.pm footer .footer-bottom p, body.pm .area-card p, body.pm .estimate-note { font-size: 15px !important; }
+  body.pm-guide .resource-body p[style*="font-size"] { font-size: 15px !important; }
+}
+@media (max-width: 400px) {
+  body.pm-guide .site-header .logo { white-space: normal; line-height: 1.15; font-size: 1rem; }
+  body.pm-guide .site-header nav a { font-size: .86rem; }
+  body.pm-guide .site-header nav a.nav-cta { padding: 0 12px; font-size: .86rem; }
+}
