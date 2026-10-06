@@ -172,6 +172,7 @@
         .compare-table th { background: #1a1a2e; color: #fff; padding: .75rem 1rem; text-align: left; white-space: nowrap; }
         .compare-table td { padding: .7rem 1rem; border-bottom: 1px solid #e5e7eb; }
         .compare-table tr:nth-child(even) td { background: #f8f9fa; }
+        @media (min-width: 900px) { .compare-table th { white-space: normal; } } /* let headers wrap so the last column is not cut off at desktop width */
 
         /* Tip row */
         .tip-row { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0; }

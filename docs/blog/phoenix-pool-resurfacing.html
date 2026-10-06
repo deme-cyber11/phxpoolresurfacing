@@ -153,7 +153,7 @@
 <section class="cta-section" style="max-width:800px;margin:3rem auto;padding:40px 32px;background:linear-gradient(135deg,#1e3a5f,#2c5282);color:#fff;border-radius:12px;text-align:center;">
   <h2 style="color:#fff;border:none;font-size:1.6rem;">Get a Free Pool Resurfacing Quote in Phoenix</h2>
   <p style="opacity:.9;font-size:1.05rem;">Talk to a local expert — no pressure, no obligation.</p>
-  <a href="/contact/" style="display:inline-block;background:#f97316;color:#fff;font-size:1.1rem;font-weight:800;padding:16px 36px;border-radius:8px;text-decoration:none;margin:16px 0;">Get My Free Quote</a>
+  <a href="/contact/" style="display:inline-block;background:#e94560;color:#fff;font-size:1.1rem;font-weight:800;padding:16px 36px;border-radius:8px;text-decoration:none;margin:16px 0;">Get My Free Quote</a>
 </section>
 </main>
 
@@ -190,6 +190,10 @@
         <div class="footer-bottom"><p>&copy; 2026 Phoenix Pool Resurfacing. All rights reserved. Licensed &amp; Insured.</p></div>
 
     </footer>
+    <script>
+    // Mobile dropdown toggle (same as every other page): without it, tapping Services, Areas or Resources on a phone jumped to the top instead of opening the menu
+    document.querySelectorAll('.dropdown > a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<=968){e.preventDefault();this.parentElement.classList.toggle('active');}});});
+    </script>
 
 </body>
 </html>

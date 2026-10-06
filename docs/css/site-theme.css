@@ -196,3 +196,38 @@ footer h4 {
 .hero p * {
   color: rgba(255, 255, 255, 0.93) !important;
 }
+
+/* ── DESIGN-CHECK 2026-10-06: defects found by clicking and measuring the live site ── */
+
+/* Fonts. The 2026-10-05 speed pass inlined these @font-face rules page by page and missed
+   /blog/ and /blog/phoenix-pool-resurfacing.html, which then rendered in a fallback face.
+   Declared here too so every page that loads this file gets the same type. Same files,
+   so pages that already declare them download nothing extra. */
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/space-grotesk-latin.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/dm-sans-latin.woff2') format('woff2'); }
+
+/* Gallery lightbox. The hover tint (.gallery-item::before) and the caption overlay sit
+   above each photo and swallowed every click, so the zoom-in lightbox never opened. */
+.gallery-item::before,
+.gallery-overlay { pointer-events: none; }
+/* Small caption labels were faint over bright sky. */
+.gallery-overlay .gallery-label { opacity: 1; color: #fff; text-shadow: 0 1px 3px rgba(0, 0, 0, .65); }
+
+/* Before/after slider. The "After" photo was revealed on the LEFT under the "Before"
+   label, so the finished pool read as the before shot. Reveal it from the right, under
+   its own label. (The drag script in index.html clips from the same side.) */
+.image-compare .compare-after { clip-path: inset(0 0 0 50%); }
+
+/* Phones: the gallery is two columns, so the fifth photo sat alone in the last row. */
+@media (max-width: 720px) {
+  body.pm .gallery-grid .gallery-item:last-child:nth-child(even) { grid-column: 1 / -1 !important; }
+}
+
+/* Contact form: a row holding only Email left an empty half column beside it, and the
+   City/State/ZIP/Service row added a second 20px gap on top of each field's margin. */
+.form-row { row-gap: 0; }
+.form-row > .form-group:only-child { grid-column: 1 / -1; }
+
+/* /blog/phoenix-pool-resurfacing.html: FAQ cards had a tinted background but no padding,
+   so the questions sat flush against the card edge. */
+.blog-post .faq-item { padding: 18px 22px; border-radius: 14px; }

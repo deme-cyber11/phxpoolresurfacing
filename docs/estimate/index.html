@@ -52,6 +52,8 @@ button{cursor:pointer;font-family:inherit;border:none}
 @media(max-width:520px){.row{grid-template-columns:1fr}}
 .field{margin-bottom:16px}
 .field:last-child{margin-bottom:0}
+.row:not(:last-child){margin-bottom:16px}
+.row>.field{margin-bottom:0}
 label{display:block;font-size:.8125rem;font-weight:600;color:#374151;margin-bottom:6px;line-height:1.4}
 label .req{color:#e94560;margin-left:2px}
 label .hint{font-weight:400;color:#94a3b8}
@@ -106,7 +108,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 <body>
 
 <nav class="nav">
-  <div class="nav__logo">Phoenix <span>Pro</span></div>
+  <div class="nav__logo">Phoenix Pool <span>Resurfacing</span></div>
   <a href="tel:6232949154" class="nav__cta">(623) 294-9154</a>
 </nav>
 
@@ -148,7 +150,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
         <label for="email">Email Address <span class="req">*</span></label>
         <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" maxlength="120">
       </div>
-      <div class="field" style="margin-bottom:0">
+      <div class="field">
         <label for="address">Property Address <span class="req">*</span></label>
         <input type="text" id="address" name="address" required placeholder="123 Main St, City, State ZIP" autocomplete="address-line1" maxlength="120">
       </div>
@@ -224,7 +226,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
         <option value="">Select if known...</option>
           <option>In-ground — concrete/gunite</option>
           <option>In-ground — fiberglass</option>
-          <option>Pool + Spa combo</option>
+          <option value="Pool + Spa combo">Pool and spa combo</option>
           <option>Spa / Hot Tub only</option>
           <option>Not sure</option>
       </select>

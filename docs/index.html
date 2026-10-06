@@ -638,7 +638,7 @@
                     <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                     <div class="trust-text">
                         <span class="trust-label">AZ ROC Licensed</span>
-                        <span class="trust-detail">$2M Liability + Bonded</span>
+                        <span class="trust-detail">$2M Liability and Bonded</span>
                     </div>
                 </div>
                 <div class="trust-item">
@@ -796,7 +796,7 @@
             <div class="services-grid">
                 <a href="/services/plaster-resurfacing/" class="service-card">
                     <div class="service-image-wrapper">
-                        <img src="/images/plaster-resurfacing.webp" alt="Plaster pool resurfacing" class="service-image" loading="lazy" width="800" height="533">
+                        <img src="/images/loc-glendale.webp" alt="Crew applying new white plaster in a drained pool" class="service-image" loading="lazy" width="800" height="533">
                     </div>
                     <div class="service-content">
                         <span class="service-tag">Most Popular</span>
@@ -1031,7 +1031,7 @@
                 <div class="gallery-item">
                     <img src="/images/gallery-deck-surface.webp" alt="Pool deck resurfacing Chandler" loading="lazy" width="800" height="533">
                     <div class="gallery-overlay">
-                        <div class="gallery-label">Deck + Surface</div>
+                        <div class="gallery-label">Deck and Surface</div>
                         <div class="gallery-title">Chandler - Complete Renovation</div>
                     </div>
                 </div>
@@ -1252,8 +1252,9 @@
             var rect = el.getBoundingClientRect();
             var pct = Math.min(Math.max((x - rect.left) / rect.width * 100, 0), 100);
             slider.style.left = pct + '%';
-            after.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+            after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
         }
+        el.addEventListener('click', function(e){ setPos(e.clientX); });
         slider.addEventListener('mousedown', function(e){ dragging = true; e.preventDefault(); });
         window.addEventListener('mouseup', function(){ dragging = false; });
         window.addEventListener('mousemove', function(e){ if(dragging) setPos(e.clientX); });
